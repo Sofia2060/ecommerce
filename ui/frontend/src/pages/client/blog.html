@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Góc dinh dưỡng – Calo, TDEE, đọc nhãn, eat clean | NutriGreen</title>
+  <meta name="description" content="Kiến thức dinh dưỡng dễ áp dụng: cách tính TDEE, đọc bảng dinh dưỡng trong 30 giây, protein bao nhiêu là đủ, đường ẩn, thực đơn tham khảo.">
+  <meta name="theme-color" content="#113b00">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NutriGreen">
+  <meta property="og:title" content="Góc dinh dưỡng – Calo, TDEE, đọc nhãn, eat clean | NutriGreen">
+  <meta property="og:description" content="Kiến thức dinh dưỡng dễ áp dụng: cách tính TDEE, đọc bảng dinh dưỡng trong 30 giây, protein bao nhiêu là đủ, đường ẩn, thực đơn tham khảo.">
+  <meta property="og:image" content="../../../public/images/og-cover.jpg">
+  <link rel="icon" href="../../../public/images/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../../../public/fonts/be-vietnam-pro-vietnamese-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../public/fonts/fonts.css">
+  <link rel="stylesheet" href="../../css/base/variables.css">
+  <link rel="stylesheet" href="../../css/base/layout.css">
+  <link rel="stylesheet" href="../../css/components/header-footer.css">
+  <link rel="stylesheet" href="../../css/components/product-card.css">
+  <link rel="stylesheet" href="../../css/components/widgets.css">
+  <link rel="stylesheet" href="../../css/pages/home.css">
+  <link rel="stylesheet" href="../../css/pages/blog.css">
+  <script src="../../js/core/common.js" defer></script>
+  <script src="../../js/components/blocks.js" defer></script>
+  <script src="../../js/pages/blog.js" defer></script>
+</head>
+<body data-page="blog">
+<!-- @header -->
+<a class="skip-link" href="#noi-dung">Bỏ qua, tới nội dung chính</a>
+<div class="topbar" role="note">
+  <div class="container topbar__in">
+    <p class="topbar__msg"><strong>Miễn phí giao hàng</strong> cho đơn từ 299.000đ</p>
+    <p class="topbar__msg topbar__msg--md">Giao trong ngày nội thành TP.HCM (AhaMove)</p>
+    <p class="topbar__msg topbar__msg--lg">Đổi trả 7 ngày với hàng lỗi, vỡ, ôi dầu</p>
+    <a class="topbar__link" href="orders.html">Tra cứu đơn hàng</a>
+  </div>
+</div>
+<header class="site-header" id="dau-trang">
+  <div class="container site-header__in">
+    <button class="icon-btn site-header__burger" type="button" aria-label="Mở menu" aria-controls="menu-di-dong" aria-expanded="false" data-mo-menu>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a class="logo" href="index.html" aria-label="NutriGreen – Trang chủ">
+      <img src="../../../public/images/logo/nutrigreen-logo.webp" alt="NutriGreen – Healthy Food, Better You" width="129" height="55">
+    </a>
+
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <ul class="main-nav__list">
+        <li class="main-nav__item has-mega" data-nav="san-pham">
+          <a class="main-nav__link" href="products.html" aria-haspopup="true">Sản phẩm
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="mega" role="menu">
+            <div class="mega__col">
+              <p class="mega__title">Theo loại</p>
+              <a href="products.html?danhmuc=hat-granola">Hạt &amp; Granola</a>
+              <a href="products.html?danhmuc=banh-an-kieng">Bánh ăn kiêng</a>
+              <a href="products.html?danhmuc=gao-lut">Bún, phở, nui gạo lứt</a>
+              <a href="products.html?danhmuc=combo">Combo theo calo</a>
+              <a class="mega__all" href="products.html">Tất cả sản phẩm →</a>
+            </div>
+            <div class="mega__col">
+              <p class="mega__title">Theo mục tiêu</p>
+              <a href="products.html?muctieu=giam-can">Giảm cân</a>
+              <a href="products.html?muctieu=tang-co">Tăng cơ</a>
+              <a href="products.html?muctieu=an-sang-nhanh">Ăn sáng nhanh</a>
+              <p class="mega__title mt-2">Theo con số</p>
+              <a href="products.html?loc=protein-cao">Protein ≥ 15g/100g</a>
+              <a href="products.html?loc=it-duong">Đường ≤ 5g/100g</a>
+            </div>
+            <div class="mega__col">
+              <p class="mega__title">Theo kcal / khẩu phần</p>
+              <a href="products.html?kcal=duoi-150">Dưới 150 kcal</a>
+              <a href="products.html?kcal=150-250">150 – 250 kcal</a>
+              <a href="products.html?kcal=tren-250">Trên 250 kcal</a>
+            </div>
+            <a class="mega__promo" href="tdee.html">
+              <span class="badge badge--forest">Công cụ miễn phí</span>
+              <strong>Bạn cần bao nhiêu calo mỗi ngày?</strong>
+              <span>Tính TDEE trong 30 giây và nhận gợi ý combo phù hợp.</span>
+              <span class="mega__promo-cta">Tính ngay →</span>
+            </a>
+          </div>
+        </li>
+        <li class="main-nav__item" data-nav="combo"><a class="main-nav__link" href="products.html?danhmuc=combo">Combo theo calo</a></li>
+        <li class="main-nav__item" data-nav="tdee"><a class="main-nav__link" href="tdee.html">Tính TDEE</a></li>
+        <li class="main-nav__item" data-nav="blog"><a class="main-nav__link" href="blog.html">Góc dinh dưỡng</a></li>
+        <li class="main-nav__item has-drop" data-nav="ho-tro">
+          <a class="main-nav__link" href="contact.html" aria-haspopup="true">Hỗ trợ
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="drop">
+            <a href="contact.html">Liên hệ &amp; câu hỏi thường gặp</a>
+            <a href="orders.html">Tra cứu đơn hàng</a>
+            <a href="policy.html#huong-dan-mua-hang">Hướng dẫn mua hàng</a>
+            <a href="policy.html#doi-tra">Chính sách đổi trả</a>
+            <a href="policy.html#giao-hang">Chính sách giao hàng</a>
+            <a href="policy.html#thanh-toan">Thanh toán</a>
+            <a href="policy.html#nguon-so-lieu">Nguồn số liệu dinh dưỡng</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <form class="search" role="search" action="products.html" data-tim-kiem>
+      <label class="sr-only" for="o-tim-kiem">Tìm sản phẩm</label>
+      <svg class="search__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input class="search__input" id="o-tim-kiem" name="q" type="search" placeholder="Tìm granola, hạt, bún gạo lứt…" autocomplete="off">
+      <div class="search__suggest" role="listbox" hidden></div>
+    </form>
+
+    <div class="header-actions">
+      <div class="hover-pop" data-pop="da-xem">
+        <a class="icon-btn hide-sm" href="recently-viewed.html" aria-label="Sản phẩm đã xem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </a>
+        <div class="hover-pop__box" data-pop-box="da-xem"></div>
+      </div>
+      <div class="hover-pop" data-pop="yeu-thich">
+        <a class="icon-btn hide-sm" href="wishlist.html" aria-label="Sản phẩm yêu thích">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+          <span class="count" data-dem="yeu-thich" hidden>0</span>
+        </a>
+        <div class="hover-pop__box" data-pop-box="yeu-thich"></div>
+      </div>
+      <div class="hover-pop" data-pop="tai-khoan">
+        <a class="icon-btn" href="account.html" aria-label="Tài khoản" data-link-tai-khoan>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+          <span class="dot" data-dot-tai-khoan hidden></span>
+        </a>
+        <div class="hover-pop__box" data-pop-box="tai-khoan"></div>
+      </div>
+      <div class="hover-pop" data-pop="gio-hang">
+        <a class="icon-btn" href="cart.html" aria-label="Giỏ hàng">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="count" data-dem="gio-hang" hidden>0</span>
+        </a>
+        <div class="hover-pop__box hover-pop__box--wide" data-pop-box="gio-hang"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="menu-di-dong" hidden>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__head">
+      <img src="../../../public/images/logo/nutrigreen-logo.webp" alt="NutriGreen" width="110" height="47">
+      <button class="icon-btn" type="button" aria-label="Đóng menu" data-dong-menu>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <form class="search search--drawer" role="search" action="products.html" data-tim-kiem>
+      <label class="sr-only" for="o-tim-kiem-dd">Tìm sản phẩm</label>
+      <svg class="search__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input class="search__input" id="o-tim-kiem-dd" name="q" type="search" placeholder="Tìm sản phẩm…" autocomplete="off">
+      <div class="search__suggest" role="listbox" hidden></div>
+    </form>
+    <a class="drawer__tdee" href="tdee.html"><strong>Tính TDEE &amp; nhận gợi ý combo</strong><span>30 giây · miễn phí</span></a>
+    <nav aria-label="Menu di động">
+      <p class="drawer__title">Sản phẩm</p>
+      <a href="products.html">Tất cả sản phẩm</a>
+      <a href="products.html?danhmuc=combo">Combo theo calo</a>
+      <a href="products.html?danhmuc=hat-granola">Hạt &amp; Granola</a>
+      <a href="products.html?danhmuc=banh-an-kieng">Bánh ăn kiêng</a>
+      <a href="products.html?danhmuc=gao-lut">Bún, phở, nui gạo lứt</a>
+      <p class="drawer__title">Theo mục tiêu</p>
+      <div class="drawer__chips">
+        <a class="chip" href="products.html?muctieu=giam-can">Giảm cân</a>
+        <a class="chip" href="products.html?muctieu=tang-co">Tăng cơ</a>
+        <a class="chip" href="products.html?muctieu=an-sang-nhanh">Ăn sáng nhanh</a>
+        <a class="chip" href="products.html?loc=protein-cao">Protein cao</a>
+        <a class="chip" href="products.html?loc=it-duong">Ít đường</a>
+      </div>
+      <p class="drawer__title">Của tôi</p>
+      <a href="account.html">Tài khoản</a>
+      <a href="orders.html">Đơn hàng của tôi</a>
+      <a href="rewards.html">Ví ưu đãi &amp; NutriCoins</a>
+      <a href="wishlist.html">Sản phẩm yêu thích</a>
+      <a href="recently-viewed.html">Sản phẩm đã xem</a>
+      <p class="drawer__title">Hỗ trợ</p>
+      <a href="blog.html">Góc dinh dưỡng</a>
+      <a href="contact.html">Liên hệ &amp; FAQ</a>
+      <a href="policy.html">Chính sách &amp; hướng dẫn</a>
+    </nav>
+  </div>
+</div>
+<!-- /@header -->
+<main id="noi-dung" class="page-main">
+<div class="container" style="padding-bottom:56px">
+  <ol class="breadcrumb"><li><a href="index.html">Trang chủ</a></li><li aria-current="page">Góc dinh dưỡng</li></ol>
+  <div class="page-title"><p class="eyebrow">Blog</p><h1>Góc dinh dưỡng</h1><p>Hiểu con số trước khi mua: calo, macro, cách đọc nhãn và chọn combo theo mục tiêu.</p></div>
+  <div class="tabs mt-2" data-chu-de role="tablist"></div>
+  <div class="grid grid-3 mt-2" data-ds-bai></div>
+  <aside class="tdee-nudge" style="margin-top:32px"><div><strong>Áp dụng ngay: bạn cần bao nhiêu calo?</strong><span class="small">Tính TDEE trong 30 giây và nhận gợi ý combo phù hợp.</span></div><a class="btn btn--primary" href="tdee.html">Tính TDEE</a></aside>
+</div>
+</main>
+<!-- @footer -->
+<section class="trust-strip" aria-label="Cam kết của NutriGreen">
+  <div class="container trust-strip__in">
+    <div class="trust-item"><span class="trust-item__ico">100%</span><p><strong>Bảng dinh dưỡng</strong><span>kcal, protein, béo, carb, đường – có nguồn</span></p></div>
+    <div class="trust-item"><span class="trust-item__ico">3 bước</span><p><strong>Đặt hàng nhanh</strong><span>Không bắt buộc tạo tài khoản</span></p></div>
+    <div class="trust-item"><span class="trust-item__ico">299k</span><p><strong>Miễn phí giao</strong><span>AhaMove nội thành · GHTK toàn quốc</span></p></div>
+    <div class="trust-item"><span class="trust-item__ico">7 ngày</span><p><strong>Đổi trả</strong><span>Hàng vỡ, ôi dầu, sai hàng</span></p></div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <img src="../../../public/images/logo/nutrigreen-logo.webp" alt="NutriGreen" width="140" height="60" loading="lazy">
+      <p class="site-footer__tag">Mua theo con số.</p>
+      <p>Thực phẩm dinh dưỡng đóng gói với bảng kcal và macro chuẩn cho mọi sản phẩm. Minh bạch dinh dưỡng – tiện lợi – đáng tin cậy.</p>
+      <div class="socials" aria-label="Kênh của NutriGreen">
+        <a href="#" data-kenh="facebook" aria-label="Fanpage Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v8h4v-8h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg></a>
+        <a href="#" data-kenh="tiktok" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.2 1.6 3.7 3.8 3.9v3.2c-1.4.1-2.6-.3-3.8-1v6.3c0 3.6-2.6 5.9-5.8 5.6-2.7-.2-4.8-2.5-4.6-5.4.2-3 3-5.2 6.2-4.6v3.3c-1.4-.4-2.9.4-3 1.6-.1 1.1.8 2 1.9 2 1.2 0 1.9-.8 1.9-2.2V3z"/></svg></a>
+        <a href="#" data-kenh="zalo" aria-label="Zalo OA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.6 1.4 4.9 3.6 6.5L5 21l3.4-1.7c1.1.3 2.3.5 3.6.5 5.5 0 10-3.8 10-8.5S17.5 3 12 3zm-3.8 10.6H5.4v-.7l2-2.6h-2V9.5h2.9v.7l-2 2.6h1.9zm1.9 0h-.9V9.5h.9zm3.6 0h-.8v-.3a1.5 1.5 0 1 1 0-2.4v-.3h.8zm3.3-1.4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg></a>
+      </div>
+    </div>
+    <nav class="site-footer__col" aria-label="Mua sắm">
+      <p class="site-footer__title">Mua sắm</p>
+      <a href="products.html?danhmuc=combo">Combo theo calo</a>
+      <a href="products.html?danhmuc=hat-granola">Hạt &amp; Granola</a>
+      <a href="products.html?danhmuc=banh-an-kieng">Bánh ăn kiêng</a>
+      <a href="products.html?danhmuc=gao-lut">Bún, phở, nui gạo lứt</a>
+      <a href="tdee.html">Công cụ tính TDEE</a>
+      <a href="blog.html">Góc dinh dưỡng</a>
+    </nav>
+    <nav class="site-footer__col" aria-label="Chính sách">
+      <p class="site-footer__title">Chính sách &amp; hướng dẫn</p>
+      <a href="policy.html#huong-dan-mua-hang">Hướng dẫn mua hàng</a>
+      <a href="policy.html#doi-tra">Đổi trả &amp; hoàn tiền</a>
+      <a href="policy.html#giao-hang">Giao hàng</a>
+      <a href="policy.html#thanh-toan">Thanh toán</a>
+      <a href="policy.html#bao-mat">Bảo mật thông tin</a>
+      <a href="policy.html#nguon-so-lieu">Nguồn số liệu dinh dưỡng</a>
+    </nav>
+    <div class="site-footer__col">
+      <p class="site-footer__title">Hỗ trợ khách hàng</p>
+      <p class="site-footer__contact">Hotline: <a href="tel:19000000" data-cau-hinh="hotline">1900 0000</a></p>
+      <p class="site-footer__contact">Email: <a href="mailto:cskh@nutrigreen.vn" data-cau-hinh="email">cskh@nutrigreen.vn</a></p>
+      <p class="site-footer__contact" data-cau-hinh="gioLamViec">08:00 – 17:30, Thứ Hai – Thứ Bảy</p>
+      <a href="contact.html">Câu hỏi thường gặp</a>
+      <a href="orders.html">Tra cứu đơn hàng</a>
+      <p class="site-footer__title mt-2">Mua trên sàn</p>
+      <div class="site-footer__shops">
+        <a href="#" data-kenh="shopee" target="_blank" rel="noopener">Shopee</a>
+        <a href="#" data-kenh="lazada" target="_blank" rel="noopener">Lazada</a>
+        <a href="#" data-kenh="tiktokShop" target="_blank" rel="noopener">TikTok Shop</a>
+      </div>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <div class="pay-chips" aria-label="Thanh toán và vận chuyển">
+      <span>COD</span><span>VietQR</span><span>MoMo</span><span>ZaloPay</span><span>AhaMove</span><span>GHTK</span>
+    </div>
+    <p>© 2026 NutriGreen. Số liệu dinh dưỡng mang tính tham khảo, không thay thế tư vấn y tế.</p>
+  </div>
+</footer>
+<!-- /@footer -->
+</body>
+</html>

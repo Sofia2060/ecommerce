@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /src/pages/client/
+Disallow: /src/pages/client/cart.html
+Disallow: /src/pages/client/checkout.html
+Disallow: /src/pages/client/order-success.html
+Disallow: /src/pages/client/account.html
+Disallow: /mock-data/
+Sitemap: https://nutrigreen.vn/sitemap.xml

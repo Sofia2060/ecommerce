@@ -1,0 +1,55 @@
+/* Giỏ hàng, thanh toán, kết quả đặt hàng (FR04, FR05, FR06) */
+.co { display: grid; gap: 24px; padding: 4px 0 56px; }
+@media (min-width: 1024px) { .co { grid-template-columns: 1fr 380px; align-items: start; } .co__side { position: sticky; top: calc(var(--ng-header-h) + 16px); } }
+.line { display: grid; grid-template-columns: 84px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--ng-line); }
+.line:first-child { padding-top: 0; }
+.line__img { width: 84px; height: 84px; border-radius: 14px; background: var(--ng-cream); padding: 6px; }
+.line__img img { width: 100%; height: 100%; object-fit: contain; }
+.line__top { display: flex; justify-content: space-between; gap: 10px; }
+.line__name { font-weight: 700; color: var(--ng-forest); line-height: 1.3; }
+.line__meta { font-size: var(--ng-fs-xs); color: var(--ng-muted); margin-top: 2px; }
+.line__bot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-top: 10px; }
+.line__price { text-align: right; }
+.line__price .price { display: block; }
+.line__price small { color: var(--ng-muted); font-size: var(--ng-fs-xs); }
+.line__variant { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+.line__variant .chip { padding: 4px 10px; font-size: var(--ng-fs-xs); }
+.line .x { border: 0; background: none; color: var(--ng-muted); font-size: var(--ng-fs-xs); text-decoration: underline; padding: 0; }
+.line--out { opacity: .65; }
+.sum { display: grid; gap: 8px; font-size: var(--ng-fs-sm); }
+.sum__row { display: flex; justify-content: space-between; gap: 10px; }
+.sum__row--total { padding-top: 10px; margin-top: 4px; border-top: 2px solid var(--ng-forest); font-size: var(--ng-fs-lg); font-weight: 800; color: var(--ng-forest); }
+.sum__row--disc span:last-child { color: var(--ng-leaf); font-weight: 700; }
+.voucher { display: flex; gap: 8px; }
+.voucher .input { min-height: 42px; text-transform: uppercase; }
+.voucher-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.voucher-list button { border: 1.5px dashed var(--ng-leaf); background: #f7fbef; border-radius: 8px; padding: 4px 8px; font-size: var(--ng-fs-xs); color: var(--ng-forest); font-weight: 700; cursor: pointer; text-align: left; }
+.voucher-list button small { display: block; font-weight: 500; color: var(--ng-muted); }
+.energy { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.energy div { padding: 10px; border-radius: 12px; background: var(--ng-forest); color: var(--ng-lime-soft); }
+.energy div + div { background: var(--ng-mint); color: var(--ng-forest); }
+.energy b { display: block; font-size: 1.2rem; }
+.energy span { font-size: 11px; opacity: .85; }
+.upsell { display: flex; gap: 12px; align-items: center; padding: 14px; border-radius: 16px; border: 2px solid var(--ng-forest); background: var(--ng-lime-soft); margin-top: 16px; }
+.upsell img { width: 72px; height: 72px; object-fit: contain; flex: none; }
+.upsell .btn { margin-left: auto; }
+.secure { display: flex; gap: 8px; align-items: center; font-size: var(--ng-fs-xs); color: var(--ng-muted); margin-top: 10px; }
+.secure svg { width: 16px; height: 16px; flex: none; color: var(--ng-leaf); }
+.co-sec { padding-bottom: 6px; }
+.co-sec h2 { font-size: var(--ng-fs-lg); display: flex; align-items: center; gap: 10px; }
+.co-sec h2 .n { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--ng-lime); border: 2px solid var(--ng-forest); font-size: .85rem; }
+.opt-stack { display: grid; gap: 8px; }
+.mini-line { display: flex; gap: 10px; align-items: center; font-size: var(--ng-fs-sm); padding: 6px 0; }
+.mini-line img { width: 46px; height: 46px; border-radius: 10px; object-fit: contain; background: var(--ng-cream); flex: none; }
+.mini-line .q { position: relative; }
+.mini-line .q i { position: absolute; top: -6px; right: -6px; min-width: 20px; height: 20px; border-radius: 10px; background: var(--ng-forest); color: #fff; font-size: 11px; font-style: normal; display: grid; place-items: center; padding: 0 4px; }
+.mini-line .p { margin-left: auto; font-weight: 700; white-space: nowrap; }
+.ok-hero { text-align: center; padding: 28px 0 8px; }
+.ok-hero__ico { width: 76px; height: 76px; margin: 0 auto 12px; border-radius: 50%; background: var(--ng-lime); border: 2px solid var(--ng-forest); display: grid; place-items: center; box-shadow: var(--ng-shadow-hard); font-size: 2rem; font-weight: 800; color: var(--ng-forest); }
+.ok-code { display: inline-flex; gap: 8px; align-items: center; padding: 6px 14px; border-radius: 999px; background: var(--ng-cream); border: 1px solid var(--ng-line); font-weight: 700; }
+.pay-box { display: grid; gap: 20px; align-items: center; }
+@media (min-width: 720px) { .pay-box { grid-template-columns: auto 1fr; } }
+.pay-box dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 0; font-size: var(--ng-fs-sm); }
+.pay-box dt { color: var(--ng-muted); }
+.pay-box dd { margin: 0; font-weight: 700; color: var(--ng-forest); }
+.countdown { font-variant-numeric: tabular-nums; font-weight: 800; color: var(--ng-orange); }

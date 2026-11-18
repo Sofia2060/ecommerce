@@ -1,0 +1,66 @@
+/* =========================================================
+   NutriGreen – biến thiết kế (lấy từ bộ nhận diện trong slide concept)
+   Xanh lá mạ #CADF47 · Vàng chanh nhạt #ECFD87 · Kem #FAFFDE
+   Xanh rêu đậm #113B00 · Xanh logo #215725 / #4D8827
+   ========================================================= */
+:root {
+  /* Màu thương hiệu */
+  --ng-forest: #113b00;      /* chữ đậm, viền, bóng đổ lệch */
+  --ng-green: #215725;       /* xanh logo – nút chính */
+  --ng-green-hover: #1a4720;
+  --ng-leaf: #4d8827;        /* xanh lá – nhấn phụ, protein */
+  --ng-lime: #cadf47;        /* xanh lá mạ – điểm nhấn */
+  --ng-lime-soft: #ecfd87;   /* nền thẻ nổi bật */
+  --ng-cream: #faffde;       /* nền trang phụ */
+  --ng-mint: #eef5e3;        /* nền khối nhẹ */
+
+  /* Trung tính */
+  --ng-ink: #1c2614;
+  --ng-text: #33402b;
+  --ng-muted: #66735d;
+  --ng-line: #dde5cc;
+  --ng-line-strong: #c3cfab;
+  --ng-white: #ffffff;
+  --ng-bg: #ffffff;
+
+  /* Trạng thái */
+  --ng-red: #c0392b;
+  --ng-red-soft: #fdecea;
+  --ng-orange: #c76b12;
+  --ng-orange-soft: #fff1df;
+  --ng-blue: #2c6aa0;
+  --ng-blue-soft: #e7f0f9;
+  --ng-success-soft: #e6f4dc;
+
+  /* Màu macro (dùng thống nhất ở thẻ, bảng, biểu đồ) */
+  --ng-protein: #4d8827;
+  --ng-carb: #d9a520;
+  --ng-fat: #b8652e;
+  --ng-sugar: #c0392b;
+
+  /* Chữ */
+  --ng-font: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --ng-fs-xs: .75rem;
+  --ng-fs-sm: .875rem;
+  --ng-fs-md: 1rem;
+  --ng-fs-lg: 1.125rem;
+  --ng-fs-xl: 1.375rem;
+  --ng-fs-2xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --ng-fs-3xl: clamp(1.9rem, 1.4rem + 2.2vw, 3rem);
+
+  /* Hình khối */
+  --ng-radius-sm: 10px;
+  --ng-radius: 16px;
+  --ng-radius-lg: 24px;
+  --ng-radius-pill: 999px;
+  --ng-shadow-hard: 4px 4px 0 var(--ng-forest);      /* bóng đổ lệch như thẻ trong slide */
+  --ng-shadow-hard-sm: 3px 3px 0 var(--ng-forest);
+  --ng-shadow-soft: 0 6px 24px rgba(17, 59, 0, .08);
+  --ng-shadow-pop: 0 18px 48px rgba(17, 59, 0, .18);
+
+  /* Bố cục */
+  --ng-container: 1200px;
+  --ng-gutter: clamp(16px, 4vw, 32px);
+  --ng-header-h: 72px;
+  --ng-ease: cubic-bezier(.2, .7, .2, 1);
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tên miền nutrigreen.vn là giá trị giữ chỗ: thay bằng tên miền thật trước khi khai báo với Google Search Console -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://nutrigreen.vn/src/pages/client/index.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/products.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/products.html?danhmuc=combo</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/products.html?danhmuc=hat-granola</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/products.html?danhmuc=banh-an-kieng</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/products.html?danhmuc=gao-lut</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/products.html?muctieu=giam-can</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/products.html?muctieu=tang-co</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/products.html?muctieu=an-sang-nhanh</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/tdee.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/blog.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/contact.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/policy.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-CB-1200</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-CB-1500</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-CB-1800</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-HAT-01</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-HAT-02</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-HAT-03</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-GRA-01</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-GRA-02</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-YM-01</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-BAN-01</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-BAN-02</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-BAN-03</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-BAN-04</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-GL-01</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-GL-02</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/product-detail.html?ma=NG-GL-03</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/blog-post.html?bai=cach-tinh-tdee</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/blog-post.html?bai=doc-bang-dinh-duong-30-giay</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/blog-post.html?bai=giau-protein-la-bao-nhieu-gam</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/blog-post.html?bai=duong-an-trong-thuc-pham</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/blog-post.html?bai=thuc-don-1200-kcal-dan-van-phong</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://nutrigreen.vn/src/pages/client/blog-post.html?bai=bun-gao-lut-va-giam-can</loc><lastmod>2026-11-02</lastmod></url>
+</urlset>

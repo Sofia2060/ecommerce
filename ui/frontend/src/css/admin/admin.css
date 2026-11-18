@@ -1,0 +1,102 @@
+/* =========================================================
+   NutriGreen – giao diện quản trị (mục 4.5), dùng chung bộ nhận diện với cửa hàng
+   ========================================================= */
+body.qt { background: #f6f8ef; }
+.qt-shell { display: grid; min-height: 100vh; }
+@media (min-width: 1024px) { .qt-shell { grid-template-columns: 248px 1fr; } }
+.qt-side { background: var(--ng-forest); color: #dfe9cc; padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+@media (min-width: 1024px) { .qt-side { position: sticky; top: 0; height: 100vh; padding: 20px 16px; overflow-y: auto; } }
+.qt-brand { display: flex; align-items: center; gap: 10px; padding: 4px 6px 12px; color: #fff; font-weight: 800; }
+.qt-brand img { height: 40px; width: auto; background: #fff; border-radius: 10px; padding: 4px 8px; }
+.qt-brand small { display: block; font-weight: 500; font-size: 11px; color: var(--ng-lime-soft); }
+.qt-nav { display: flex; gap: 4px; overflow-x: auto; }
+@media (min-width: 1024px) { .qt-nav { flex-direction: column; overflow: visible; } }
+.qt-nav a { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; color: #e9f2d6; font-weight: 600; font-size: var(--ng-fs-sm); white-space: nowrap; text-decoration: none; }
+.qt-nav a:hover { background: rgba(236, 253, 135, .12); }
+.qt-nav a.is-active { background: var(--ng-lime); color: var(--ng-forest); }
+.qt-nav svg { width: 20px; height: 20px; flex: none; }
+.qt-nav .n { margin-left: auto; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 11px; background: #ffd9a8; color: #6b3a05; font-size: 12px; font-weight: 800; display: grid; place-items: center; }
+.qt-side__foot { margin-top: auto; display: none; flex-direction: column; gap: 6px; font-size: var(--ng-fs-sm); padding-top: 12px; border-top: 1px solid rgba(236, 253, 135, .18); }
+@media (min-width: 1024px) { .qt-side__foot { display: flex; } }
+.qt-side__foot a, .qt-side__foot button { color: #e9f2d6; background: none; border: 0; padding: 6px; text-align: left; font-weight: 600; }
+.qt-main { padding: 18px var(--ng-gutter) 48px; min-width: 0; }
+.qt-head { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: flex-end; justify-content: space-between; margin-bottom: 18px; }
+.qt-head h1 { font-size: var(--ng-fs-2xl); margin: 0; }
+.qt-head p { margin: 2px 0 0; color: var(--ng-muted); font-size: var(--ng-fs-sm); }
+.qt-card { background: #fff; border: 1px solid var(--ng-line); border-radius: 18px; padding: 18px; min-width: 0; }
+.qt-card h2 { font-size: var(--ng-fs-lg); margin: 0 0 4px; }
+.qt-card .sub { font-size: var(--ng-fs-sm); color: var(--ng-muted); margin: 0 0 12px; }
+.qt-grid { display: grid; gap: 14px; }
+@media (min-width: 900px) { .qt-grid--2 { grid-template-columns: 1fr 1fr; } .qt-grid--3-2 { grid-template-columns: 3fr 2fr; } }
+.qt-grid + .qt-grid, .qt-grid + .qt-card, .qt-card + .qt-grid, .qt-main > .qt-card + .qt-card { margin-top: 14px; }
+/* việc cần làm */
+.todo { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 900px) { .todo { grid-template-columns: repeat(5, 1fr); } }
+.todo a { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--ng-line); background: #fff; color: var(--ng-text); text-decoration: none; font-size: var(--ng-fs-sm); }
+.todo a b { font-size: 1.7rem; line-height: 1.1; color: var(--ng-forest); }
+.todo a.can { border-color: #e8a04a; background: var(--ng-orange-soft); }
+.todo a.can b { color: #8a4a06; }
+.todo a:hover { border-color: var(--ng-forest); }
+.todo a span:last-child { color: var(--ng-green); font-weight: 700; font-size: var(--ng-fs-xs); }
+/* số chính */
+.kpis { display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 900px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
+.kpi { background: #fff; border: 1px solid var(--ng-line); border-radius: 18px; padding: 16px; }
+.kpi__l { font-size: var(--ng-fs-sm); color: var(--ng-muted); }
+.kpi__v { font-size: clamp(1.4rem, 1rem + 1.4vw, 2rem); font-weight: 800; color: var(--ng-forest); line-height: 1.2; }
+.kpi__d { font-size: var(--ng-fs-xs); font-weight: 700; }
+.kpi__d.up { color: var(--ng-green); } .kpi__d.down { color: var(--ng-red); } .kpi__d.flat { color: var(--ng-muted); }
+.kpi__n { font-size: var(--ng-fs-xs); color: var(--ng-muted); }
+/* biểu đồ */
+.chart-wrap { position: relative; }
+.bars { width: 100%; height: 240px; display: block; }
+.bars text { font: 11px var(--ng-font); fill: var(--ng-muted); }
+.bars .bar { fill: var(--ng-green); }
+.bars .hit:hover + .bar, .bars .bar.on { fill: var(--ng-leaf); }
+.tip { position: absolute; pointer-events: none; background: var(--ng-forest); color: #fff; padding: 8px 10px; border-radius: 10px; font-size: var(--ng-fs-xs); line-height: 1.5; white-space: nowrap; transform: translate(-50%, -110%); z-index: 5; }
+.tip b { color: var(--ng-lime); }
+.hbar { display: grid; grid-template-columns: minmax(90px, 34%) 1fr auto; gap: 10px; align-items: center; font-size: var(--ng-fs-sm); padding: 6px 0; }
+.hbar .track { height: 12px; background: var(--ng-mint); border-radius: 4px; overflow: hidden; }
+.hbar .track span { display: block; height: 100%; background: var(--ng-green); border-radius: 0 4px 4px 0; }
+.hbar b { color: var(--ng-forest); white-space: nowrap; }
+.hbar small { color: var(--ng-muted); font-weight: 500; }
+.insights { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.insights li { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; font-size: var(--ng-fs-sm); }
+.insights li i { width: 34px; height: 34px; border-radius: 10px; background: var(--ng-lime-soft); display: grid; place-items: center; font-style: normal; font-weight: 800; color: var(--ng-forest); }
+.insights strong { color: var(--ng-forest); }
+.insights .act { display: block; color: var(--ng-green); font-weight: 700; }
+.funnel { display: grid; gap: 8px; }
+.funnel div { padding: 10px 14px; border-radius: 12px; background: var(--ng-mint); display: flex; justify-content: space-between; gap: 10px; font-size: var(--ng-fs-sm); }
+.funnel div b { color: var(--ng-forest); }
+.funnel div:nth-child(2) { margin: 0 6%; } .funnel div:nth-child(3) { margin: 0 12%; background: var(--ng-lime-soft); }
+/* bảng */
+.qt-table { width: 100%; font-size: var(--ng-fs-sm); }
+.qt-table th { text-align: left; padding: 10px 12px; color: var(--ng-muted); font-weight: 600; border-bottom: 1px solid var(--ng-line); white-space: nowrap; background: #fbfcf6; }
+.qt-table td { padding: 10px 12px; border-bottom: 1px solid var(--ng-line); vertical-align: middle; }
+.qt-table tr:last-child td { border-bottom: 0; }
+.qt-table tbody tr[data-mo] { cursor: pointer; }
+.qt-table tbody tr[data-mo]:hover td { background: var(--ng-cream); }
+.qt-table .r { text-align: right; } .qt-table .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.qt-table img { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; background: var(--ng-cream); }
+.qt-table .cell-sp { display: flex; gap: 10px; align-items: center; min-width: 180px; }
+.qt-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+.qt-tools .input, .qt-tools .select { width: auto; min-height: 40px; }
+.qt-tools .grow { flex: 1; min-width: 180px; }
+.qt-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.row-off td { opacity: .55; }
+.dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; font-size: var(--ng-fs-sm); margin: 0; }
+.dl dt { color: var(--ng-muted); } .dl dd { margin: 0; color: var(--ng-forest); font-weight: 600; }
+.check-ok { color: var(--ng-green); font-weight: 700; } .check-bad { color: var(--ng-red); font-weight: 700; }
+.qt-login { min-height: 100vh; display: grid; place-items: center; padding: 20px; background: radial-gradient(900px 500px at 80% 0%, var(--ng-lime-soft), transparent 60%), var(--ng-cream); }
+.qt-login .card { width: min(100%, 420px); }
+.combo-cfg { display: grid; gap: 14px; }
+@media (min-width: 900px) { .combo-cfg { grid-template-columns: repeat(3, 1fr); } }
+.thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
+.thumbs img { width: 72px; height: 72px; object-fit: cover; border-radius: 10px; }
+.qt-table tbody tr[data-mo-dt] { cursor: pointer; }
+.qt-table tbody tr[data-mo-dt]:hover td { background: var(--ng-cream); }
+
+.stars { display: inline-flex; gap: 1px; color: #e3a008; }
+.stars svg { width: 15px; height: 15px; }
+.stars .off { color: #d9dccf; }
+.opt-stack { display: grid; gap: 8px; }

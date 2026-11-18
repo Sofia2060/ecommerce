@@ -1,0 +1,67 @@
+/* =========================================================
+   Thẻ sản phẩm – hiển thị kcal và protein ngay trên thẻ (ngách "minh bạch dinh dưỡng")
+   ========================================================= */
+.pcard { position: relative; display: flex; flex-direction: column; background: #fff; border: 1.5px solid var(--ng-line); border-radius: 18px; overflow: hidden; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.pcard:hover { border-color: var(--ng-forest); box-shadow: var(--ng-shadow-hard); transform: translate(-2px, -2px); }
+.pcard__media { position: relative; display: block; aspect-ratio: 1 / 1; background: var(--ng-cream); }
+.pcard__media img { width: 100%; height: 100%; object-fit: contain; padding: 6%; transition: transform .35s var(--ng-ease); }
+.pcard:hover .pcard__media img { transform: scale(1.04); }
+.pcard--combo .pcard__media { background: var(--ng-lime-soft); }
+.pcard__tags { position: absolute; top: 10px; left: 10px; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; z-index: 1; }
+.pcard__fav { position: absolute; top: 8px; right: 8px; z-index: 1; width: 38px; height: 38px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .92); display: grid; place-items: center; color: var(--ng-forest); box-shadow: 0 2px 8px rgba(0, 0, 0, .08); }
+.pcard__fav svg { width: 19px; height: 19px; }
+.pcard__fav[aria-pressed="true"] { color: var(--ng-red); }
+.pcard__fav[aria-pressed="true"] svg { fill: currentColor; }
+.pcard__body { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px; flex: 1; }
+.pcard__cat { font-size: var(--ng-fs-xs); color: var(--ng-leaf); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.pcard__name { font-size: var(--ng-fs-md); font-weight: 700; color: var(--ng-forest); line-height: 1.3; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pcard__name a { color: inherit; }
+.pcard__name a::after { content: ''; position: absolute; inset: 0; z-index: 0; }
+.pcard__spec { font-size: var(--ng-fs-xs); color: var(--ng-muted); }
+.pcard__nums { display: flex; flex-wrap: wrap; gap: 4px; position: relative; z-index: 1; pointer-events: none; }
+.num-pill { display: inline-flex; align-items: baseline; gap: 3px; padding: 2px 8px; border-radius: 8px; background: var(--ng-mint); font-size: var(--ng-fs-xs); color: var(--ng-forest); font-weight: 600; white-space: nowrap; }
+.num-pill b { font-size: .85rem; font-weight: 800; }
+.num-pill--kcal { background: var(--ng-forest); color: var(--ng-lime-soft); }
+.num-pill--pro { background: #e3f0d6; }
+.num-pill--sug { background: #fbeee9; color: #8c2318; }
+.pcard__per { font-size: 11px; color: var(--ng-muted); }
+.pcard__foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 6px; position: relative; z-index: 1; }
+.pcard__price { display: flex; flex-direction: column; line-height: 1.2; }
+.pcard__price .price { font-size: 1.08rem; }
+.pcard__save { font-size: 11px; font-weight: 700; color: var(--ng-leaf); }
+.pcard__add { width: 42px; height: 42px; flex: none; border-radius: 50%; border: 2px solid var(--ng-forest); background: var(--ng-lime); color: var(--ng-forest); display: grid; place-items: center; transition: transform .15s, box-shadow .15s; }
+.pcard__add:hover { box-shadow: var(--ng-shadow-hard-sm); transform: translate(-1px, -1px); }
+.pcard__add svg { width: 20px; height: 20px; }
+.pcard__add[disabled] { background: #eee; border-color: #bbb; color: #999; box-shadow: none; transform: none; cursor: not-allowed; }
+.pcard--out .pcard__media img { opacity: .55; filter: grayscale(.4); }
+.pcard__stock { font-size: 11px; font-weight: 700; color: var(--ng-orange); }
+
+/* Thanh tỷ lệ năng lượng P / C / F */
+.macro-bar { display: flex; height: 6px; border-radius: 6px; overflow: hidden; background: var(--ng-line); }
+.macro-bar span { display: block; height: 100%; }
+.macro-bar .p { background: var(--ng-protein); }
+.macro-bar .c { background: var(--ng-carb); }
+.macro-bar .f { background: var(--ng-fat); }
+.macro-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: var(--ng-fs-xs); color: var(--ng-muted); }
+.macro-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 4px; vertical-align: 0; }
+.macro-legend .p i { background: var(--ng-protein); } .macro-legend .c i { background: var(--ng-carb); } .macro-legend .f i { background: var(--ng-fat); }
+
+/* Lưới thẻ trượt ngang trên điện thoại */
+.rail { display: grid; grid-auto-flow: column; grid-auto-columns: 72%; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 14px; margin: 0 -4px; scrollbar-width: thin; }
+.rail > * { scroll-snap-align: start; }
+@media (min-width: 640px) { .rail { grid-auto-columns: 40%; } }
+@media (min-width: 1024px) { .rail { grid-auto-flow: row; grid-template-columns: repeat(4, 1fr); overflow: visible; } }
+
+/* Sao đánh giá */
+.stars { display: inline-flex; gap: 1px; color: #e3a008; }
+.stars svg { width: 15px; height: 15px; }
+.stars .off { color: #d9dccf; }
+@media (max-width: 420px) {
+  .grid-4 { gap: 10px; }
+  .pcard__body { padding: 10px 10px 12px; gap: 5px; }
+  .pcard__name { font-size: .92rem; }
+  .num-pill { padding: 2px 6px; }
+  .pcard__add { width: 38px; height: 38px; }
+  .pcard__price .price { font-size: 1rem; }
+  .pcard__fav { width: 34px; height: 34px; }
+}

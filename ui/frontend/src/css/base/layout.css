@@ -1,0 +1,199 @@
+/* =========================================================
+   Nền tảng: reset, chữ, khung, nút, biểu mẫu, tiện ích, toast, modal
+   Thiết kế mobile-first (NFR02): style mặc định cho điện thoại,
+   mở rộng bằng @media (min-width) cho máy tính bảng và máy tính.
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: var(--ng-font); font-size: var(--ng-fs-md); line-height: 1.6;
+  color: var(--ng-text); background: var(--ng-bg); -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--ng-green); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+input, select, textarea { font: inherit; color: inherit; }
+h1, h2, h3, h4 { color: var(--ng-forest); line-height: 1.25; margin: 0 0 .5em; font-weight: 800; letter-spacing: -.01em; }
+h1 { font-size: var(--ng-fs-3xl); }
+h2 { font-size: var(--ng-fs-2xl); }
+h3 { font-size: var(--ng-fs-xl); font-weight: 700; }
+h4 { font-size: var(--ng-fs-lg); font-weight: 700; }
+p { margin: 0 0 1em; }
+ul, ol { padding-left: 1.2em; }
+table { border-collapse: collapse; width: 100%; }
+hr { border: 0; border-top: 1px solid var(--ng-line); margin: 24px 0; }
+:focus-visible { outline: 3px solid var(--ng-lime); outline-offset: 2px; border-radius: 6px; }
+.sr-only { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: 8px; top: -60px; background: var(--ng-forest); color: #fff; padding: 8px 14px; border-radius: 8px; z-index: 1000; }
+.skip-link:focus { top: 8px; }
+
+/* ---------- Khung ---------- */
+.container { width: 100%; max-width: var(--ng-container); margin: 0 auto; padding: 0 var(--ng-gutter); }
+.section { padding: clamp(36px, 6vw, 72px) 0; }
+.section--cream { background: var(--ng-cream); }
+.section--mint { background: var(--ng-mint); }
+.section--forest { background: var(--ng-forest); color: #e9f2d6; }
+.section--forest h2, .section--forest h3 { color: #fff; }
+.section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 24px; }
+.section-head h2 { margin: 0; }
+.section-head p { margin: 4px 0 0; color: var(--ng-muted); max-width: 640px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: var(--ng-fs-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ng-leaf); margin-bottom: 8px; }
+.eyebrow::before { content: ''; width: 18px; height: 18px; background: var(--ng-lime); border-radius: 50%; box-shadow: inset 0 0 0 5px var(--ng-forest); }
+.page-main { min-height: 60vh; }
+.page-title { padding: 28px 0 8px; }
+.page-title h1 { font-size: var(--ng-fs-2xl); margin-bottom: 4px; }
+.page-title p { color: var(--ng-muted); margin: 0; }
+
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: 1fr; }
+.grid-3 { grid-template-columns: 1fr; }
+.grid-4 { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 720px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+}
+@media (min-width: 1024px) { .grid-4 { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb { display: flex; flex-wrap: wrap; gap: 6px; font-size: var(--ng-fs-sm); color: var(--ng-muted); padding: 14px 0 0; margin: 0; list-style: none; }
+.breadcrumb li + li::before { content: '›'; margin-right: 6px; color: var(--ng-line-strong); }
+.breadcrumb a { color: var(--ng-muted); }
+
+/* ---------- Nút ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 10px 22px; border-radius: var(--ng-radius-pill);
+  border: 2px solid var(--ng-forest); background: var(--ng-white); color: var(--ng-forest);
+  font-weight: 700; font-size: var(--ng-fs-md); line-height: 1.2; text-align: center;
+  transition: transform .15s var(--ng-ease), box-shadow .15s var(--ng-ease), background .15s;
+  text-decoration: none !important; white-space: nowrap;
+}
+.btn:hover { transform: translate(-1px, -1px); box-shadow: var(--ng-shadow-hard-sm); }
+.btn:active { transform: translate(1px, 1px); box-shadow: none; }
+.btn--primary { background: var(--ng-green); border-color: var(--ng-forest); color: #fff; }
+.btn--primary:hover { background: var(--ng-green-hover); }
+.btn--lime { background: var(--ng-lime); }
+.btn--ghost { border-color: transparent; background: transparent; }
+.btn--ghost:hover { box-shadow: none; background: var(--ng-mint); transform: none; }
+.btn--sm { min-height: 36px; padding: 6px 14px; font-size: var(--ng-fs-sm); }
+.btn--lg { min-height: 54px; padding: 12px 28px; font-size: var(--ng-fs-lg); }
+.btn--block { width: 100%; }
+.btn--danger { border-color: var(--ng-red); color: var(--ng-red); }
+.btn[disabled], .btn.is-disabled { opacity: .45; pointer-events: none; }
+.link-btn { background: none; border: 0; padding: 0; color: var(--ng-green); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.icon-btn { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; border: 0; background: transparent; color: var(--ng-forest); position: relative; }
+.icon-btn:hover { background: var(--ng-mint); }
+.icon-btn svg { width: 22px; height: 22px; }
+
+/* ---------- Thẻ khối bo góc kiểu slide ---------- */
+.card { background: var(--ng-white); border: 2px solid var(--ng-forest); border-radius: var(--ng-radius); box-shadow: var(--ng-shadow-hard); padding: 20px; }
+.card--flat { box-shadow: none; border: 1px solid var(--ng-line); }
+.card--lime { background: var(--ng-lime-soft); }
+.card--cream { background: var(--ng-cream); }
+.panel { background: var(--ng-white); border: 1px solid var(--ng-line); border-radius: var(--ng-radius); padding: 20px; }
+.panel + .panel { margin-top: 16px; }
+.panel h2, .panel h3 { font-size: var(--ng-fs-lg); }
+
+/* ---------- Nhãn ---------- */
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: var(--ng-radius-pill); font-size: var(--ng-fs-xs); font-weight: 700; line-height: 1.5; background: var(--ng-mint); color: var(--ng-forest); white-space: nowrap; }
+.badge--lime { background: var(--ng-lime); }
+.badge--forest { background: var(--ng-forest); color: var(--ng-lime-soft); }
+.badge--red { background: var(--ng-red-soft); color: var(--ng-red); }
+.badge--orange { background: var(--ng-orange-soft); color: var(--ng-orange); }
+.badge--blue { background: var(--ng-blue-soft); color: var(--ng-blue); }
+.badge--green { background: var(--ng-success-soft); color: var(--ng-green); }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border: 1.5px solid var(--ng-line-strong); border-radius: var(--ng-radius-pill); background: #fff; font-size: var(--ng-fs-sm); font-weight: 600; color: var(--ng-text); cursor: pointer; }
+.chip:hover { border-color: var(--ng-forest); }
+.chip.is-active, .chip[aria-pressed="true"] { background: var(--ng-forest); color: var(--ng-lime-soft); border-color: var(--ng-forest); }
+.chip .x { font-weight: 800; }
+
+/* ---------- Biểu mẫu ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label, .field .label { font-weight: 600; font-size: var(--ng-fs-sm); color: var(--ng-forest); }
+.field .hint { font-size: var(--ng-fs-xs); color: var(--ng-muted); }
+.field .err { font-size: var(--ng-fs-xs); color: var(--ng-red); min-height: 0; }
+.input, .select, .textarea {
+  width: 100%; min-height: 46px; padding: 10px 14px; border: 1.5px solid var(--ng-line-strong);
+  border-radius: 12px; background: #fff; transition: border-color .15s, box-shadow .15s;
+}
+.textarea { min-height: 110px; resize: vertical; }
+.input:focus, .select:focus, .textarea:focus { outline: none; border-color: var(--ng-green); box-shadow: 0 0 0 4px rgba(202, 223, 71, .45); }
+.field.is-invalid .input, .field.is-invalid .select, .field.is-invalid .textarea { border-color: var(--ng-red); }
+.form-row { display: grid; gap: 0 14px; grid-template-columns: 1fr; }
+@media (min-width: 600px) { .form-row--2 { grid-template-columns: 1fr 1fr; } .form-row--3 { grid-template-columns: repeat(3, 1fr); } }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: var(--ng-fs-sm); cursor: pointer; }
+.check input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--ng-green); flex: none; }
+.option-card { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1.5px solid var(--ng-line-strong); border-radius: 14px; cursor: pointer; background: #fff; transition: border-color .15s, background .15s; }
+.option-card:hover { border-color: var(--ng-forest); }
+.option-card input { margin-top: 4px; accent-color: var(--ng-green); width: 18px; height: 18px; flex: none; }
+.option-card:has(input:checked) { border-color: var(--ng-forest); background: var(--ng-cream); box-shadow: var(--ng-shadow-hard-sm); }
+.option-card .t { font-weight: 700; color: var(--ng-forest); }
+.option-card .d { font-size: var(--ng-fs-sm); color: var(--ng-muted); }
+.option-card .r { margin-left: auto; font-weight: 700; white-space: nowrap; }
+.qty { display: inline-flex; align-items: center; border: 1.5px solid var(--ng-line-strong); border-radius: var(--ng-radius-pill); overflow: hidden; background: #fff; }
+.qty button { width: 38px; height: 38px; border: 0; background: transparent; font-size: 18px; font-weight: 700; color: var(--ng-forest); }
+.qty button:hover { background: var(--ng-mint); }
+.qty input { width: 42px; height: 38px; border: 0; text-align: center; font-weight: 700; -moz-appearance: textfield; }
+.qty input::-webkit-outer-spin-button, .qty input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.seg { display: inline-flex; padding: 3px; background: var(--ng-mint); border-radius: var(--ng-radius-pill); gap: 2px; }
+.seg button { border: 0; background: transparent; padding: 6px 14px; border-radius: var(--ng-radius-pill); font-size: var(--ng-fs-sm); font-weight: 600; color: var(--ng-muted); }
+.seg button[aria-pressed="true"] { background: #fff; color: var(--ng-forest); box-shadow: 0 1px 4px rgba(0, 0, 0, .1); }
+
+/* ---------- Thông báo trong trang ---------- */
+.alert { display: flex; gap: 10px; padding: 12px 16px; border-radius: 12px; background: var(--ng-mint); color: var(--ng-forest); font-size: var(--ng-fs-sm); }
+.alert--warn { background: var(--ng-orange-soft); color: #7a4208; }
+.alert--error { background: var(--ng-red-soft); color: #8c2318; }
+.alert--info { background: var(--ng-blue-soft); color: #1d4b74; }
+.alert strong { color: inherit; }
+.callout { padding: 14px 16px; border-left: 4px solid var(--ng-lime); background: var(--ng-cream); border-radius: 0 12px 12px 0; }
+.muted { color: var(--ng-muted); }
+.small { font-size: var(--ng-fs-sm); }
+.xs { font-size: var(--ng-fs-xs); }
+.strong { font-weight: 700; color: var(--ng-forest); }
+.price { font-weight: 800; color: var(--ng-forest); }
+.price-old { text-decoration: line-through; color: var(--ng-muted); font-weight: 500; font-size: .9em; }
+.num { font-variant-numeric: tabular-nums; }
+.text-center { text-align: center; }
+.mt-0 { margin-top: 0; } .mb-0 { margin-bottom: 0; } .mt-1 { margin-top: 8px; } .mt-2 { margin-top: 16px; } .mt-3 { margin-top: 24px; } .mb-2 { margin-bottom: 16px; }
+.flex { display: flex; } .between { justify-content: space-between; } .center { align-items: center; } .gap-1 { gap: 8px; } .gap-2 { gap: 16px; } .wrap { flex-wrap: wrap; }
+.hidden, [hidden] { display: none !important; }
+.empty { text-align: center; padding: 48px 16px; color: var(--ng-muted); }
+.empty svg { width: 64px; height: 64px; margin: 0 auto 12px; color: var(--ng-line-strong); }
+.empty h3 { color: var(--ng-forest); }
+
+/* ---------- Bảng ---------- */
+.table { width: 100%; font-size: var(--ng-fs-sm); }
+.table th, .table td { padding: 10px 12px; border-bottom: 1px solid var(--ng-line); text-align: left; vertical-align: top; }
+.table th { color: var(--ng-forest); font-weight: 700; background: var(--ng-cream); }
+.table td.r, .table th.r { text-align: right; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--ng-line); border-radius: 12px; }
+.table-wrap .table tr:last-child td { border-bottom: 0; }
+
+/* ---------- Toast ---------- */
+.toast-wrap { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 900; width: min(92vw, 420px); pointer-events: none; }
+.toast { pointer-events: auto; display: flex; gap: 12px; align-items: center; background: var(--ng-forest); color: #fff; padding: 12px 16px; border-radius: 14px; box-shadow: var(--ng-shadow-pop); font-size: var(--ng-fs-sm); animation: toast-in .25s var(--ng-ease); }
+.toast a { color: var(--ng-lime); font-weight: 700; margin-left: auto; white-space: nowrap; }
+.toast--error { background: #7d1f14; }
+.toast .ico { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--ng-lime); color: var(--ng-forest); flex: none; font-weight: 800; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Modal ---------- */
+.modal { position: fixed; inset: 0; z-index: 800; display: grid; place-items: end center; background: rgba(17, 30, 8, .5); padding: 0; animation: fade .2s; }
+@media (min-width: 640px) { .modal { place-items: center; padding: 24px; } }
+.modal__box { position: relative; width: 100%; max-width: 560px; max-height: 92vh; overflow: auto; background: #fff; border-radius: 22px 22px 0 0; padding: 26px 22px 22px; box-shadow: var(--ng-shadow-pop); animation: up .25s var(--ng-ease); }
+@media (min-width: 640px) { .modal__box { border-radius: 22px; border: 2px solid var(--ng-forest); box-shadow: 6px 6px 0 var(--ng-forest); } }
+.modal__box--wide { max-width: 760px; }
+.modal__close { position: absolute; top: 10px; right: 10px; }
+.modal h2 { font-size: var(--ng-fs-xl); padding-right: 36px; }
+.modal__actions { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; margin-top: 18px; }
+@keyframes fade { from { opacity: 0; } }
+@keyframes up { from { transform: translateY(24px); opacity: 0; } }
+body.no-scroll { overflow: hidden; }
+
+/* ---------- Bộ khung tải ---------- */
+.skeleton { background: linear-gradient(90deg, #eef2e4 25%, #f7f9f0 37%, #eef2e4 63%); background-size: 400% 100%; animation: sk 1.4s ease infinite; border-radius: 12px; }
+@keyframes sk { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

@@ -1,0 +1,221 @@
+{
+ "thuongHieu": {
+  "ten": "NutriGreen",
+  "slogan": "Healthy Food • Better You",
+  "thongDiep": "Mua theo con số",
+  "hotline": "1900 0000",
+  "email": "cskh@nutrigreen.vn",
+  "gioLamViec": "08:00 – 17:30, Thứ Hai – Thứ Bảy",
+  "camKetPhanHoi": "Phản hồi trong 15 phút (giờ hành chính)",
+  "ghiChu": "Hotline, email, đường dẫn mạng xã hội là giá trị giữ chỗ – nhóm thay bằng thông tin thật."
+ },
+ "kenh": {
+  "zalo": "https://zalo.me/",
+  "messenger": "https://web.facebook.com/profile.php?id=61595506027121",
+  "facebook": "https://web.facebook.com/profile.php?id=61595506027121",
+  "tiktok": "https://www.tiktok.com/",
+  "shopee": "https://shopee.vn/",
+  "lazada": "https://www.lazada.vn/",
+  "tiktokShop": "https://shop.tiktok.com/"
+ },
+ "giaoHang": {
+  "mienPhiTu": 299000,
+  "hcm": [
+   {
+    "ma": "ahamove",
+    "donVi": "AhaMove",
+    "ten": "Giao trong ngày (nội thành TP.HCM)",
+    "phi": 25000,
+    "thoiGian": "Trong ngày với đơn xác nhận trước 16:00"
+   },
+   {
+    "ma": "ghtk-hcm",
+    "donVi": "GHTK",
+    "ten": "Giao tiết kiệm",
+    "phi": 20000,
+    "thoiGian": "1 – 2 ngày"
+   }
+  ],
+  "tinhKhac": {
+   "donVi": "GHTK",
+   "ma": "ghtk",
+   "phi": {
+    "nam": 30000,
+    "trung": 35000,
+    "bac": 35000
+   },
+   "thoiGian": {
+    "nam": "2 – 3 ngày",
+    "trung": "3 – 4 ngày",
+    "bac": "3 – 5 ngày"
+   }
+  }
+ },
+ "thanhToan": [
+  {
+   "ma": "COD",
+   "ten": "Thanh toán khi nhận hàng (COD)",
+   "moTa": "Kiểm tra hàng rồi trả tiền mặt cho shipper.",
+   "trucTuyen": false
+  },
+  {
+   "ma": "VIETQR",
+   "ten": "Chuyển khoản ngân hàng (VietQR)",
+   "moTa": "Quét mã QR có sẵn số tiền và mã đơn. NutriGreen xác nhận khi tiền về.",
+   "trucTuyen": true
+  },
+  {
+   "ma": "VIDIENTU",
+   "ten": "Ví điện tử (MoMo, ZaloPay)",
+   "moTa": "Quét mã QR bằng ứng dụng ví.",
+   "trucTuyen": true
+  }
+ ],
+ "nganHangNhan": {
+  "nganHang": "Ngân hàng TMCP (giữ chỗ)",
+  "soTaiKhoan": "0000 0000 0000",
+  "chuTaiKhoan": "CONG TY NUTRIGREEN (giữ chỗ)"
+ },
+ "maUuDai": [
+  {
+   "ma": "CHAOBAN10",
+   "moTa": "Giảm 10% đơn đầu tiên (tối đa 50.000đ)",
+   "loai": "phanTram",
+   "giaTri": 10,
+   "toiDa": 50000,
+   "donToiThieu": 0,
+   "chiDonDau": true,
+   "tu": "2026-10-21",
+   "den": "2026-12-31"
+  },
+  {
+   "ma": "COMBO1111",
+   "moTa": "Siêu sale 11.11: giảm 15% giá combo theo calo",
+   "loai": "phanTram",
+   "giaTri": 15,
+   "toiDa": 80000,
+   "donToiThieu": 0,
+   "chiCombo": true,
+   "tu": "2026-11-01",
+   "den": "2026-11-20"
+  },
+  {
+   "ma": "MINHFIT",
+   "moTa": "Mã KOC: giảm 8% (tối đa 40.000đ)",
+   "loai": "phanTram",
+   "giaTri": 8,
+   "toiDa": 40000,
+   "donToiThieu": 150000,
+   "koc": "Minh Fit",
+   "tu": "2026-10-21",
+   "den": "2026-12-31"
+  }
+ ],
+ "nutriCoins": {
+  "tichLuy": "1 xu cho mỗi 1.000đ tiền hàng khi đơn giao thành công",
+  "xuMoi1000d": 1,
+  "danhGiaChu": 50,
+  "danhGiaAnh": 100,
+  "doiThuong": [
+   {
+    "ma": "V20K",
+    "xu": 600,
+    "ten": "Voucher giảm 20.000đ",
+    "giam": 20000,
+    "donToiThieu": 150000
+   },
+   {
+    "ma": "V35K",
+    "xu": 1000,
+    "ten": "Voucher giảm 35.000đ",
+    "giam": 35000,
+    "donToiThieu": 250000
+   },
+   {
+    "ma": "VCOMBO",
+    "xu": 1500,
+    "ten": "Giảm 60.000đ cho đơn có combo",
+    "giam": 60000,
+    "donToiThieu": 300000,
+    "chiCombo": true
+   }
+  ]
+ },
+ "doiTra": {
+  "soNgay": 7,
+  "lyDo": [
+   "Bánh bị vỡ, dập nát",
+   "Hạt/granola bị ôi dầu, mất giòn",
+   "Bao bì rách, hở",
+   "Giao sai hoặc thiếu sản phẩm",
+   "Hàng gần/quá hạn sử dụng",
+   "Lý do khác"
+  ],
+  "phuongAn": [
+   "Đổi sản phẩm mới",
+   "Hoàn tiền"
+  ],
+  "toiDaAnh": 3
+ },
+ "tdee": {
+  "heSoVanDong": [
+   {
+    "ma": "1.2",
+    "ten": "Ít vận động",
+    "moTa": "Ngồi văn phòng, hầu như không tập"
+   },
+   {
+    "ma": "1.375",
+    "ten": "Vận động nhẹ",
+    "moTa": "Tập 1–3 buổi/tuần"
+   },
+   {
+    "ma": "1.55",
+    "ten": "Vận động vừa",
+    "moTa": "Tập 3–5 buổi/tuần"
+   },
+   {
+    "ma": "1.725",
+    "ten": "Vận động nhiều",
+    "moTa": "Tập 6–7 buổi/tuần"
+   },
+   {
+    "ma": "1.9",
+    "ten": "Rất nhiều",
+    "moTa": "Lao động nặng hoặc tập 2 buổi/ngày"
+   }
+  ],
+  "mucTieu": [
+   {
+    "ma": "giam-can",
+    "ten": "Giảm cân",
+    "dieuChinh": -500,
+    "combo": "NG-CB-1200",
+    "proteinGkg": 1.6
+   },
+   {
+    "ma": "duy-tri",
+    "ten": "Duy trì",
+    "dieuChinh": 0,
+    "combo": "NG-CB-1500",
+    "proteinGkg": 1.2
+   },
+   {
+    "ma": "tang-co",
+    "ten": "Tăng cơ",
+    "dieuChinh": 300,
+    "combo": "NG-CB-1800",
+    "proteinGkg": 1.8
+   }
+  ],
+  "kcalToiThieu": {
+   "nu": 1200,
+   "nam": 1500
+  }
+ },
+ "nguongLoc": {
+  "proteinCao": 15,
+  "itDuong": 5,
+  "ghiChu": "Ngưỡng tính trên 100g. 'Ít đường' theo chuẩn ≤ 5g/100g của Quy định (EC) 1924/2006; 'protein cao' là ngưỡng NutriGreen tự công bố."
+ }
+}

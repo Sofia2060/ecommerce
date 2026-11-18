@@ -1,0 +1,62 @@
+{
+ "danhMuc": [
+  {
+   "id": "hat-granola",
+   "ten": "Hạt & Granola",
+   "moTa": "Hạt rang mộc, granola, yến mạch"
+  },
+  {
+   "id": "banh-an-kieng",
+   "ten": "Bánh ăn kiêng",
+   "moTa": "Bánh hạt, biscotti, bánh quy, thanh hạt"
+  },
+  {
+   "id": "gao-lut",
+   "ten": "Gạo lứt",
+   "moTa": "Bún, phở, nui gạo lứt"
+  },
+  {
+   "id": "combo",
+   "ten": "Combo theo calo",
+   "moTa": "Gói 7 ngày theo mức 1.200 / 1.500 / 1.800 kcal"
+  }
+ ],
+ "mucTieu": [
+  {
+   "id": "giam-can",
+   "ten": "Giảm cân",
+   "moTa": "Ít đường, kiểm soát khẩu phần"
+  },
+  {
+   "id": "tang-co",
+   "ten": "Tăng cơ",
+   "moTa": "Nhiều protein, chất béo tốt"
+  },
+  {
+   "id": "an-sang-nhanh",
+   "ten": "Ăn sáng nhanh",
+   "moTa": "Sẵn sàng trong 3 phút"
+  }
+ ],
+ "khoangKcal": [
+  {
+   "id": "duoi-150",
+   "ten": "Dưới 150 kcal",
+   "min": 0,
+   "max": 149.99
+  },
+  {
+   "id": "150-250",
+   "ten": "150 – 250 kcal",
+   "min": 150,
+   "max": 250
+  },
+  {
+   "id": "tren-250",
+   "ten": "Trên 250 kcal",
+   "min": 250.01,
+   "max": 99999
+  }
+ ],
+ "ghiChu": "Khoảng kcal tính theo 1 khẩu phần ghi trên sản phẩm."
+}

@@ -1,0 +1,31 @@
+/* Liên hệ & FAQ, chính sách, 404 */
+.channels { display: grid; gap: 12px; }
+@media (min-width: 720px) { .channels { grid-template-columns: repeat(4, 1fr); } }
+.channel { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 18px; border: 1.5px solid var(--ng-line); background: #fff; color: var(--ng-text); text-decoration: none !important; transition: border-color .2s, box-shadow .2s; }
+.channel:hover { border-color: var(--ng-forest); box-shadow: var(--ng-shadow-hard); }
+.channel .ic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; color: #fff; margin-bottom: 6px; }
+.channel .ic svg { width: 22px; height: 22px; }
+.channel strong { color: var(--ng-forest); }
+.channel span { font-size: var(--ng-fs-sm); color: var(--ng-muted); }
+.info-grid { display: grid; gap: 28px; }
+@media (min-width: 1024px) { .info-grid { grid-template-columns: 1fr 420px; align-items: start; } .info-grid > .card { position: sticky; top: calc(var(--ng-header-h) + 16px); } }
+.faq details { border: 1.5px solid var(--ng-line); border-radius: 14px; background: #fff; margin-bottom: 10px; }
+.faq details[open] { border-color: var(--ng-forest); }
+.faq summary { cursor: pointer; padding: 14px 44px 14px 16px; font-weight: 700; color: var(--ng-forest); list-style: none; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%; background: var(--ng-lime); display: grid; place-items: center; font-weight: 800; }
+.faq details[open] summary::after { content: '−'; }
+.faq .a { padding: 0 16px 14px; font-size: var(--ng-fs-sm); }
+.faq-group { font-size: var(--ng-fs-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--ng-leaf); font-weight: 800; margin: 18px 0 8px; }
+.policy { display: grid; gap: 24px; }
+@media (min-width: 1024px) { .policy { grid-template-columns: 240px 1fr; } .policy__nav { position: sticky; top: calc(var(--ng-header-h) + 16px); align-self: start; } }
+.policy__nav { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; }
+@media (min-width: 1024px) { .policy__nav { flex-direction: column; } }
+.policy__nav a { flex: none; padding: 8px 12px; border-radius: 10px; background: var(--ng-mint); color: var(--ng-forest); font-weight: 600; font-size: var(--ng-fs-sm); white-space: nowrap; text-decoration: none; }
+.policy__nav a.is-active { background: var(--ng-lime); }
+.prose-policy section { padding: 6px 0 22px; border-bottom: 1px solid var(--ng-line); margin-bottom: 18px; scroll-margin-top: calc(var(--ng-header-h) + 16px); }
+.prose-policy h2 { font-size: var(--ng-fs-xl); }
+.prose-policy li { margin-bottom: .35em; }
+.prose-policy .table-wrap { margin: 10px 0; }
+.nf { text-align: center; padding: 60px 0 80px; }
+.nf__code { font-size: clamp(5rem, 4rem + 6vw, 9rem); font-weight: 800; line-height: 1; color: var(--ng-lime); -webkit-text-stroke: 3px var(--ng-forest); margin: 0 0 12px; }

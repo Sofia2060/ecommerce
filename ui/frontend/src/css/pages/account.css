@@ -1,0 +1,68 @@
+/* Tài khoản, ví ưu đãi, đơn hàng (FR08 – FR11) */
+.auth { display: grid; gap: 22px; padding: 22px 0 56px; max-width: 980px; margin: 0 auto; }
+@media (min-width: 860px) { .auth { grid-template-columns: 1fr 1fr; } }
+.auth .card h2 { font-size: var(--ng-fs-xl); }
+.auth__perks { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 6px; font-size: var(--ng-fs-sm); }
+.auth__perks li::before { content: '✓'; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--ng-lime); color: var(--ng-forest); font-weight: 800; font-size: 12px; margin-right: 8px; }
+.pw { position: relative; }
+.pw button { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); border: 0; background: none; font-size: var(--ng-fs-xs); font-weight: 700; color: var(--ng-green); padding: 6px; }
+.acc { display: grid; gap: 22px; padding: 18px 0 56px; }
+@media (min-width: 960px) { .acc { grid-template-columns: 250px 1fr; align-items: start; } .acc__nav { position: sticky; top: calc(var(--ng-header-h) + 16px); } }
+.acc__nav { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; }
+@media (min-width: 960px) { .acc__nav { flex-direction: column; overflow: visible; } }
+.acc__user { display: none; }
+@media (min-width: 960px) { .acc__user { display: flex; gap: 10px; align-items: center; padding: 14px; border-radius: 16px; background: var(--ng-forest); color: #fff; margin-bottom: 8px; } }
+.avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--ng-lime); color: var(--ng-forest); display: grid; place-items: center; font-weight: 800; flex: none; }
+.acc__nav a, .acc__nav button { flex: none; padding: 9px 14px; border-radius: 12px; color: var(--ng-forest); font-weight: 600; font-size: var(--ng-fs-sm); background: var(--ng-mint); border: 0; text-align: left; white-space: nowrap; text-decoration: none; }
+@media (min-width: 960px) { .acc__nav a, .acc__nav button { background: none; } }
+.acc__nav a:hover, .acc__nav a.is-active { background: var(--ng-lime-soft); }
+.acc__nav a.is-active { box-shadow: inset 3px 0 0 var(--ng-forest); }
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 720px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+.stat { padding: 14px; border-radius: 16px; background: var(--ng-cream); border: 1px solid var(--ng-line); text-decoration: none !important; color: var(--ng-text); }
+.stat b { display: block; font-size: 1.5rem; color: var(--ng-forest); line-height: 1.2; }
+.stat span { font-size: var(--ng-fs-xs); color: var(--ng-muted); }
+.remind { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 16px; border-radius: 18px; border: 2px solid var(--ng-forest); background: var(--ng-lime-soft); box-shadow: var(--ng-shadow-hard); }
+.remind img { width: 64px; height: 64px; object-fit: contain; }
+.remind .btn { margin-left: auto; }
+.chart { width: 100%; height: 220px; }
+.chart text { font-size: 11px; fill: var(--ng-muted); font-family: var(--ng-font); }
+.addr { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--ng-line); font-size: var(--ng-fs-sm); }
+.addr:last-child { border-bottom: 0; }
+/* ví ưu đãi */
+.coin-hero { display: grid; gap: 18px; padding: 24px; border-radius: 22px; background: var(--ng-forest); color: #fff; border: 2px solid var(--ng-forest); box-shadow: 5px 5px 0 var(--ng-lime); }
+@media (min-width: 720px) { .coin-hero { grid-template-columns: 1fr auto; align-items: center; } }
+.coin-hero b { font-size: 3rem; line-height: 1; color: var(--ng-lime); }
+.coin-hero p { color: #d8e5c3; margin: 0; }
+.gifts { display: grid; gap: 12px; }
+@media (min-width: 720px) { .gifts { grid-template-columns: repeat(3, 1fr); } }
+.gift { display: flex; flex-direction: column; gap: 8px; padding: 18px; border-radius: 18px; border: 2px dashed var(--ng-leaf); background: #fbfdf5; }
+.gift strong { font-size: var(--ng-fs-lg); color: var(--ng-forest); }
+.gift .xu { font-weight: 800; color: var(--ng-leaf); }
+.vcard { display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--ng-line-strong); background: #fff; }
+.vcard__l { flex: none; width: 76px; height: 56px; border-radius: 10px; background: var(--ng-lime); display: grid; place-items: center; font-weight: 800; color: var(--ng-forest); font-size: .85rem; text-align: center; line-height: 1.1; }
+.vcard--off { opacity: .55; }
+.vcard .btn { margin-left: auto; }
+/* đơn hàng */
+.tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 12px; }
+.ocard { border: 1.5px solid var(--ng-line); border-radius: 18px; padding: 16px; background: #fff; }
+.ocard + .ocard { margin-top: 12px; }
+.ocard__head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; }
+.ocard__head strong { color: var(--ng-forest); }
+.ocard__imgs { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+.ocard__imgs img { width: 56px; height: 56px; border-radius: 10px; background: var(--ng-cream); object-fit: contain; padding: 3px; }
+.ocard__foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; border-top: 1px dashed var(--ng-line-strong); padding-top: 12px; }
+.od { display: grid; gap: 18px; padding-bottom: 56px; }
+@media (min-width: 1024px) { .od { grid-template-columns: 1fr 340px; align-items: start; } }
+.od-item { display: grid; grid-template-columns: 64px 1fr auto; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--ng-line); }
+.od-item img { width: 64px; height: 64px; border-radius: 12px; background: var(--ng-cream); object-fit: contain; padding: 4px; }
+.od-item .actions { grid-column: 2 / -1; display: flex; gap: 8px; flex-wrap: wrap; }
+.ret { padding: 14px; border-radius: 14px; background: var(--ng-cream); border: 1px solid var(--ng-line); }
+.ret + .ret { margin-top: 10px; }
+.lookup { max-width: 520px; margin: 24px auto 56px; }
+.review__imgs { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.review__reply { margin-top: 10px; padding: 10px 12px; border-left: 3px solid var(--ng-lime); background: #fff; font-size: var(--ng-fs-sm); border-radius: 0 10px 10px 0; }
+
+.auth--one { grid-template-columns: 1fr !important; max-width: 480px; }
+.auth__switch { text-align: center; margin: 16px 0 0; padding-top: 14px; border-top: 1px dashed var(--ng-line-strong); font-size: var(--ng-fs-sm); }
+.auth__switch a { font-weight: 700; }

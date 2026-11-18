@@ -1,0 +1,685 @@
+{
+ "ghiChu": "Giá theo khung 80.000–180.000đ (mục 3.2.2). kcal/100g khớp Bảng 3.3 (kcal cả gói = kcal/100g × khối lượng). Năng lượng kiểm tra theo hệ số 4 (protein, carb trừ xơ) – 9 (béo) – 2 (xơ). Ảnh có anhMinhHoa=true là ảnh dựng lại từ bao bì mẫu, cần thay ảnh thật.",
+ "sanPham": [
+  {
+   "ma": "NG-HAT-01",
+   "slug": "hat-mix-5-loai",
+   "loai": "san-pham",
+   "ten": "Hạt mix 5 loại",
+   "danhMuc": "hat-granola",
+   "mucTieu": [
+    "tang-co"
+   ],
+   "quyCach": "Hũ 250g",
+   "khoiLuong": 250,
+   "gia": 169000,
+   "anh": "hat-mix-5-loai",
+   "anhMinhHoa": false,
+   "moTaNgan": "Hạnh nhân, điều, óc chó, hạt bí xanh và nam việt quất sấy, rang mộc không muối.",
+   "thanhPhan": "Hạnh nhân (30%), hạt điều (25%), óc chó (20%), hạt bí xanh (15%), nam việt quất sấy (10%).",
+   "xuatXu": "Hạnh nhân, óc chó nhập khẩu Mỹ; điều Bình Phước (nay thuộc Đồng Nai); đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.",
+   "huongDan": "Ăn trực tiếp như bữa phụ, rắc lên sữa chua, salad hoặc granola.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 612,
+     "protein": 19,
+     "beo": 51.5,
+     "carb": 22,
+     "xo": 8,
+     "duong": 4.5
+    },
+    "khauPhan": {
+     "g": 30,
+     "moTa": "1 nắm vừa (30g)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – nhóm Nuts, mixed nuts, dry roasted (đối chiếu theo tỷ lệ phối trộn).",
+   "ton": 46,
+   "lo": {
+    "ma": "L260920-01",
+    "nsx": "2026-09-20",
+    "hsd": "2027-03-20"
+   },
+   "noiBat": true
+  },
+  {
+   "ma": "NG-HAT-02",
+   "slug": "hanh-nhan-rang-moc",
+   "loai": "san-pham",
+   "ten": "Hạnh nhân rang mộc",
+   "danhMuc": "hat-granola",
+   "mucTieu": [
+    "tang-co"
+   ],
+   "quyCach": "Hũ 250g",
+   "khoiLuong": 250,
+   "gia": 155000,
+   "anh": "hanh-nhan-rang-moc",
+   "anhMinhHoa": true,
+   "moTaNgan": "Hạnh nhân Mỹ nguyên hạt, rang mộc ở nhiệt độ thấp, không muối, không dầu.",
+   "thanhPhan": "100% hạnh nhân.",
+   "xuatXu": "Hạnh nhân nhập khẩu Mỹ; rang và đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.",
+   "huongDan": "Ăn trực tiếp, xay làm sữa hạt hoặc rắc lên yến mạch.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 600,
+     "protein": 21,
+     "beo": 50.5,
+     "carb": 21,
+     "xo": 11,
+     "duong": 4.9
+    },
+    "khauPhan": {
+     "g": 30,
+     "moTa": "khoảng 23 hạt (30g)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Nuts, almonds, dry roasted, without salt added.",
+   "ton": 38,
+   "lo": {
+    "ma": "L260922-02",
+    "nsx": "2026-09-22",
+    "hsd": "2027-03-22"
+   },
+   "noiBat": false
+  },
+  {
+   "ma": "NG-HAT-03",
+   "slug": "hat-dieu-rang-moc",
+   "loai": "san-pham",
+   "ten": "Hạt điều rang mộc",
+   "danhMuc": "hat-granola",
+   "mucTieu": [
+    "tang-co"
+   ],
+   "quyCach": "Hũ 250g",
+   "khoiLuong": 250,
+   "gia": 149000,
+   "anh": "hat-dieu-rang-moc",
+   "anhMinhHoa": true,
+   "moTaNgan": "Điều nguyên hạt loại W320, rang mộc, giữ vị béo tự nhiên.",
+   "thanhPhan": "100% hạt điều.",
+   "xuatXu": "Điều Bình Phước (nay thuộc Đồng Nai); rang và đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.",
+   "huongDan": "Ăn trực tiếp như bữa phụ hoặc dùng nấu sữa hạt.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 576,
+     "protein": 15.5,
+     "beo": 44,
+     "carb": 32,
+     "xo": 3.3,
+     "duong": 5
+    },
+    "khauPhan": {
+     "g": 30,
+     "moTa": "khoảng 18 hạt (30g)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Nuts, cashew nuts, dry roasted, without salt added.",
+   "ton": 41,
+   "lo": {
+    "ma": "L260924-03",
+    "nsx": "2026-09-24",
+    "hsd": "2027-03-24"
+   },
+   "noiBat": false
+  },
+  {
+   "ma": "NG-GRA-01",
+   "slug": "granola-it-duong",
+   "loai": "san-pham",
+   "ten": "Granola ít đường",
+   "danhMuc": "hat-granola",
+   "mucTieu": [
+    "an-sang-nhanh",
+    "giam-can"
+   ],
+   "quyCach": "Túi 300g",
+   "khoiLuong": 300,
+   "gia": 125000,
+   "anh": "granola-it-duong",
+   "anhMinhHoa": false,
+   "moTaNgan": "Yến mạch nướng cùng hạnh nhân, hạt bí, dừa sấy; tạo ngọt bằng erythritol, không thêm đường mía.",
+   "thanhPhan": "Yến mạch cán dẹt (55%), hạnh nhân lát (12%), hạt bí xanh (10%), dừa sấy (8%), dầu dừa, erythritol, quế.",
+   "xuatXu": "Phối trộn và nướng tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.",
+   "huongDan": "Dùng với sữa chua không đường hoặc sữa hạt; ăn trực tiếp như snack.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 470,
+     "protein": 11,
+     "beo": 22,
+     "carb": 60,
+     "xo": 8,
+     "duong": 4.8
+    },
+    "khauPhan": {
+     "g": 40,
+     "moTa": "4 muỗng canh (40g)"
+    }
+   },
+   "nguonSoLieu": "Tính theo công thức phối trộn, đối chiếu USDA FoodData Central cho từng nguyên liệu.",
+   "ton": 62,
+   "lo": {
+    "ma": "L260926-04",
+    "nsx": "2026-09-26",
+    "hsd": "2027-03-26"
+   },
+   "noiBat": true
+  },
+  {
+   "ma": "NG-GRA-02",
+   "slug": "granola-cacao",
+   "loai": "san-pham",
+   "ten": "Granola vị cacao",
+   "danhMuc": "hat-granola",
+   "mucTieu": [
+    "an-sang-nhanh"
+   ],
+   "quyCach": "Túi 300g",
+   "khoiLuong": 300,
+   "gia": 129000,
+   "anh": "granola-cacao",
+   "anhMinhHoa": true,
+   "moTaNgan": "Granola yến mạch phủ bột cacao nguyên chất, ngọt nhẹ từ mật dừa.",
+   "thanhPhan": "Yến mạch cán dẹt (55%), hạnh nhân (10%), hạt bí (8%), bột cacao (6%), mật hoa dừa, dầu dừa.",
+   "xuatXu": "Cacao Bến Tre (nay thuộc Vĩnh Long); nướng và đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.",
+   "huongDan": "Dùng với sữa tươi không đường hoặc sữa chua.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 470,
+     "protein": 10.5,
+     "beo": 21.5,
+     "carb": 62,
+     "xo": 9,
+     "duong": 9
+    },
+    "khauPhan": {
+     "g": 40,
+     "moTa": "4 muỗng canh (40g)"
+    }
+   },
+   "nguonSoLieu": "Tính theo công thức phối trộn, đối chiếu USDA FoodData Central cho từng nguyên liệu.",
+   "ton": 35,
+   "lo": {
+    "ma": "L260928-05",
+    "nsx": "2026-09-28",
+    "hsd": "2027-03-28"
+   },
+   "noiBat": false
+  },
+  {
+   "ma": "NG-YM-01",
+   "slug": "yen-mach-can-det",
+   "loai": "san-pham",
+   "ten": "Yến mạch cán dẹt",
+   "danhMuc": "hat-granola",
+   "mucTieu": [
+    "an-sang-nhanh",
+    "giam-can",
+    "tang-co"
+   ],
+   "quyCach": "Túi 500g",
+   "khoiLuong": 500,
+   "gia": 85000,
+   "anh": "yen-mach-can-det",
+   "anhMinhHoa": true,
+   "moTaNgan": "Yến mạch nguyên hạt cán dẹt, nấu cháo 3 phút hoặc ngâm qua đêm (overnight oats).",
+   "thanhPhan": "100% yến mạch nguyên hạt.",
+   "xuatXu": "Yến mạch nhập khẩu Úc; đóng gói tại TP.HCM.",
+   "hanSuDung": "12 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.",
+   "huongDan": "Nấu với nước/sữa 3–5 phút hoặc ngâm sữa trong tủ lạnh qua đêm.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 380,
+     "protein": 13.5,
+     "beo": 7.5,
+     "carb": 69,
+     "xo": 10,
+     "duong": 1
+    },
+    "khauPhan": {
+     "g": 40,
+     "moTa": "1/2 chén (40g)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Oats, whole grain, rolled, old fashioned.",
+   "ton": 57,
+   "lo": {
+    "ma": "L260930-06",
+    "nsx": "2026-09-30",
+    "hsd": "2027-09-28"
+   },
+   "noiBat": false
+  },
+  {
+   "ma": "NG-BAN-01",
+   "slug": "banh-hat-an-kieng",
+   "loai": "san-pham",
+   "ten": "Bánh hạt ăn kiêng",
+   "danhMuc": "banh-an-kieng",
+   "mucTieu": [
+    "giam-can"
+   ],
+   "quyCach": "Hộp 200g",
+   "khoiLuong": 200,
+   "gia": 119000,
+   "anh": "banh-hat-an-kieng",
+   "anhMinhHoa": true,
+   "moTaNgan": "Bánh ngói hạt giòn mỏng, không bột mì, tạo ngọt bằng erythritol.",
+   "thanhPhan": "Hạnh nhân lát (40%), hạt bí (15%), hạt hướng dương (15%), lòng trắng trứng, bột yến mạch, erythritol.",
+   "xuatXu": "Sản xuất và đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, dưới 30°C. Sau khi mở, cho vào hộp kín, dùng trong 14 ngày.",
+   "huongDan": "Dùng như bữa phụ cùng trà, cà phê không đường.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 500,
+     "protein": 14,
+     "beo": 34,
+     "carb": 38,
+     "xo": 7,
+     "duong": 4
+    },
+    "khauPhan": {
+     "g": 25,
+     "moTa": "2 miếng (25g)"
+    }
+   },
+   "nguonSoLieu": "Tính theo công thức, đối chiếu USDA FoodData Central cho từng nguyên liệu.",
+   "ton": 29,
+   "lo": {
+    "ma": "L261002-07",
+    "nsx": "2026-10-02",
+    "hsd": "2027-04-02"
+   },
+   "noiBat": true
+  },
+  {
+   "ma": "NG-BAN-02",
+   "slug": "biscotti-nguyen-cam",
+   "loai": "san-pham",
+   "ten": "Biscotti nguyên cám",
+   "danhMuc": "banh-an-kieng",
+   "mucTieu": [
+    "giam-can",
+    "an-sang-nhanh"
+   ],
+   "quyCach": "Hộp 250g",
+   "khoiLuong": 250,
+   "gia": 109000,
+   "anh": "biscotti-nguyen-cam",
+   "anhMinhHoa": true,
+   "moTaNgan": "Biscotti nướng hai lần từ bột mì nguyên cám và hạnh nhân, giòn lâu.",
+   "thanhPhan": "Bột mì nguyên cám (45%), hạnh nhân (18%), trứng, mật hoa dừa, dầu hướng dương, vani.",
+   "xuatXu": "Sản xuất và đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, dưới 30°C. Sau khi mở, cho vào hộp kín, dùng trong 14 ngày.",
+   "huongDan": "Chấm cà phê, trà hoặc sữa hạt.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 432,
+     "protein": 11,
+     "beo": 16,
+     "carb": 64,
+     "xo": 7,
+     "duong": 8
+    },
+    "khauPhan": {
+     "g": 25,
+     "moTa": "2 thanh (25g)"
+    }
+   },
+   "nguonSoLieu": "Tính theo công thức, đối chiếu USDA FoodData Central cho từng nguyên liệu.",
+   "ton": 0,
+   "lo": {
+    "ma": "L261004-08",
+    "nsx": "2026-10-04",
+    "hsd": "2027-04-04"
+   },
+   "noiBat": false
+  },
+  {
+   "ma": "NG-BAN-03",
+   "slug": "banh-quy-yen-mach",
+   "loai": "san-pham",
+   "ten": "Bánh quy yến mạch",
+   "danhMuc": "banh-an-kieng",
+   "mucTieu": [
+    "an-sang-nhanh"
+   ],
+   "quyCach": "Hộp 200g",
+   "khoiLuong": 200,
+   "gia": 89000,
+   "anh": "banh-quy-yen-mach",
+   "anhMinhHoa": false,
+   "moTaNgan": "Bánh quy yến mạch nướng mềm giữa, giòn viền, ngọt dịu từ chuối và mật dừa.",
+   "thanhPhan": "Yến mạch (40%), bột mì nguyên cám (20%), chuối sấy, bơ, mật hoa dừa, trứng.",
+   "xuatXu": "Sản xuất và đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, dưới 30°C. Sau khi mở, cho vào hộp kín, dùng trong 14 ngày.",
+   "huongDan": "Bữa sáng nhanh cùng sữa hoặc mang theo làm bữa phụ.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 450,
+     "protein": 8,
+     "beo": 19.5,
+     "carb": 64,
+     "xo": 6,
+     "duong": 9
+    },
+    "khauPhan": {
+     "g": 30,
+     "moTa": "2 cái (30g)"
+    }
+   },
+   "nguonSoLieu": "Tính theo công thức, đối chiếu USDA FoodData Central cho từng nguyên liệu.",
+   "ton": 44,
+   "lo": {
+    "ma": "L261006-09",
+    "nsx": "2026-10-06",
+    "hsd": "2027-04-06"
+   },
+   "noiBat": false
+  },
+  {
+   "ma": "NG-BAN-04",
+   "slug": "thanh-hat-ngu-coc",
+   "loai": "san-pham",
+   "ten": "Thanh hạt ngũ cốc",
+   "danhMuc": "banh-an-kieng",
+   "mucTieu": [
+    "an-sang-nhanh",
+    "tang-co"
+   ],
+   "quyCach": "Hộp 10 thanh × 25g",
+   "khoiLuong": 250,
+   "gia": 135000,
+   "anh": "thanh-hat-ngu-coc",
+   "anhMinhHoa": true,
+   "moTaNgan": "Thanh năng lượng từ yến mạch, hạt và mật ong, đóng gói từng thanh tiện mang theo.",
+   "thanhPhan": "Yến mạch (35%), đậu phộng (15%), hạt điều (12%), mật ong, hạt chia, nho khô.",
+   "xuatXu": "Sản xuất và đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, dưới 30°C. Sau khi mở, cho vào hộp kín, dùng trong 14 ngày.",
+   "huongDan": "Ăn trước tập 30–60 phút hoặc thay bữa phụ.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 472,
+     "protein": 10,
+     "beo": 24,
+     "carb": 58,
+     "xo": 7,
+     "duong": 12
+    },
+    "khauPhan": {
+     "g": 25,
+     "moTa": "1 thanh (25g)"
+    }
+   },
+   "nguonSoLieu": "Tính theo công thức, đối chiếu USDA FoodData Central cho từng nguyên liệu.",
+   "ton": 5,
+   "lo": {
+    "ma": "L261008-10",
+    "nsx": "2026-10-08",
+    "hsd": "2027-04-08"
+   },
+   "noiBat": false
+  },
+  {
+   "ma": "NG-GL-01",
+   "slug": "bun-gao-lut",
+   "loai": "san-pham",
+   "ten": "Bún gạo lứt",
+   "danhMuc": "gao-lut",
+   "mucTieu": [
+    "giam-can"
+   ],
+   "quyCach": "Bộ 2 gói × 500g",
+   "khoiLuong": 1000,
+   "gia": 98000,
+   "anh": "bun-gao-lut",
+   "anhMinhHoa": false,
+   "moTaNgan": "Bún khô 100% gạo lứt đỏ, sợi dai, không chất tẩy trắng.",
+   "thanhPhan": "Gạo lứt đỏ (98%), nước, muối.",
+   "xuatXu": "Gạo lứt Đồng Tháp; sản xuất tại Đồng Tháp, đóng gói tại TP.HCM.",
+   "hanSuDung": "12 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, tránh ẩm. Gói đã mở cần kẹp kín.",
+   "huongDan": "Luộc 5–7 phút trong nước sôi, xả nước lạnh. 80g khô ≈ 1 tô bún.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 360,
+     "protein": 7.5,
+     "beo": 1.5,
+     "carb": 80,
+     "xo": 3.5,
+     "duong": 0.5
+    },
+    "khauPhan": {
+     "g": 80,
+     "moTa": "1 bữa (80g khô)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Noodles, brown rice, dry (đối chiếu).",
+   "ton": 70,
+   "lo": {
+    "ma": "L261010-11",
+    "nsx": "2026-10-10",
+    "hsd": "2027-10-10"
+   },
+   "noiBat": true
+  },
+  {
+   "ma": "NG-GL-02",
+   "slug": "pho-gao-lut",
+   "loai": "san-pham",
+   "ten": "Phở gạo lứt",
+   "danhMuc": "gao-lut",
+   "mucTieu": [
+    "giam-can"
+   ],
+   "quyCach": "Bộ 2 gói × 500g",
+   "khoiLuong": 1000,
+   "gia": 98000,
+   "anh": "pho-gao-lut",
+   "anhMinhHoa": true,
+   "moTaNgan": "Bánh phở khô từ gạo lứt, sợi dẹt mềm, nấu nước dùng hoặc xào.",
+   "thanhPhan": "Gạo lứt (98%), nước, muối.",
+   "xuatXu": "Gạo lứt Đồng Tháp; sản xuất tại Đồng Tháp, đóng gói tại TP.HCM.",
+   "hanSuDung": "12 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, tránh ẩm. Gói đã mở cần kẹp kín.",
+   "huongDan": "Trụng 3–4 phút trong nước sôi. 80g khô ≈ 1 tô phở.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 360,
+     "protein": 7,
+     "beo": 1.2,
+     "carb": 81,
+     "xo": 3,
+     "duong": 0.5
+    },
+    "khauPhan": {
+     "g": 80,
+     "moTa": "1 bữa (80g khô)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Noodles, brown rice, dry (đối chiếu).",
+   "ton": 52,
+   "lo": {
+    "ma": "L261012-12",
+    "nsx": "2026-10-12",
+    "hsd": "2027-10-12"
+   },
+   "noiBat": false
+  },
+  {
+   "ma": "NG-GL-03",
+   "slug": "nui-gao-lut",
+   "loai": "san-pham",
+   "ten": "Nui gạo lứt",
+   "danhMuc": "gao-lut",
+   "mucTieu": [
+    "giam-can"
+   ],
+   "quyCach": "Bộ 2 gói × 500g",
+   "khoiLuong": 1000,
+   "gia": 98000,
+   "anh": "nui-gao-lut",
+   "anhMinhHoa": false,
+   "moTaNgan": "Nui xoắn gạo lứt, giữ dáng khi nấu, hợp salad và súp.",
+   "thanhPhan": "Gạo lứt (95%), bột năng, nước.",
+   "xuatXu": "Gạo lứt Đồng Tháp; sản xuất tại Đồng Tháp, đóng gói tại TP.HCM.",
+   "hanSuDung": "12 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, tránh ẩm. Gói đã mở cần kẹp kín.",
+   "huongDan": "Luộc 8–10 phút, xả nước lạnh. 80g khô ≈ 1 đĩa.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 360,
+     "protein": 7.5,
+     "beo": 2,
+     "carb": 79.5,
+     "xo": 3.8,
+     "duong": 0.6
+    },
+    "khauPhan": {
+     "g": 80,
+     "moTa": "1 bữa (80g khô)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Pasta, brown rice, dry (đối chiếu).",
+   "ton": 48,
+   "lo": {
+    "ma": "L261014-13",
+    "nsx": "2026-10-14",
+    "hsd": "2027-10-14"
+   },
+   "noiBat": false
+  }
+ ],
+ "combo": [
+  {
+   "ma": "NG-CB-1200",
+   "slug": "combo-giam-can-1200",
+   "ten": "Combo Giảm cân 1.200",
+   "mucTieuKcal": 1200,
+   "mucTieu": [
+    "giam-can"
+   ],
+   "gia": 308000,
+   "nhan": "Giảm cân, giữ dáng",
+   "thanhPhan": [
+    {
+     "ma": "NG-GRA-01",
+     "soLuong": 1
+    },
+    {
+     "ma": "NG-BAN-01",
+     "soLuong": 1
+    },
+    {
+     "chon": [
+      "NG-GL-01",
+      "NG-GL-02",
+      "NG-GL-03"
+     ],
+     "soLuong": 1
+    }
+   ],
+   "moTaNgan": "Bữa sáng granola ít đường, bữa phụ bánh hạt và 1 bộ bún/phở/nui gạo lứt cho bữa chính, đủ dùng 7 ngày.",
+   "phuHop": "Dân văn phòng, phụ nữ giữ dáng muốn kiểm soát calo mà không phải tự tính.",
+   "loai": "combo",
+   "danhMuc": "combo",
+   "anh": "combo-1200",
+   "anhMinhHoa": false,
+   "soNgay": 7,
+   "noiBat": true,
+   "chiBanTrenWebsite": true
+  },
+  {
+   "ma": "NG-CB-1500",
+   "slug": "combo-can-bang-1500",
+   "ten": "Combo Cân bằng 1.500",
+   "mucTieuKcal": 1500,
+   "mucTieu": [
+    "duy-tri"
+   ],
+   "gia": 353000,
+   "nhan": "Duy trì cân nặng, ăn sạch",
+   "thanhPhan": [
+    {
+     "ma": "NG-GRA-01",
+     "soLuong": 1
+    },
+    {
+     "ma": "NG-HAT-01",
+     "soLuong": 1
+    },
+    {
+     "chon": [
+      "NG-GL-01",
+      "NG-GL-02",
+      "NG-GL-03"
+     ],
+     "soLuong": 1
+    }
+   ],
+   "moTaNgan": "Granola ít đường, hạt mix 5 loại và 1 bộ bún/phở/nui gạo lứt, cân bằng tinh bột – chất béo tốt cho 7 ngày.",
+   "phuHop": "Người muốn duy trì cân nặng, ăn sạch đều đặn.",
+   "loai": "combo",
+   "danhMuc": "combo",
+   "anh": "combo-1500",
+   "anhMinhHoa": false,
+   "soNgay": 7,
+   "noiBat": true,
+   "chiBanTrenWebsite": true
+  },
+  {
+   "ma": "NG-CB-1800",
+   "slug": "combo-tang-co-1800",
+   "ten": "Combo Tăng cơ 1.800",
+   "mucTieuKcal": 1800,
+   "mucTieu": [
+    "tang-co"
+   ],
+   "gia": 465000,
+   "nhan": "Tập gym, tăng cơ",
+   "thanhPhan": [
+    {
+     "ma": "NG-GRA-01",
+     "soLuong": 2
+    },
+    {
+     "ma": "NG-HAT-01",
+     "soLuong": 1
+    },
+    {
+     "chon": [
+      "NG-GL-01",
+      "NG-GL-02",
+      "NG-GL-03"
+     ],
+     "soLuong": 1
+    }
+   ],
+   "moTaNgan": "2 túi granola ít đường, hạt mix 5 loại và 1 bộ bún/phở/nui gạo lứt, nhiều năng lượng cho ngày tập.",
+   "phuHop": "Người tập gym/yoga cần thêm năng lượng và chất béo tốt.",
+   "loai": "combo",
+   "danhMuc": "combo",
+   "anh": "combo-1800",
+   "anhMinhHoa": false,
+   "soNgay": 7,
+   "noiBat": true,
+   "chiBanTrenWebsite": true
+  }
+ ]
+}

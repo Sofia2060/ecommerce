@@ -1,0 +1,141 @@
+{
+ "ghiChu": "34 đơn vị hành chính cấp tỉnh sau sắp xếp năm 2025; 'vung' dùng để tính phí GHTK.",
+ "tinh": [
+  {
+   "ten": "Thành phố Hồ Chí Minh",
+   "vung": "nam"
+  },
+  {
+   "ten": "Thành phố Cần Thơ",
+   "vung": "nam"
+  },
+  {
+   "ten": "Tỉnh Đồng Nai",
+   "vung": "nam"
+  },
+  {
+   "ten": "Tỉnh Tây Ninh",
+   "vung": "nam"
+  },
+  {
+   "ten": "Tỉnh Vĩnh Long",
+   "vung": "nam"
+  },
+  {
+   "ten": "Tỉnh Đồng Tháp",
+   "vung": "nam"
+  },
+  {
+   "ten": "Tỉnh Cà Mau",
+   "vung": "nam"
+  },
+  {
+   "ten": "Tỉnh An Giang",
+   "vung": "nam"
+  },
+  {
+   "ten": "Tỉnh Thanh Hóa",
+   "vung": "trung"
+  },
+  {
+   "ten": "Tỉnh Nghệ An",
+   "vung": "trung"
+  },
+  {
+   "ten": "Tỉnh Hà Tĩnh",
+   "vung": "trung"
+  },
+  {
+   "ten": "Tỉnh Quảng Trị",
+   "vung": "trung"
+  },
+  {
+   "ten": "Thành phố Huế",
+   "vung": "trung"
+  },
+  {
+   "ten": "Thành phố Đà Nẵng",
+   "vung": "trung"
+  },
+  {
+   "ten": "Tỉnh Quảng Ngãi",
+   "vung": "trung"
+  },
+  {
+   "ten": "Tỉnh Gia Lai",
+   "vung": "trung"
+  },
+  {
+   "ten": "Tỉnh Khánh Hòa",
+   "vung": "trung"
+  },
+  {
+   "ten": "Tỉnh Lâm Đồng",
+   "vung": "trung"
+  },
+  {
+   "ten": "Tỉnh Đắk Lắk",
+   "vung": "trung"
+  },
+  {
+   "ten": "Thành phố Hà Nội",
+   "vung": "bac"
+  },
+  {
+   "ten": "Thành phố Hải Phòng",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Lai Châu",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Điện Biên",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Sơn La",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Lạng Sơn",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Quảng Ninh",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Cao Bằng",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Tuyên Quang",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Lào Cai",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Thái Nguyên",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Phú Thọ",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Bắc Ninh",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Hưng Yên",
+   "vung": "bac"
+  },
+  {
+   "ten": "Tỉnh Ninh Bình",
+   "vung": "bac"
+  }
+ ]
+}

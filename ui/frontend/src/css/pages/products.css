@@ -1,0 +1,36 @@
+/* Danh sách sản phẩm + bộ lọc dinh dưỡng (FR01) */
+.list-title { display: flex; justify-content: space-between; gap: 16px; align-items: flex-end; }
+.shop { display: grid; gap: 24px; padding: 16px 0 56px; }
+@media (min-width: 1024px) { .shop { grid-template-columns: 260px 1fr; align-items: start; } }
+.filters { display: none; }
+.filters.is-open { display: block; position: fixed; inset: 0; z-index: 700; background: #fff; overflow-y: auto; padding: 16px 20px 100px; animation: up .2s; }
+@media (min-width: 1024px) { .filters { display: block; } .filters__head .icon-btn, .filters__foot [data-dong-loc] { display: none; } }
+.filters__head { display: flex; justify-content: space-between; align-items: center; }
+.filters__head h2 { font-size: var(--ng-fs-lg); margin: 0; }
+.fgroup { border: 0; padding: 14px 0; margin: 0; border-bottom: 1px solid var(--ng-line); }
+.fgroup legend { font-weight: 800; color: var(--ng-forest); font-size: var(--ng-fs-sm); padding: 0; margin-bottom: 8px; }
+.fgroup .check { padding: 5px 0; }
+.fgroup .check .n { margin-left: auto; color: var(--ng-muted); font-size: var(--ng-fs-xs); }
+.fgroup .check span { flex: 1; display: flex; gap: 6px; }
+.filters__foot { display: flex; gap: 10px; padding-top: 16px; }
+.filters.is-open .filters__foot { position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 20px; background: #fff; border-top: 2px solid var(--ng-forest); }
+.filters__foot .btn { flex: 1; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 12px; }
+.toolbar__count { margin: 0 auto 0 0; font-size: var(--ng-fs-sm); }
+.toolbar__sort { width: auto; min-height: 38px; padding: 6px 12px; font-size: var(--ng-fs-sm); }
+@media (min-width: 1024px) { .toolbar__filter { display: none; } }
+.active-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.active-chips:empty { display: none; }
+.cmp { width: 100%; font-size: var(--ng-fs-sm); }
+.cmp th, .cmp td { padding: 10px; border-bottom: 1px solid var(--ng-line); text-align: right; white-space: nowrap; }
+.cmp th:first-child, .cmp td:first-child { text-align: left; white-space: normal; }
+.cmp th { background: var(--ng-forest); color: #fff; font-weight: 700; position: sticky; top: 0; cursor: pointer; }
+.cmp th[aria-sort] { background: var(--ng-green); }
+.cmp th button { all: unset; cursor: pointer; }
+.cmp td:first-child a { display: flex; gap: 10px; align-items: center; font-weight: 700; color: var(--ng-forest); }
+.cmp td:first-child img { width: 44px; height: 44px; object-fit: contain; background: var(--ng-cream); border-radius: 8px; flex: none; }
+.cmp tr:hover td { background: var(--ng-cream); }
+.cmp .best { background: var(--ng-lime-soft); font-weight: 800; color: var(--ng-forest); border-radius: 6px; }
+.cmp .add { width: 34px; height: 34px; }
+.tdee-nudge { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; padding: 18px 20px; border-radius: 18px; border: 2px solid var(--ng-forest); background: var(--ng-lime-soft); box-shadow: var(--ng-shadow-hard); }
+.tdee-nudge strong { color: var(--ng-forest); font-size: var(--ng-fs-lg); display: block; }
