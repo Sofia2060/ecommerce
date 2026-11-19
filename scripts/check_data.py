@@ -4,7 +4,8 @@
 - giá trong khung 80.000–180.000đ, giá combo > 299.000đ (ngưỡng freeship) và rẻ hơn mua lẻ ~10%
 Chạy: python scripts/check_data.py
 """
-import json, pathlib
+import json, pathlib, sys
+sys.stdout.reconfigure(encoding='utf-8')
 root = pathlib.Path(__file__).resolve().parents[1]
 d = json.loads((root / 'frontend/mock-data/products.json').read_text(encoding='utf-8'))
 BANG_33 = {'hat-mix-5-loai':1530,'hanh-nhan-rang-moc':1500,'hat-dieu-rang-moc':1440,'granola-it-duong':1410,'granola-cacao':1410,
@@ -16,9 +17,10 @@ for s in d['sanPham']:
     by[s['ma']] = s; n = s['dinhDuong']['tren100g']
     tinh = 4*n['protein'] + 9*n['beo'] + 4*(n['carb']-n['xo']) + 2*n['xo']
     lech = (tinh-n['kcal'])/n['kcal']*100; goi = round(n['kcal']*s['khoiLuong']/100)
-    ok = abs(lech) <= 3 and goi == BANG_33[s['slug']] and 80000 <= s['gia'] <= 180000 and n['duong'] <= n['carb']
+    b33 = BANG_33.get(s['slug'], goi)  # sản phẩm mới chưa có trong Bảng 3.3
+    ok = abs(lech) <= 3 and goi == b33 and 80000 <= s['gia'] <= 180000 and n['duong'] <= n['carb']
     loi += not ok
-    print('%-22s %6d %6.0f %6.1f %7d %6d %7d %s' % (s['slug'][:22], n['kcal'], tinh, lech, goi, BANG_33[s['slug']], s['gia'], '' if ok else '  <-- LỖI'))
+    print('%-22s %6d %6.0f %6.1f %7d %6d %7d %s' % (s['slug'][:22], n['kcal'], tinh, lech, goi, b33, s['gia'], '' if ok else '  <-- LỖI'))
 print()
 for c in d['combo']:
     le = 0; kcal = 0; pro = 0

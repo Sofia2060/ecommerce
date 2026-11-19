@@ -1,0 +1,46 @@
+/* =========================================================
+   Quản trị – lớp giao diện 2.0 (nạp sau admin.css và base/theme.css)
+   Cùng ngôn ngữ với cửa hàng nhưng tiết chế: quản trị cần đọc số nhanh, chuyển động chỉ để phản hồi thao tác.
+   ========================================================= */
+body.qt { background: radial-gradient(900px 400px at 100% 0%, rgba(236, 253, 135, .35), transparent 60%), #f6f8ef; }
+.qt-side { background: var(--ng-grad-forest); box-shadow: 8px 0 30px -18px rgba(17, 59, 0, .6); }
+.qt-brand img { transition: transform .4s var(--ng-ease-spring); }
+.qt-brand:hover img { transform: rotate(-4deg) scale(1.05); }
+
+/* menu bên: vạch lá mạ trượt vào, mục đang mở nổi lên */
+.qt-nav a { position: relative; transition: background-color .2s, color .2s, padding-left .25s var(--ng-ease-out); background-image: none; }
+.qt-nav a::before { content: ''; position: absolute; left: 0; top: 22%; bottom: 22%; width: 3px; border-radius: 3px; background: var(--ng-lime); transform: scaleY(0); transition: transform .25s var(--ng-ease-out); }
+@media (min-width: 1024px) { .qt-nav a:hover:not(.is-active) { padding-left: 18px; } .qt-nav a:hover::before { transform: scaleY(1); } }
+.qt-nav a.is-active { box-shadow: 3px 3px 0 rgba(0, 0, 0, .25); }
+.qt-nav a svg { transition: transform .3s var(--ng-ease-spring); }
+.qt-nav a:hover svg { transform: scale(1.12) rotate(-6deg); }
+.qt-nav .n { animation: bump .6s .4s var(--ng-ease-spring) backwards; }
+
+/* khung nội dung xuất hiện nhẹ */
+.qt-main { animation: page-in .5s var(--ng-ease-out) backwards; }
+.qt-head h1 { position: relative; padding-bottom: 6px; }
+.qt-head h1::after { content: ''; position: absolute; left: 0; bottom: 0; width: 44px; height: 4px; border-radius: 4px; background: var(--ng-lime); }
+
+/* thẻ, chỉ số */
+.qt-card { border-radius: 18px; transition: box-shadow .3s var(--ng-ease-out), transform .3s var(--ng-ease-out), border-color .2s; }
+.qt-card:hover { box-shadow: var(--ng-shadow-lift); border-color: var(--ng-line-strong); }
+.kpi { transition: transform .3s var(--ng-ease-spring), box-shadow .3s, border-color .2s; }
+.kpi:hover { transform: translateY(-4px); box-shadow: 4px 4px 0 var(--ng-forest); border-color: var(--ng-forest); }
+.kpis > * { animation: rise .55s var(--ng-ease-out) backwards; }
+.kpis > :nth-child(2) { animation-delay: .06s; } .kpis > :nth-child(3) { animation-delay: .12s; } .kpis > :nth-child(4) { animation-delay: .18s; }
+.todo, .insights > *, .tip { transition: transform .25s var(--ng-ease-out), background-color .2s; }
+.insights > *:hover, .tip:hover { transform: translateX(4px); }
+
+/* biểu đồ cột mọc lên, thanh ngang chạy ra */
+.bars rect, .bars .bar { transform-origin: 50% 100%; transform-box: fill-box; animation: bar-up .8s var(--ng-ease-out) backwards; }
+@keyframes bar-up { from { transform: scaleY(0); } }
+.hbar span, .funnel span { transform-origin: 0 50%; animation: grow-x .9s var(--ng-ease-out) backwards; }
+
+/* bảng: dòng đổi màu khi rê chuột */
+.qt-table tbody tr { transition: background-color .15s; }
+.qt-table tbody tr:hover { background: var(--ng-cream); }
+.qt-tabs button, .qt-tabs a { transition: background-color .2s, color .2s, transform .2s; }
+.qt-tabs button:hover, .qt-tabs a:hover { transform: translateY(-1px); }
+
+/* đăng nhập quản trị */
+.qt-login .card, .qt-login form { animation: modal-in .5s var(--ng-ease-spring) backwards; }

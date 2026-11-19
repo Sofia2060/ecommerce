@@ -36,6 +36,15 @@
   const anh = (key, nho) => DUONG.anh + 'products/' + key + (nho ? '-sm' : '') + '.webp';
   const lamTron1 = (n) => Math.round(n * 10) / 10;
   NG.bam = (c) => bam(c);
+  // Ảnh sản phẩm chưa có file (ví dụ 7 sản phẩm mới): tự thay bằng khung "Ảnh đang cập nhật".
+  // Chỉ cần chép <slug>.webp và <slug>-sm.webp vào public/images/products/ là ảnh thật hiện ra.
+  const ANH_CHO = DUONG.anh + 'products/placeholder.svg';
+  document.addEventListener('error', (e) => {
+    const i = e.target;
+    const boDi = i && i.tagName === 'IMG' && i.closest('[data-an-khi-loi]');
+    if (boDi) { boDi.remove(); return; } // ảnh phụ chưa có file: ẩn hẳn thay vì hiện khung chờ
+    if (i && i.tagName === 'IMG' && !i.dataset.anhCho && /\/products\//.test(i.getAttribute('src') || '')) { i.dataset.anhCho = '1'; i.classList.add('is-placeholder'); i.removeAttribute('srcset'); i.src = ANH_CHO; }
+  }, true);
   Object.assign(NG, { $, $$, esc, so, tien, ngay, gioNgay: gio, khongDau, qs, sdtHopLe, emailHopLe, chuanSdt, anh, DUONG, lamTron1 });
 
   /* đường dẫn trang (cùng thư mục src/pages/client/) */
@@ -327,6 +336,23 @@
       if (u.matKhau !== await bam(u.email + '|' + cu)) throw new Error('Mật khẩu hiện tại không đúng.');
       if (!this.matKhauHopLe(moi)) throw new Error('Mật khẩu mới tối thiểu 8 ký tự, có chữ và số.');
       this.capNhat({ matKhau: await bam(u.email + '|' + moi) });
+    },
+    // Quên mật khẩu: tìm tài khoản theo email/SĐT → gửi OTP tới SĐT đã đăng ký → đặt mật khẩu mới
+    timTaiKhoan(dinhDanh) {
+      const id = String(dinhDanh || '').trim().toLowerCase(); if (!id) return null;
+      return this.ds().find((x) => x.email === id || (chuanSdt(id).length >= 9 && x.sdt === chuanSdt(id))) || null;
+    },
+    async datLaiMatKhau(dinhDanh, otp, moi) {
+      const u = this.timTaiKhoan(dinhDanh); if (!u) throw new Error('Không tìm thấy tài khoản.');
+      if (!this.kiemOtp(u.sdt, otp)) throw new Error('Mã OTP không đúng hoặc đã hết hạn. Hãy gửi lại mã.');
+      if (!this.matKhauHopLe(moi)) throw new Error('Mật khẩu mới tối thiểu 8 ký tự, có chữ và số.');
+      if (u.matKhau === await bam(u.email + '|' + moi)) throw new Error('Mật khẩu mới phải khác mật khẩu cũ.');
+      const ds = this.ds(); const i = ds.findIndex((x) => x.id === u.id);
+      ds[i] = Object.assign({}, ds[i], { matKhau: await bam(u.email + '|' + moi), doiMatKhauLuc: new Date().toISOString() });
+      NG.kho.ghi('khachHang', ds); NG.kho.xoa('otp');
+      NG.kho.ghi('phien', { id: u.id, luc: Date.now() }); this.lienKetDon(u);
+      NG.track('dat_lai_mat_khau', { id: u.id });
+      return ds[i];
     },
     // đơn đặt không cần tài khoản bằng SĐT này sẽ tự gắn vào tài khoản
     lienKetDon(u) {
@@ -663,6 +689,7 @@
       const fav = NG.yeuThich.co(sp.ma);
       const tags = [];
       if (combo) tags.push('<span class="badge badge--forest">Combo 7 ngày</span>');
+      if (sp.moi) tags.push('<span class="badge badge--new">Mới</span>');
       if (!sp.conHang) tags.push('<span class="badge badge--red">Tạm hết</span>');
       else if (!combo && sp.ton <= 5) tags.push('<span class="badge badge--orange">Còn ' + sp.ton + '</span>');
       if (!combo && n.duong <= d.cauHinh.nguongLoc.itDuong) tags.push('<span class="badge badge--lime">Đường ' + so(n.duong, 1) + 'g/100g</span>');
@@ -672,7 +699,8 @@
       else nums = '<span class="num-pill num-pill--kcal"><b>' + so(sp.kp.kcal) + '</b> kcal</span><span class="num-pill num-pill--pro"><b>' + so(sp.kp.protein, 1) + 'g</b> protein</span><span class="num-pill num-pill--sug">đường <b>' + so(sp.kp.duong, 1) + 'g</b></span>';
       const per = combo ? 'Dành cho mục tiêu ' + so(sp.mucTieuKcal) + ' kcal/ngày' : theo100 ? 'Trên 100g' : 'Mỗi khẩu phần ' + sp.dinhDuong.khauPhan.g + 'g';
       return '<article class="pcard' + (combo ? ' pcard--combo' : '') + (sp.conHang ? '' : ' pcard--out') + '" data-ma="' + esc(sp.ma) + '">' +
-        '<a class="pcard__media" href="' + link + '" tabindex="-1" aria-hidden="true"><img src="' + anh(sp.anh, true) + '" alt="" loading="lazy" width="320" height="320"></a>' +
+        // data-anh-phu: ảnh phụ để xem trước khi rê chuột lên thẻ (motion.js)
+        '<a class="pcard__media" href="' + link + '" tabindex="-1" aria-hidden="true"' + (sp.anhPhu && sp.anhPhu.length ? ' data-anh-phu="' + esc(sp.anhPhu.map((x) => anh(x.anh)).join('|')) + '"' : '') + '><img src="' + anh(sp.anh, true) + '" alt="" loading="lazy" width="320" height="320"></a>' +
         '<div class="pcard__tags">' + tags.join('') + '</div>' +
         '<button class="pcard__fav" type="button" aria-label="Yêu thích ' + esc(sp.ten) + '" aria-pressed="' + fav + '" data-yeu-thich="' + esc(sp.ma) + '">' + IC.tim + '</button>' +
         '<div class="pcard__body">' +

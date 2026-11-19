@@ -20,7 +20,9 @@
   <link rel="stylesheet" href="../../css/components/product-card.css">
   <link rel="stylesheet" href="../../css/components/widgets.css">
   <link rel="stylesheet" href="../../css/pages/home.css">
+  <link rel="stylesheet" href="../../css/base/theme.css">
   <script src="../../js/core/common.js" defer></script>
+  <script src="../../js/core/motion.js" defer></script>
   <script src="../../js/components/blocks.js" defer></script>
   <script src="../../js/pages/home.js" defer></script>
 </head>
@@ -183,63 +185,124 @@
   </div>
 </div>
 <!-- /@header -->
-<main id="noi-dung" class="page-main">
-<section class="hero">
-  <div class="container hero__in">
-    <div class="hero__text">
-      <p class="eyebrow">Mua theo con số</p>
-      <h1>Ăn sạch, sống khỏe – <span class="hl">biết rõ từng calo</span></h1>
-      <p class="hero__lead">Granola, hạt, bánh ăn kiêng và bún gạo lứt có bảng kcal, protein, đường cho <strong>100% sản phẩm</strong>.</p>
-      <div class="hero__cta">
-        <a class="btn btn--primary btn--lg" href="tdee.html" data-track="hero_tdee">Tính TDEE &amp; nhận combo</a>
-        <a class="btn btn--lg" href="products.html">Xem sản phẩm</a>
+<main id="noi-dung" class="page-main home">
+<section class="banner" aria-roledescription="carousel" aria-label="Chương trình nổi bật" data-banner>
+  <div class="banner__track">
+    <div class="banner__slide banner__slide--1 is-active" role="group" aria-roledescription="slide" aria-label="1 / 3">
+      <div class="container banner__in">
+        <div class="banner__text">
+          <p class="banner__kicker">NutriGreen · Healthy food</p>
+          <h1>Thực phẩm healthy<br>cho bữa ăn mỗi ngày</h1>
+          <p class="banner__lead">Granola, hạt rang mộc, bánh ăn kiêng và bún phở gạo lứt – ghi rõ kcal, protein trên từng gói.</p>
+          <div class="banner__cta"><a class="btn btn--primary btn--lg" href="products.html">Mua ngay</a><a class="btn btn--lg" href="#tdee-nhanh">Tính calo của bạn</a></div>
+        </div>
+        <div class="banner__art">
+          <img class="banner__p banner__p--a" src="../../../public/images/products/granola-it-duong.webp" alt="Granola ít đường" width="640" height="640" fetchpriority="high">
+          <img class="banner__p banner__p--b" src="../../../public/images/products/hat-mix-5-loai.webp" alt="Hạt mix 5 loại" width="640" height="640">
+          <img class="banner__p banner__p--c" src="../../../public/images/products/bun-gao-lut.webp" alt="Bún gạo lứt" width="640" height="640">
+        </div>
       </div>
-      <p class="hero__note">Miễn phí giao từ 299.000đ · Đặt hàng không cần tài khoản · Đổi trả 7 ngày</p>
     </div>
-    <div class="hero__art">
-      <div class="tile tile--txt" aria-hidden="true"><span>Tasty<br>&amp; Fit</span></div>
-      <a class="tile tile--img" href="product-detail.html?ma=NG-GRA-01" aria-label="Granola ít đường">
-        <img src="../../../public/images/products/granola-it-duong.webp" alt="" width="640" height="640" fetchpriority="high">
-        <span class="hero__chip" data-hero-chip><strong><span data-v="kcal">188</span> kcal</strong><span><b data-v="pro">4,4</b>g protein · <b data-v="duong">1,9</b>g đường / 40g</span></span>
-      </a>
-      <a class="tile tile--img" href="product-detail.html?ma=NG-HAT-01" aria-label="Hạt mix 5 loại"><img src="../../../public/images/products/hat-mix-5-loai.webp" alt="" width="640" height="640"></a>
-      <div class="tile tile--txt tile--forest" aria-hidden="true"><span>Green<br>Energy</span></div>
+    <div class="banner__slide banner__slide--2" role="group" aria-roledescription="slide" aria-label="2 / 3">
+      <div class="container banner__in">
+        <div class="banner__text">
+          <p class="banner__kicker">Chỉ bán trên website</p>
+          <h2 class="banner__h">Combo 7 ngày<br>theo mức calo</h2>
+          <p class="banner__lead">Ba mức 1.200 · 1.500 · 1.800 kcal, đủ bữa sáng, bữa phụ và bữa chính. Rẻ hơn mua lẻ khoảng 10%.</p>
+          <div class="banner__cta"><a class="btn btn--primary btn--lg" href="products.html?danhmuc=combo">Chọn combo</a></div>
+        </div>
+        <div class="banner__art">
+          <img class="banner__p banner__p--solo" src="../../../public/images/products/combo-1500.webp" alt="Combo Cân bằng 1.500" width="640" height="640" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="banner__slide banner__slide--3" role="group" aria-roledescription="slide" aria-label="3 / 3">
+      <div class="container banner__in">
+        <div class="banner__text">
+          <p class="banner__kicker">Bữa sáng 3 phút</p>
+          <h2 class="banner__h">Yến mạch, granola<br>&amp; bánh ngũ cốc</h2>
+          <p class="banner__lead">Pha với sữa chua hoặc sữa hạt là xong bữa sáng. Giao trong ngày ở TP.HCM.</p>
+          <div class="banner__cta"><a class="btn btn--primary btn--lg" href="products.html?muctieu=an-sang-nhanh">Xem món ăn sáng</a></div>
+        </div>
+        <div class="banner__art">
+          <img class="banner__photo" src="../../../public/images/products/yen-mach-can-det.webp" alt="Yến mạch cán dẹt NutriGreen" width="640" height="640" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="banner__nav banner__nav--prev" type="button" aria-label="Banner trước" data-banner-lui><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg></button>
+  <button class="banner__nav banner__nav--next" type="button" aria-label="Banner sau" data-banner-toi><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  <div class="banner__dots" data-banner-dots></div>
+</section>
+
+<section class="deals" aria-label="Mã ưu đãi">
+  <div class="container deals__in" data-uu-dai></div>
+</section>
+
+<section class="section" aria-labelledby="tieu-de-moi" data-khoi-moi hidden>
+  <div class="container">
+    <div class="section-head"><h2 id="tieu-de-moi" class="title-line">Sản phẩm mới</h2><a class="link-more" href="products.html?sapxep=moi">Xem tất cả →</a></div>
+    <div class="rail" data-moi></div>
+  </div>
+</section>
+
+<section class="section section--cream" aria-labelledby="tieu-de-dm">
+  <div class="container">
+    <div class="section-head section-head--center"><h2 id="tieu-de-dm" class="title-line">Danh mục sản phẩm</h2></div>
+    <div class="cat-row">
+      <a class="cat-tile" href="products.html?danhmuc=hat-granola"><span class="cat-tile__img"><img src="../../../public/images/products/hat-mix-5-loai-sm.webp" alt="" loading="lazy" width="320" height="320"></span><span class="cat-tile__name">Hạt &amp; Granola</span><span class="cat-tile__n" data-dem-dm="hat-granola"></span></a>
+      <a class="cat-tile" href="products.html?danhmuc=banh-an-kieng"><span class="cat-tile__img"><img src="../../../public/images/products/banh-hat-an-kieng-sm.webp" alt="" loading="lazy" width="320" height="320"></span><span class="cat-tile__name">Bánh ăn kiêng</span><span class="cat-tile__n" data-dem-dm="banh-an-kieng"></span></a>
+      <a class="cat-tile" href="products.html?danhmuc=gao-lut"><span class="cat-tile__img"><img src="../../../public/images/products/bun-gao-lut-sm.webp" alt="" loading="lazy" width="320" height="320"></span><span class="cat-tile__name">Bún, phở, gạo lứt</span><span class="cat-tile__n" data-dem-dm="gao-lut"></span></a>
+      <a class="cat-tile" href="products.html?danhmuc=combo"><span class="cat-tile__img"><img src="../../../public/images/products/combo-1200-sm.webp" alt="" loading="lazy" width="320" height="320"></span><span class="cat-tile__name">Combo theo calo</span><span class="cat-tile__n" data-dem-dm="combo"></span></a>
     </div>
   </div>
 </section>
 
-<div class="container" data-campaign hidden></div>
-
-<section class="section section--tight" aria-labelledby="tieu-de-muc-tieu">
+<section class="section" aria-labelledby="tieu-de-combo">
   <div class="container">
-    <div class="section-head"><h2 id="tieu-de-muc-tieu">Bạn đang hướng tới điều gì?</h2></div>
-    <div class="goals">
-      <a class="goal goal--1" href="products.html?muctieu=giam-can"><span class="goal__k">Giảm cân</span><span class="goal__d">Ít đường, dễ kiểm soát khẩu phần</span><span class="goal__go">Xem sản phẩm →</span><img src="../../../public/images/products/bun-gao-lut-sm.webp" alt="" loading="lazy" width="320" height="320"></a>
-      <a class="goal goal--2" href="products.html?muctieu=tang-co"><span class="goal__k">Tăng cơ</span><span class="goal__d">Hạt rang mộc giàu protein</span><span class="goal__go">Xem sản phẩm →</span><img src="../../../public/images/products/hanh-nhan-rang-moc-sm.webp" alt="" loading="lazy" width="320" height="320"></a>
-      <a class="goal goal--3" href="products.html?muctieu=an-sang-nhanh"><span class="goal__k">Ăn sáng nhanh</span><span class="goal__d">Sẵn sàng trong 3 phút</span><span class="goal__go">Xem sản phẩm →</span><img src="../../../public/images/products/banh-quy-yen-mach-sm.webp" alt="" loading="lazy" width="320" height="320"></a>
-    </div>
-  </div>
-</section>
-
-<section class="section section--cream" aria-labelledby="tieu-de-combo">
-  <div class="container">
-    <div class="section-head"><div><h2 id="tieu-de-combo">Combo 7 ngày theo mức calo</h2><p>Ghép sẵn bữa sáng, bữa phụ, bữa chính · rẻ hơn mua lẻ khoảng 10% · chỉ bán trên website.</p></div><a class="btn btn--sm" href="tdee.html">Chưa biết chọn mức nào? Tính TDEE</a></div>
+    <div class="section-head"><h2 id="tieu-de-combo" class="title-line">Combo 7 ngày</h2><a class="link-more" href="products.html?danhmuc=combo">Xem tất cả combo →</a></div>
     <div class="combos" data-combo-list><div class="skeleton" style="height:380px"></div><div class="skeleton" style="height:380px"></div><div class="skeleton" style="height:380px"></div></div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="tieu-de-noi-bat">
-  <div class="container">
-    <div class="section-head"><div><h2 id="tieu-de-noi-bat">Sản phẩm bán chạy</h2><p>Con số trên thẻ là của một khẩu phần – lượng bạn thật sự ăn.</p></div><a class="btn btn--sm" href="products.html">Xem tất cả</a></div>
-    <div class="rail" data-noi-bat></div>
+<section class="why" aria-labelledby="tieu-de-why">
+  <div class="container why__in">
+    <div class="why__text">
+      <h2 id="tieu-de-why">Vì sao chọn NutriGreen</h2>
+      <ul class="why__list">
+        <li><span class="why__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><div><h3>Dinh dưỡng ghi rõ</h3><p>Mỗi gói có bảng kcal, protein, chất béo, đường theo khẩu phần và theo 100g.</p></div></li>
+        <li><span class="why__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-3 8-7 11z"/><path d="M12 14V8M9 11l3-3 3 3"/></svg></span><div><h3>Nguyên liệu rõ nguồn</h3><p>Gạo lứt Đồng Tháp, điều Đồng Nai, hạnh nhân Mỹ. Sản phẩm có số tự công bố an toàn thực phẩm.</p></div></li>
+        <li><span class="why__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span><div><h3>Giao nhanh</h3><p>Trong ngày ở nội thành TP.HCM, 2–5 ngày toàn quốc. Miễn phí giao từ <span data-mien-phi>299.000đ</span>.</p></div></li>
+        <li><span class="why__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></span><div><h3>Đổi trả 7 ngày</h3><p>Bánh vỡ, hạt ôi dầu hoặc giao nhầm – gửi ảnh trong đơn hàng, đổi mới ngay.</p></div></li>
+      </ul>
+    </div>
+    <div class="why__art" aria-hidden="true">
+      <img src="../../../public/images/products/granola-it-duong.webp" alt="" loading="lazy" width="640" height="640">
+      <span class="why__stamp"><b>100%</b>sản phẩm có bảng dinh dưỡng</span>
+    </div>
   </div>
 </section>
 
-<section class="section section--forest quick-tdee" aria-labelledby="tieu-de-tdee-nhanh">
+<section class="section" aria-labelledby="tieu-de-sp">
+  <div class="container">
+    <div class="section-head section-head--center"><h2 id="tieu-de-sp" class="title-line">Sản phẩm</h2></div>
+    <div class="tabs-sp" role="tablist" aria-label="Lọc sản phẩm" data-tab-sp>
+      <button type="button" role="tab" aria-selected="true" data-tab="ban-chay">Bán chạy</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="giam-can">Giảm cân</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="tang-co">Tăng cơ</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="an-sang-nhanh">Ăn sáng nhanh</button>
+    </div>
+    <div class="grid grid-4" role="tabpanel" data-luoi-sp></div>
+    <p class="text-center mt-3"><a class="btn" href="products.html" data-xem-het>Xem tất cả sản phẩm</a></p>
+  </div>
+</section>
+
+<section class="section section--forest quick-tdee" id="tdee-nhanh" aria-labelledby="tieu-de-tdee-nhanh">
   <div class="container quick-tdee__in">
     <div class="quick-tdee__text">
-      <h2 id="tieu-de-tdee-nhanh">Bạn cần bao nhiêu calo mỗi ngày?</h2>
-      <p>Nhập 4 chỉ số, nhận ngay mức calo và combo phù hợp. Muốn tính kỹ hơn theo mức vận động, dùng <a href="tdee.html" style="color:var(--ng-lime)">bản đầy đủ</a>.</p>
+      <h2 id="tieu-de-tdee-nhanh">Mỗi ngày bạn cần bao nhiêu calo?</h2>
+      <p>Nhập tuổi, chiều cao, cân nặng và mục tiêu – NutriGreen gợi ý combo vừa với bạn.</p>
+      <a class="quick-tdee__more" href="tdee.html">Tính chi tiết theo mức vận động →</a>
     </div>
     <form class="quick-tdee__form card" data-tdee-nhanh novalidate>
       <div class="seg seg--gender" role="group" aria-label="Giới tính">
@@ -256,6 +319,13 @@
       <button class="btn btn--primary btn--block" type="submit">Tính &amp; gợi ý combo</button>
       <div class="quick-tdee__kq" data-kq hidden></div>
     </form>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="tieu-de-blog">
+  <div class="container">
+    <div class="section-head"><h2 id="tieu-de-blog" class="title-line">Góc dinh dưỡng</h2><a class="link-more" href="blog.html">Xem tất cả bài viết →</a></div>
+    <div class="grid grid-3" data-blog></div>
   </div>
 </section>
 </main>

@@ -14,23 +14,38 @@
     vung.innerHTML = '<div class="auth auth--one">' +
       '<section class="card" data-view="dang-nhap" aria-labelledby="h-dn"><h2 id="h-dn">Đăng nhập</h2><form data-dn novalidate>' +
       '<div class="field"><label for="dn-id">Email hoặc số điện thoại</label><input class="input" id="dn-id" name="id" autocomplete="username" required><span class="err"></span></div>' +
-      '<div class="field"><label for="dn-mk">Mật khẩu</label><div class="pw"><input class="input" id="dn-mk" name="mk" type="password" autocomplete="current-password" required><button type="button" data-hien-mk>Hiện</button></div><span class="err"></span></div>' +
+      '<div class="field"><div class="label-row"><label for="dn-mk">Mật khẩu</label><a class="label-link" href="#quen-mat-khau" data-sang-quen>Quên mật khẩu?</a></div><div class="pw"><input class="input" id="dn-mk" name="mk" type="password" autocomplete="current-password" required><button type="button" data-hien-mk>Hiện</button></div><span class="err"></span></div>' +
       '<p class="err small" data-loi></p><button class="btn btn--primary btn--block" type="submit">Đăng nhập</button>' +
-      '<p class="small muted mt-2 mb-0">Quên mật khẩu? Gọi hotline hoặc chat Zalo để được hỗ trợ đặt lại.</p></form><p class="auth__switch">Chưa có tài khoản? <a href="#dang-ky">Tạo tài khoản mới</a></p></section>' +
+      '</form><p class="auth__switch">Chưa có tài khoản? <a href="#dang-ky">Tạo tài khoản mới</a></p></section>' +
+      // ---- Quên mật khẩu: 3 bước trên cùng một màn hình, không rời trang
+      '<section class="card" data-view="quen-mk" hidden aria-labelledby="h-qm"><a class="auth__back" href="#dang-nhap">← Quay lại đăng nhập</a><h2 id="h-qm">Đặt lại mật khẩu</h2>' +
+      '<ol class="steps steps--auth" data-qm-buoc><li class="is-current"><span>Tài khoản</span></li><li><span>Mã OTP</span></li><li><span>Mật khẩu mới</span></li></ol>' +
+      '<form data-qm1 novalidate><p class="small muted">Nhập email hoặc số điện thoại bạn đã dùng để đăng ký. Chúng tôi sẽ gửi mã xác minh tới số điện thoại của tài khoản.</p>' +
+      '<div class="field"><label for="qm-id">Email hoặc số điện thoại</label><input class="input" id="qm-id" name="id" autocomplete="username" required><span class="err"></span></div>' +
+      '<button class="btn btn--primary btn--block" type="submit">Gửi mã xác minh</button></form>' +
+      '<form data-qm2 novalidate hidden><p class="small">Mã OTP gồm 6 số đã được gửi tới <strong data-qm-sdt></strong>. Mã có hiệu lực 5 phút.</p>' +
+      '<div class="field"><label for="qm-otp">Mã OTP</label><input class="input input--otp" id="qm-otp" name="otp" inputmode="numeric" maxlength="6" autocomplete="one-time-code"><span class="err"></span></div>' +
+      '<button class="btn btn--primary btn--block" type="submit">Xác minh</button><div class="flex between center mt-1 wrap gap-1"><button class="link-btn small" type="button" data-qm-gui-lai disabled>Gửi lại mã (60s)</button><button class="link-btn small" type="button" data-qm-doi>Dùng tài khoản khác</button></div></form>' +
+      '<form data-qm3 novalidate hidden><p class="small muted">Tạo mật khẩu mới cho <strong data-qm-ten></strong>.</p>' +
+      '<div class="field"><label for="qm-mk">Mật khẩu mới</label><div class="pw"><input class="input" id="qm-mk" name="mk" type="password" autocomplete="new-password" data-do-manh><button type="button" data-hien-mk>Hiện</button></div><div class="pw-meter" aria-hidden="true"><span></span></div><span class="hint" data-pw-hint>Tối thiểu 8 ký tự, có chữ và số</span><span class="err"></span></div>' +
+      '<div class="field"><label for="qm-lai">Nhập lại mật khẩu mới</label><div class="pw"><input class="input" id="qm-lai" name="lai" type="password" autocomplete="new-password"><button type="button" data-hien-mk>Hiện</button></div><span class="err"></span></div>' +
+      '<button class="btn btn--primary btn--block" type="submit">Đặt lại &amp; đăng nhập</button></form></section>' +
       '<section class="card" data-view="dang-ky" hidden aria-labelledby="h-dk"><h2 id="h-dk">Tạo tài khoản</h2><ul class="auth__perks"><li>Lưu lịch sử TDEE, xem % mục tiêu trên mọi sản phẩm</li><li>Tích NutriCoins mỗi đơn, đổi voucher</li><li>Nhắc đặt lại combo khi sắp hết</li><li>Đơn đã đặt bằng SĐT này tự gắn vào tài khoản</li></ul><form data-dk novalidate>' +
       '<div class="field"><label for="dk-ten">Họ và tên</label><input class="input" id="dk-ten" name="hoTen" autocomplete="name" value="' + esc(p.get('ten') || '') + '"><span class="err"></span></div>' +
       '<div class="form-row form-row--2"><div class="field"><label for="dk-sdt">Số điện thoại</label><input class="input" id="dk-sdt" name="sdt" type="tel" inputmode="tel" autocomplete="tel" value="' + esc(p.get('sdt') || '') + '"><span class="err"></span></div>' +
       '<div class="field"><label for="dk-email">Email</label><input class="input" id="dk-email" name="email" type="email" autocomplete="email" value="' + esc(p.get('email') || '') + '"><span class="err"></span></div></div>' +
-      '<div class="field"><label for="dk-mk">Mật khẩu</label><div class="pw"><input class="input" id="dk-mk" name="mk" type="password" autocomplete="new-password"><button type="button" data-hien-mk>Hiện</button></div><span class="hint">Tối thiểu 8 ký tự, có chữ và số</span><span class="err"></span></div>' +
+      '<div class="field"><label for="dk-mk">Mật khẩu</label><div class="pw"><input class="input" id="dk-mk" name="mk" type="password" autocomplete="new-password" data-do-manh><button type="button" data-hien-mk>Hiện</button></div><div class="pw-meter" aria-hidden="true"><span></span></div><span class="hint" data-pw-hint>Tối thiểu 8 ký tự, có chữ và số</span><span class="err"></span></div>' +
       '<label class="check mb-2"><input type="checkbox" name="nhanEmail" checked> Nhận email ưu đãi và bài viết dinh dưỡng</label>' +
       '<button class="btn btn--primary btn--block" type="submit">Gửi mã OTP &amp; tạo tài khoản</button><p class="xs muted mt-1 mb-0">Mật khẩu được mã hóa trước khi lưu. Xem <a href="policy.html#bao-mat">chính sách bảo mật</a>.</p></form><p class="auth__switch">Đã có tài khoản? <a href="#dang-nhap">Đăng nhập</a></p></section></div>';
     // mỗi lúc chỉ hiện một màn hình: đăng nhập (mặc định) hoặc tạo tài khoản (#dang-ky)
     const chuyen = () => {
-      const dk = location.hash === '#dang-ky';
-      $$('[data-view]', vung).forEach((s) => { s.hidden = (s.dataset.view === 'dang-ky') !== dk; });
-      document.title = (dk ? 'Tạo tài khoản' : 'Đăng nhập') + ' | NutriGreen';
-      const o = $(dk ? '#dk-ten' : '#dn-id'); if (o && innerWidth >= 1024) o.focus();
+      const view = location.hash === '#dang-ky' ? 'dang-ky' : location.hash === '#quen-mat-khau' ? 'quen-mk' : 'dang-nhap';
+      $$('[data-view]', vung).forEach((s) => { s.hidden = s.dataset.view !== view; });
+      document.title = ({ 'dang-ky': 'Tạo tài khoản', 'quen-mk': 'Quên mật khẩu', 'dang-nhap': 'Đăng nhập' })[view] + ' | NutriGreen';
+      const o = $(({ 'dang-ky': '#dk-ten', 'quen-mk': '#qm-id', 'dang-nhap': '#dn-id' })[view]); if (o && innerWidth >= 1024) o.focus();
     };
+    // mang email/SĐT khách đã gõ ở form đăng nhập sang form quên mật khẩu
+    $('[data-sang-quen]', vung).addEventListener('click', () => { const v = $('#dn-id').value.trim(); if (v) $('#qm-id').value = v; });
     window.addEventListener('hashchange', chuyen); chuyen();
     const loi = (form, k, m) => { const fl = form[k].closest('.field'); fl.classList.toggle('is-invalid', !!m); fl.querySelector('.err').textContent = m || ''; return !m; };
     vung.addEventListener('click', (e) => { const b = e.target.closest('[data-hien-mk]'); if (b) { const i = b.previousElementSibling; i.type = i.type === 'password' ? 'text' : 'password'; b.textContent = i.type === 'password' ? 'Hiện' : 'Ẩn'; } });
@@ -39,6 +54,57 @@
       try { await NG.taiKhoan.dangNhap(f.id.value, f.mk.value); NG.track('dang_nhap', {}); NG.ui.toast('Đăng nhập thành công'); setTimeout(() => { if (tiep) location.href = tiep; else location.replace('account.html'); }, 400); }
       catch (er) { f.querySelector('[data-loi]').textContent = er.message; }
     });
+    // ---- độ mạnh mật khẩu (đăng ký + đặt lại)
+    vung.addEventListener('input', (e) => {
+      const i = e.target.closest('[data-do-manh]'); if (!i) return;
+      const v = i.value; let d = 0; if (v.length >= 8) d++; if (/[A-Za-z]/.test(v) && /\d/.test(v)) d++; if (v.length >= 12) d++; if (/[^A-Za-z0-9]/.test(v) || (/[a-z]/.test(v) && /[A-Z]/.test(v))) d++;
+      const fl = i.closest('.field'); fl.querySelector('.pw-meter').dataset.muc = v ? d : '';
+      fl.querySelector('[data-pw-hint]').textContent = !v ? 'Tối thiểu 8 ký tự, có chữ và số' : ['Quá ngắn – cần ít nhất 8 ký tự', 'Yếu – thêm cả chữ và số', 'Tạm được', 'Khá mạnh', 'Rất mạnh'][d];
+    });
+
+    // ---- quên mật khẩu: bước 1 tìm tài khoản → bước 2 OTP → bước 3 mật khẩu mới
+    const qm = { u: null, otpOk: '', hen: null };
+    const qmBuoc = (n) => {
+      ['[data-qm1]', '[data-qm2]', '[data-qm3]'].forEach((sel, i) => { $(sel, vung).hidden = i !== n - 1; });
+      $$('[data-qm-buoc] li', vung).forEach((li, i) => { li.classList.toggle('is-done', i < n - 1); li.classList.toggle('is-current', i === n - 1); });
+      const o = $(['#qm-id', '#qm-otp', '#qm-mk'][n - 1]); if (o) setTimeout(() => o.focus(), 30);
+    };
+    const demNguoc = () => {
+      const b = $('[data-qm-gui-lai]', vung); let s = 60; clearInterval(qm.hen); b.disabled = true; b.textContent = 'Gửi lại mã (60s)';
+      qm.hen = setInterval(() => { s--; b.textContent = s > 0 ? 'Gửi lại mã (' + s + 's)' : 'Gửi lại mã'; b.disabled = s > 0; if (s <= 0) clearInterval(qm.hen); }, 1000);
+    };
+    $('[data-qm1]', vung).addEventListener('submit', (e) => {
+      e.preventDefault(); const f = e.target; const v = f.id.value.trim();
+      if (!v) return loi(f, 'id', 'Vui lòng nhập email hoặc số điện thoại.');
+      if (!NG.emailHopLe(v) && !NG.sdtHopLe(v)) return loi(f, 'id', 'Email hoặc số điện thoại chưa đúng định dạng.');
+      const u = NG.taiKhoan.timTaiKhoan(v);
+      if (!u) return loi(f, 'id', 'Không tìm thấy tài khoản với thông tin này. Kiểm tra lại hoặc tạo tài khoản mới.');
+      loi(f, 'id', ''); qm.u = u; NG.taiKhoan.guiOtp(u.sdt); NG.track('quen_mat_khau_gui_otp', {});
+      $('[data-qm-sdt]', vung).textContent = u.sdt.replace(/^(\d{3})\d{4}(\d{3})$/, '$1****$2');
+      $('[data-qm-ten]', vung).textContent = u.email;
+      $('#qm-otp').value = ''; qmBuoc(2); demNguoc(); NG.ui.toast('Đã gửi mã OTP tới số điện thoại của bạn');
+    });
+    $('[data-qm-gui-lai]', vung).addEventListener('click', () => { if (!qm.u) return; NG.taiKhoan.guiOtp(qm.u.sdt); demNguoc(); NG.ui.toast('Đã gửi lại mã OTP'); });
+    $('[data-qm-doi]', vung).addEventListener('click', () => { clearInterval(qm.hen); qm.u = null; qmBuoc(1); });
+    $('#qm-otp').addEventListener('input', (e) => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 6); if (e.target.value.length === 6) $('[data-qm2]', vung).requestSubmit(); });
+    $('[data-qm2]', vung).addEventListener('submit', (e) => {
+      e.preventDefault(); const f = e.target;
+      if (!qm.u) return qmBuoc(1);
+      if (!NG.taiKhoan.kiemOtp(qm.u.sdt, f.otp.value)) return loi(f, 'otp', 'Mã OTP không đúng hoặc đã hết hạn.');
+      loi(f, 'otp', ''); qm.otpOk = f.otp.value; clearInterval(qm.hen); qmBuoc(3);
+    });
+    $('[data-qm3]', vung).addEventListener('submit', async (e) => {
+      e.preventDefault(); const f = e.target; let ok = true;
+      ok = loi(f, 'mk', NG.taiKhoan.matKhauHopLe(f.mk.value) ? '' : 'Mật khẩu tối thiểu 8 ký tự, có chữ và số.') && ok;
+      ok = loi(f, 'lai', f.lai.value && f.lai.value === f.mk.value ? '' : 'Mật khẩu nhập lại không khớp.') && ok;
+      if (!ok) return;
+      try {
+        await NG.taiKhoan.datLaiMatKhau(qm.u.email, qm.otpOk, f.mk.value);
+        NG.ui.toast('Đã đặt lại mật khẩu. Bạn đã được đăng nhập.');
+        setTimeout(() => { if (tiep) location.href = tiep; else location.replace('account.html'); }, 600);
+      } catch (er) { if (/OTP/.test(er.message)) { qmBuoc(2); loi($('[data-qm2]', vung), 'otp', er.message); } else loi(f, 'mk', er.message); }
+    });
+
     $('[data-dk]').addEventListener('submit', async (e) => {
       e.preventDefault(); const f = e.target; let ok = true;
       ok = loi(f, 'hoTen', f.hoTen.value.trim().length < 2 ? 'Vui lòng nhập họ tên.' : '') && ok;

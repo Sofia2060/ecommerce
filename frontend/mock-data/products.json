@@ -42,7 +42,29 @@
     "nsx": "2026-09-20",
     "hsd": "2027-03-20"
    },
-   "noiBat": true
+   "noiBat": true,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-001/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "hat-mix-5-loai-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "hat-mix-5-loai-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "hat-mix-5-loai-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "hat-mix-5-loai-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-HAT-02",
@@ -85,7 +107,29 @@
     "nsx": "2026-09-22",
     "hsd": "2027-03-22"
    },
-   "noiBat": false
+   "noiBat": false,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-002/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "hanh-nhan-rang-moc-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "hanh-nhan-rang-moc-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "hanh-nhan-rang-moc-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "hanh-nhan-rang-moc-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-HAT-03",
@@ -128,7 +172,29 @@
     "nsx": "2026-09-24",
     "hsd": "2027-03-24"
    },
-   "noiBat": false
+   "noiBat": false,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-003/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "hat-dieu-rang-moc-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "hat-dieu-rang-moc-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "hat-dieu-rang-moc-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "hat-dieu-rang-moc-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-GRA-01",
@@ -172,7 +238,29 @@
     "nsx": "2026-09-26",
     "hsd": "2027-03-26"
    },
-   "noiBat": true
+   "noiBat": true,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-004/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "granola-it-duong-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "granola-it-duong-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "granola-it-duong-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "granola-it-duong-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-GRA-02",
@@ -215,7 +303,29 @@
     "nsx": "2026-09-28",
     "hsd": "2027-03-28"
    },
-   "noiBat": false
+   "noiBat": false,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-005/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "granola-cacao-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "granola-cacao-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "granola-cacao-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "granola-cacao-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-YM-01",
@@ -260,7 +370,29 @@
     "nsx": "2026-09-30",
     "hsd": "2027-09-28"
    },
-   "noiBat": false
+   "noiBat": false,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-006/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "yen-mach-can-det-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "yen-mach-can-det-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "yen-mach-can-det-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "yen-mach-can-det-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-BAN-01",
@@ -303,7 +435,29 @@
     "nsx": "2026-10-02",
     "hsd": "2027-04-02"
    },
-   "noiBat": true
+   "noiBat": true,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-007/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "banh-hat-an-kieng-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "banh-hat-an-kieng-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "banh-hat-an-kieng-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "banh-hat-an-kieng-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-BAN-02",
@@ -347,7 +501,29 @@
     "nsx": "2026-10-04",
     "hsd": "2027-04-04"
    },
-   "noiBat": false
+   "noiBat": false,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-008/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "biscotti-nguyen-cam-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "biscotti-nguyen-cam-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "biscotti-nguyen-cam-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "biscotti-nguyen-cam-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-BAN-03",
@@ -390,7 +566,29 @@
     "nsx": "2026-10-06",
     "hsd": "2027-04-06"
    },
-   "noiBat": false
+   "noiBat": false,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-009/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "banh-quy-yen-mach-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "banh-quy-yen-mach-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "banh-quy-yen-mach-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "banh-quy-yen-mach-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-BAN-04",
@@ -434,7 +632,29 @@
     "nsx": "2026-10-08",
     "hsd": "2027-04-08"
    },
-   "noiBat": false
+   "noiBat": false,
+   "moi": false,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-010/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "thanh-hat-ngu-coc-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "thanh-hat-ngu-coc-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "thanh-hat-ngu-coc-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "thanh-hat-ngu-coc-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-GL-01",
@@ -477,7 +697,29 @@
     "nsx": "2026-10-10",
     "hsd": "2027-10-10"
    },
-   "noiBat": true
+   "noiBat": true,
+   "moi": false,
+   "diUng": "Sản xuất tại cơ sở có chế biến hạt cây, đậu phộng.",
+   "soCongBo": "TCB-NG-011/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "bun-gao-lut-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "bun-gao-lut-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "bun-gao-lut-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "bun-gao-lut-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-GL-02",
@@ -520,7 +762,29 @@
     "nsx": "2026-10-12",
     "hsd": "2027-10-12"
    },
-   "noiBat": false
+   "noiBat": false,
+   "moi": false,
+   "diUng": "Sản xuất tại cơ sở có chế biến hạt cây, đậu phộng.",
+   "soCongBo": "TCB-NG-012/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "pho-gao-lut-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "pho-gao-lut-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "pho-gao-lut-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "pho-gao-lut-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-GL-03",
@@ -563,7 +827,487 @@
     "nsx": "2026-10-14",
     "hsd": "2027-10-14"
    },
-   "noiBat": false
+   "noiBat": false,
+   "moi": false,
+   "diUng": "Sản xuất tại cơ sở có chế biến hạt cây, đậu phộng.",
+   "soCongBo": "TCB-NG-013/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "nui-gao-lut-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "nui-gao-lut-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "nui-gao-lut-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "nui-gao-lut-5"
+    }
+   ],
+   "ngayLenKe": "2026-09-15"
+  },
+  {
+   "ma": "NG-HAT-04",
+   "slug": "hat-oc-cho-rang-moc",
+   "loai": "san-pham",
+   "ten": "Hạt óc chó rang mộc",
+   "danhMuc": "hat-granola",
+   "mucTieu": [
+    "tang-co"
+   ],
+   "quyCach": "Hũ 250g",
+   "khoiLuong": 250,
+   "gia": 179000,
+   "anh": "hat-oc-cho-rang-moc",
+   "anhMinhHoa": true,
+   "moTaNgan": "Óc chó nửa nhân vàng sáng, rang mộc nhiệt độ thấp, giàu omega-3 thực vật.",
+   "thanhPhan": "100% óc chó.",
+   "xuatXu": "Óc chó nhập khẩu Mỹ; rang và đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.",
+   "huongDan": "Ăn trực tiếp, rắc lên yến mạch, salad hoặc xay sữa hạt.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 654,
+     "protein": 15.2,
+     "beo": 62,
+     "carb": 14,
+     "xo": 6.7,
+     "duong": 2.6
+    },
+    "khauPhan": {
+     "g": 30,
+     "moTa": "khoảng 7 nửa nhân (30g)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Nuts, walnuts, english (đối chiếu).",
+   "ton": 33,
+   "lo": {
+    "ma": "L261016-14",
+    "nsx": "2026-10-16",
+    "hsd": "2027-04-16"
+   },
+   "noiBat": false,
+   "moi": true,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-014/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "hat-oc-cho-rang-moc-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "hat-oc-cho-rang-moc-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "hat-oc-cho-rang-moc-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "hat-oc-cho-rang-moc-5"
+    }
+   ],
+   "ngayLenKe": "2026-10-20"
+  },
+  {
+   "ma": "NG-HAT-05",
+   "slug": "hat-chia-uc",
+   "loai": "san-pham",
+   "ten": "Hạt chia Úc",
+   "danhMuc": "hat-granola",
+   "mucTieu": [
+    "giam-can",
+    "an-sang-nhanh"
+   ],
+   "quyCach": "Túi 300g",
+   "khoiLuong": 300,
+   "gia": 99000,
+   "anh": "hat-chia-uc",
+   "anhMinhHoa": true,
+   "moTaNgan": "Hạt chia đen Úc, nở gấp 10 lần khi ngâm, rất nhiều chất xơ.",
+   "thanhPhan": "100% hạt chia.",
+   "xuatXu": "Hạt chia nhập khẩu Úc; đóng gói tại TP.HCM.",
+   "hanSuDung": "12 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.",
+   "huongDan": "Ngâm 1 muỗng với 150ml nước/sữa 10 phút; trộn sữa chua, sinh tố, overnight oats.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 450,
+     "protein": 16.5,
+     "beo": 30.7,
+     "carb": 42,
+     "xo": 34,
+     "duong": 0.5
+    },
+    "khauPhan": {
+     "g": 15,
+     "moTa": "1 muỗng canh (15g)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Seeds, chia seeds, dried (đối chiếu).",
+   "ton": 64,
+   "lo": {
+    "ma": "L261018-15",
+    "nsx": "2026-10-18",
+    "hsd": "2027-10-18"
+   },
+   "noiBat": false,
+   "moi": true,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-015/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "hat-chia-uc-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "hat-chia-uc-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "hat-chia-uc-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "hat-chia-uc-5"
+    }
+   ],
+   "ngayLenKe": "2026-10-20"
+  },
+  {
+   "ma": "NG-GRA-03",
+   "slug": "granola-trai-cay-nhiet-doi",
+   "loai": "san-pham",
+   "ten": "Granola trái cây nhiệt đới",
+   "danhMuc": "hat-granola",
+   "mucTieu": [
+    "an-sang-nhanh"
+   ],
+   "quyCach": "Túi 300g",
+   "khoiLuong": 300,
+   "gia": 135000,
+   "anh": "granola-trai-cay-nhiet-doi",
+   "anhMinhHoa": true,
+   "moTaNgan": "Granola yến mạch với xoài, thơm, dừa sấy dẻo – vị chua ngọt tự nhiên.",
+   "thanhPhan": "Yến mạch cán dẹt (50%), xoài sấy (10%), thơm sấy (8%), dừa sấy (8%), hạt điều (8%), mật ong, dầu dừa.",
+   "xuatXu": "Trái cây sấy Tiền Giang; phối trộn và nướng tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.",
+   "huongDan": "Dùng với sữa chua không đường hoặc sữa hạt.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 440,
+     "protein": 9,
+     "beo": 17,
+     "carb": 66,
+     "xo": 7,
+     "duong": 12
+    },
+    "khauPhan": {
+     "g": 40,
+     "moTa": "4 muỗng canh (40g)"
+    }
+   },
+   "nguonSoLieu": "Tính theo công thức phối trộn, đối chiếu USDA FoodData Central cho từng nguyên liệu.",
+   "ton": 40,
+   "lo": {
+    "ma": "L261020-16",
+    "nsx": "2026-10-20",
+    "hsd": "2027-04-20"
+   },
+   "noiBat": false,
+   "moi": true,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-016/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "granola-trai-cay-nhiet-doi-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "granola-trai-cay-nhiet-doi-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "granola-trai-cay-nhiet-doi-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "granola-trai-cay-nhiet-doi-5"
+    }
+   ],
+   "ngayLenKe": "2026-10-20"
+  },
+  {
+   "ma": "NG-BAN-05",
+   "slug": "banh-gao-lut-me-den",
+   "loai": "san-pham",
+   "ten": "Bánh gạo lứt mè đen",
+   "danhMuc": "banh-an-kieng",
+   "mucTieu": [
+    "giam-can",
+    "an-sang-nhanh"
+   ],
+   "quyCach": "Túi 200g",
+   "khoiLuong": 200,
+   "gia": 85000,
+   "anh": "banh-gao-lut-me-den",
+   "anhMinhHoa": true,
+   "moTaNgan": "Bánh gạo lứt nổ giòn xốp phủ mè đen rang, không chiên, ít béo.",
+   "thanhPhan": "Gạo lứt (88%), mè đen (8%), muối hồng, dầu gạo.",
+   "xuatXu": "Gạo lứt Đồng Tháp; sản xuất và đóng gói tại TP.HCM.",
+   "hanSuDung": "9 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, dưới 30°C. Sau khi mở, cho vào hộp kín, dùng trong 14 ngày.",
+   "huongDan": "Ăn trực tiếp hoặc phết bơ đậu phộng, bơ, phô mai ít béo.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 395,
+     "protein": 8.5,
+     "beo": 6,
+     "carb": 80,
+     "xo": 4.5,
+     "duong": 0.8
+    },
+    "khauPhan": {
+     "g": 20,
+     "moTa": "2 miếng (20g)"
+    }
+   },
+   "nguonSoLieu": "Tính theo công thức, đối chiếu USDA FoodData Central – Rice cakes, brown rice.",
+   "ton": 55,
+   "lo": {
+    "ma": "L261022-17",
+    "nsx": "2026-10-22",
+    "hsd": "2027-07-22"
+   },
+   "noiBat": false,
+   "moi": true,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-017/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "banh-gao-lut-me-den-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "banh-gao-lut-me-den-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "banh-gao-lut-me-den-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "banh-gao-lut-me-den-5"
+    }
+   ],
+   "ngayLenKe": "2026-10-20"
+  },
+  {
+   "ma": "NG-BAN-06",
+   "slug": "thanh-protein-hat",
+   "loai": "san-pham",
+   "ten": "Thanh protein hạt",
+   "danhMuc": "banh-an-kieng",
+   "mucTieu": [
+    "tang-co"
+   ],
+   "quyCach": "Hộp 8 thanh × 40g",
+   "khoiLuong": 320,
+   "gia": 179000,
+   "anh": "thanh-protein-hat",
+   "anhMinhHoa": true,
+   "moTaNgan": "Thanh protein từ whey và hạt, 10g protein mỗi thanh, ngọt nhẹ từ chà là.",
+   "thanhPhan": "Whey protein (22%), hạnh nhân (18%), chà là (18%), yến mạch (15%), hạt điều, cacao, hạt chia.",
+   "xuatXu": "Whey nhập khẩu New Zealand; sản xuất và đóng gói tại TP.HCM.",
+   "hanSuDung": "6 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, dưới 30°C. Sau khi mở, cho vào hộp kín, dùng trong 14 ngày.",
+   "huongDan": "Ăn sau tập 30 phút hoặc thay bữa phụ.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 410,
+     "protein": 25,
+     "beo": 18,
+     "carb": 42,
+     "xo": 9,
+     "duong": 7
+    },
+    "khauPhan": {
+     "g": 40,
+     "moTa": "1 thanh (40g)"
+    }
+   },
+   "nguonSoLieu": "Tính theo công thức, đối chiếu USDA FoodData Central cho từng nguyên liệu.",
+   "ton": 27,
+   "lo": {
+    "ma": "L261024-18",
+    "nsx": "2026-10-24",
+    "hsd": "2027-04-24"
+   },
+   "noiBat": false,
+   "moi": true,
+   "diUng": "Có chứa hạt cây (hạnh nhân, hạt điều, óc chó). Sản xuất tại cơ sở có chế biến đậu phộng, vừng, sữa.",
+   "soCongBo": "TCB-NG-018/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "thanh-protein-hat-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "thanh-protein-hat-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "thanh-protein-hat-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "thanh-protein-hat-5"
+    }
+   ],
+   "ngayLenKe": "2026-10-20"
+  },
+  {
+   "ma": "NG-GL-04",
+   "slug": "mi-gao-lut-rau-cu",
+   "loai": "san-pham",
+   "ten": "Mì gạo lứt rau củ",
+   "danhMuc": "gao-lut",
+   "mucTieu": [
+    "giam-can"
+   ],
+   "quyCach": "Bộ 2 gói × 500g",
+   "khoiLuong": 1000,
+   "gia": 105000,
+   "anh": "mi-gao-lut-rau-cu",
+   "anhMinhHoa": true,
+   "moTaNgan": "Mì gạo lứt trộn bột rau bina, cà rốt, củ dền – 3 màu tự nhiên, không phẩm màu.",
+   "thanhPhan": "Gạo lứt (90%), bột rau bina, bột cà rốt, bột củ dền, muối.",
+   "xuatXu": "Gạo lứt Đồng Tháp; sản xuất tại Đồng Tháp, đóng gói tại TP.HCM.",
+   "hanSuDung": "12 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, tránh ẩm. Gói đã mở cần kẹp kín.",
+   "huongDan": "Trụng 4–5 phút trong nước sôi. 80g khô ≈ 1 tô mì.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 355,
+     "protein": 7.5,
+     "beo": 2,
+     "carb": 78,
+     "xo": 4,
+     "duong": 1.5
+    },
+    "khauPhan": {
+     "g": 80,
+     "moTa": "1 bữa (80g khô)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Noodles, brown rice, dry (đối chiếu).",
+   "ton": 45,
+   "lo": {
+    "ma": "L261026-19",
+    "nsx": "2026-10-26",
+    "hsd": "2027-10-26"
+   },
+   "noiBat": false,
+   "moi": true,
+   "diUng": "Sản xuất tại cơ sở có chế biến hạt cây, đậu phộng.",
+   "soCongBo": "TCB-NG-019/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "mi-gao-lut-rau-cu-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "mi-gao-lut-rau-cu-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "mi-gao-lut-rau-cu-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "mi-gao-lut-rau-cu-5"
+    }
+   ],
+   "ngayLenKe": "2026-10-20"
+  },
+  {
+   "ma": "NG-GL-05",
+   "slug": "gao-lut-huyet-rong",
+   "loai": "san-pham",
+   "ten": "Gạo lứt đỏ huyết rồng",
+   "danhMuc": "gao-lut",
+   "mucTieu": [
+    "giam-can",
+    "tang-co"
+   ],
+   "quyCach": "Túi 2kg",
+   "khoiLuong": 2000,
+   "gia": 129000,
+   "anh": "gao-lut-huyet-rong",
+   "anhMinhHoa": true,
+   "moTaNgan": "Gạo lứt đỏ huyết rồng Long An, hạt dài, dẻo nhẹ, giữ nguyên lớp cám.",
+   "thanhPhan": "100% gạo lứt huyết rồng.",
+   "xuatXu": "Long An (nay thuộc Tây Ninh); đóng gói tại TP.HCM.",
+   "hanSuDung": "12 tháng kể từ ngày sản xuất",
+   "baoQuan": "Nơi khô ráo, tránh ẩm. Gói đã mở cần kẹp kín.",
+   "huongDan": "Ngâm 2 giờ, nấu tỉ lệ 1 gạo : 1,8 nước. 60g gạo ≈ 1 chén cơm.",
+   "dinhDuong": {
+    "tren100g": {
+     "kcal": 355,
+     "protein": 7.8,
+     "beo": 2.5,
+     "carb": 76,
+     "xo": 3.5,
+     "duong": 0.7
+    },
+    "khauPhan": {
+     "g": 60,
+     "moTa": "1 chén cơm (60g gạo)"
+    }
+   },
+   "nguonSoLieu": "USDA FoodData Central – Rice, brown, long-grain, raw (đối chiếu).",
+   "ton": 58,
+   "lo": {
+    "ma": "L261028-20",
+    "nsx": "2026-10-28",
+    "hsd": "2027-10-28"
+   },
+   "noiBat": false,
+   "moi": true,
+   "diUng": "Sản xuất tại cơ sở có chế biến hạt cây, đậu phộng.",
+   "soCongBo": "TCB-NG-020/2026/NG",
+   "anhPhu": [
+    {
+     "loai": "Nguyên liệu",
+     "anh": "gao-lut-huyet-rong-2"
+    },
+    {
+     "loai": "Cận cảnh",
+     "anh": "gao-lut-huyet-rong-3"
+    },
+    {
+     "loai": "Cách dùng",
+     "anh": "gao-lut-huyet-rong-4"
+    },
+    {
+     "loai": "Mặt sau",
+     "anh": "gao-lut-huyet-rong-5"
+    }
+   ],
+   "ngayLenKe": "2026-10-20"
   }
  ],
  "combo": [
@@ -603,7 +1347,8 @@
    "anhMinhHoa": false,
    "soNgay": 7,
    "noiBat": true,
-   "chiBanTrenWebsite": true
+   "chiBanTrenWebsite": true,
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-CB-1500",
@@ -641,7 +1386,8 @@
    "anhMinhHoa": false,
    "soNgay": 7,
    "noiBat": true,
-   "chiBanTrenWebsite": true
+   "chiBanTrenWebsite": true,
+   "ngayLenKe": "2026-09-15"
   },
   {
    "ma": "NG-CB-1800",
@@ -679,7 +1425,8 @@
    "anhMinhHoa": false,
    "soNgay": 7,
    "noiBat": true,
-   "chiBanTrenWebsite": true
+   "chiBanTrenWebsite": true,
+   "ngayLenKe": "2026-09-15"
   }
  ]
 }

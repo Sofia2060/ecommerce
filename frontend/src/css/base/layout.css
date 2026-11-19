@@ -196,4 +196,7 @@ body.no-scroll { overflow: hidden; }
 .skeleton { background: linear-gradient(90deg, #eef2e4 25%, #f7f9f0 37%, #eef2e4 63%); background-size: 400% 100%; animation: sk 1.4s ease infinite; border-radius: 12px; }
 @keyframes sk { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
 
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+/* Chuyển động: motion.js gắn html.motion-full | motion-soft | motion-off (khách chọn ở chân trang).
+   Nếu JS chưa chạy mà hệ điều hành yêu cầu giảm chuyển động → tắt hết như cũ. */
+@media (prefers-reduced-motion: reduce) { html:not(.motion) *, html:not(.motion) *::before, html:not(.motion) *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+html.motion-off *, html.motion-off *::before, html.motion-off *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

@@ -44,7 +44,7 @@
   };
   const sapXep = (ds) => {
     const k = st.sapxep; const n = (s, f) => (s.loai === 'combo' ? (f === 'kcal' ? s.kcalNgay : f === 'protein' ? s.proteinNgay : s.duongNgay) : st.theo === '100g' ? s.dinhDuong.tren100g[f] : s.kp[f]);
-    const f = { 'gia-tang': (a, b) => a.gia - b.gia, 'gia-giam': (a, b) => b.gia - a.gia, 'kcal-tang': (a, b) => n(a, 'kcal') - n(b, 'kcal'), 'protein-giam': (a, b) => n(b, 'protein') - n(a, 'protein'), 'duong-tang': (a, b) => n(a, 'duong') - n(b, 'duong') }[k];
+    const f = { 'gia-tang': (a, b) => a.gia - b.gia, 'gia-giam': (a, b) => b.gia - a.gia, 'kcal-tang': (a, b) => n(a, 'kcal') - n(b, 'kcal'), 'protein-giam': (a, b) => n(b, 'protein') - n(a, 'protein'), 'duong-tang': (a, b) => n(a, 'duong') - n(b, 'duong'), moi: (a, b) => (!!b.moi - !!a.moi) || (b.conHang - a.conHang) }[k];
     if (f) return ds.slice().sort(f);
     if (st.q) return ds; // giữ thứ tự liên quan
     return ds.slice().sort((a, b) => (b.conHang - a.conHang) || ((b.loai === 'combo') - (a.loai === 'combo')) || (b.noiBat - a.noiBat));

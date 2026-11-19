@@ -18,6 +18,15 @@ HTML + CSS + JavaScript thuần, dữ liệu mẫu JSON + `localStorage`, mở b
 | Mã OTP khi đăng ký | `123456` (bản thật gửi SMS) |
 | Mã giảm giá | `CHAOBAN10` (−10% đơn đầu, tối đa 50k) · `COMBO1111` (−15% combo, 01–20/11/2026) · `MINHFIT` (mã KOC −8%, đơn từ 150k) |
 | Đưa dữ liệu về ban đầu | DevTools → Application → Local Storage → xóa các khóa `ng.*` rồi tải lại trang |
+| Quên mật khẩu | Đăng nhập → “Quên mật khẩu?” (`account.html#quen-mat-khau`): nhập email/SĐT → OTP `123456` → mật khẩu mới → tự đăng nhập |
+| Hiệu ứng chuyển động | Chân trang → **Hiệu ứng: Đầy đủ / Nhẹ / Tắt** (lưu `ng.hieuUng`). Nếu Windows tắt “Animation effects”, web tự dùng mức **Nhẹ** – chọn **Đầy đủ** khi trình bày |
+
+## Cập nhật giao diện 2.0 (11/2026)
+- **Trang chủ** bố cục lại theo website bán lẻ thực phẩm: banner trượt 3 slide → dải mã ưu đãi (đọc từ `config.json`, tự ẩn mã hết hạn) → sản phẩm mới → danh mục → combo 7 ngày → vì sao chọn NutriGreen → sản phẩm theo tab (bán chạy / giảm cân / tăng cơ / ăn sáng nhanh) → tính calo nhanh → góc dinh dưỡng.
+- **Lớp thiết kế & chuyển động**: `src/css/base/theme.css` + `src/js/core/motion.js` (nạp sau cùng ở mọi trang, kể cả quản trị qua `src/css/admin/admin-theme.css`): hover nổi thẻ, nghiêng 3D, ảnh bay vào giỏ, hiện dần khi cuộn, đếm số, thanh tiến độ cuộn, nút về đầu trang, nút tìm kiếm trên điện thoại.
+- **7 sản phẩm mới** (`"moi": true`): NG-HAT-04 óc chó, NG-HAT-05 hạt chia, NG-GRA-03 granola trái cây, NG-BAN-05 bánh gạo lứt mè đen, NG-BAN-06 thanh protein hạt, NG-GL-04 mì gạo lứt rau củ, NG-GL-05 gạo lứt huyết rồng. Nhãn “Mới”, sắp xếp “Hàng mới về”.
+- **Ảnh sản phẩm**: chép `<slug>.webp` (640px) và `<slug>-sm.webp` (320px) vào `public/images/products/`. Ảnh phụ trên trang chi tiết lấy từ bảng `item_image`: `<slug>-2.webp` … `<slug>-5.webp` (nguyên liệu, cận cảnh, cách dùng, mặt sau). Ảnh chưa có: ảnh chính hiện khung “Ảnh đang cập nhật”, ảnh phụ tự ẩn.
+- **Trang chi tiết** hiện lưu ý dị ứng và số tự công bố ATTP lấy từ CSDL.
 
 Kịch bản demo gợi ý (≈5 phút): Trang chủ → TDEE nhanh → “Thêm trọn gói” → Giỏ (mã `COMBO1111`, chọn TP.HCM thấy phí giao ngay) → Đặt hàng VietQR → trang QR + đếm ngược → đăng nhập demo → Đơn hàng: theo dõi vận chuyển, đánh giá kèm ảnh (+100 xu), gửi đổi trả → Ví ưu đãi đổi xu lấy voucher.
 
@@ -46,7 +55,7 @@ frontend/
 │   ├── fonts/                 Be Vietnam Pro tự lưu trữ (OFL)
 │   └── images/{logo,products}/ ảnh WebP nền trong, bản 640px và -sm 320px; og-cover.jpg
 ├── mock-data/
-│   ├── products.json          13 sản phẩm + 3 combo (giá, macro/100g, khẩu phần, lô, tồn)
+│   ├── products.json          20 sản phẩm + 3 combo (giá, macro/100g, khẩu phần, lô, tồn, dị ứng, số công bố, ảnh phụ)
 │   ├── config.json            phí giao, freeship 299k, thanh toán, mã giảm giá, NutriCoins, đổi trả, TDEE
 │   ├── categories.json        danh mục, mục tiêu, khoảng kcal
 │   ├── provinces.json         34 tỉnh/thành sau sắp xếp 2025 + vùng tính phí GHTK
@@ -64,7 +73,7 @@ Kiểm tra số liệu dinh dưỡng và giá: `python scripts/check_data.py`.
 ## Trang ↔ sitemap 4.1 ↔ yêu cầu chức năng
 | Sitemap 4.1 | Trang | FR / BRD | Điểm chính |
 |---|---|---|---|
-| Trang chủ | `index.html` | BRD01–03 | Rút gọn còn 5 khối: hero “mua theo con số”, chọn theo mục tiêu, 3 combo, 4 sản phẩm bán chạy, **TDEE nhanh → combo** (dải chiến dịch 11.11 tự ẩn khi hết hạn) |
+| Trang chủ | `index.html` | BRD01–03 | Banner trượt, dải mã ưu đãi (tự ẩn mã hết hạn), sản phẩm mới, danh mục, 3 combo, vì sao chọn, sản phẩm theo tab mục tiêu, **TDEE nhanh → combo**, góc dinh dưỡng |
 | Danh sách SP – theo danh mục / mục tiêu / kcal | `products.html` | FR01 | Lọc loại, mục tiêu, **kcal/khẩu phần**, **protein ≥ 15g/100g**, **đường ≤ 5g/100g**, giá, còn hàng; đếm kết quả từng lựa chọn; xem số liệu theo khẩu phần/100g; **bảng so sánh**; sắp xếp theo kcal/protein/đường; URL chia sẻ được (giữ UTM) |
 | Chi tiết sản phẩm | `product-detail.html?ma=` | FR03, BRD01, BRD07 | Bảng dinh dưỡng 100g / khẩu phần / cả gói + tỷ lệ năng lượng + **nguồn số liệu**; **% mục tiêu calo cá nhân**; mã lô, NSX, HSD; lưu ý dị ứng; combo: chọn bún/phở/nui, bảng thành phần, kcal/ngày, “vì sao combo không đủ X kcal”; đánh giá; JSON-LD Product |
 | Công cụ tính TDEE | `tdee.html` | FR02, FR08, BRD02 | Mifflin-St Jeor, 5 mức vận động, 3 mục tiêu, sàn an toàn 1.200/1.500 kcal, BMI ngưỡng châu Á, macro gợi ý, **combo gợi ý + “Thêm trọn gói”**, gợi ý sản phẩm bổ sung, lưu lịch sử |

@@ -66,3 +66,26 @@
 .auth--one { grid-template-columns: 1fr !important; max-width: 480px; }
 .auth__switch { text-align: center; margin: 16px 0 0; padding-top: 14px; border-top: 1px dashed var(--ng-line-strong); font-size: var(--ng-fs-sm); }
 .auth__switch a { font-weight: 700; }
+
+/* ---- Đăng nhập / quên mật khẩu (UI 2.0) ---- */
+.auth--one > .card { border-radius: 24px; box-shadow: 6px 6px 0 var(--ng-forest); animation: auth-in .5s var(--ng-ease-out, ease) backwards; }
+.auth--one > .card:not([hidden]) { animation-name: auth-in; }
+@keyframes auth-in { from { opacity: 0; transform: translateY(16px) scale(.98); } }
+.label-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.label-link { font-size: var(--ng-fs-sm); font-weight: 600; color: var(--ng-green); }
+.label-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.auth__back { display: inline-flex; align-items: center; gap: 6px; font-size: var(--ng-fs-sm); font-weight: 600; color: var(--ng-muted); margin-bottom: 10px; transition: color .2s, gap .25s; }
+.auth__back:hover { color: var(--ng-forest); gap: 10px; text-decoration: none; }
+.steps--auth { margin: 4px 0 18px; }
+.steps--auth li { font-size: var(--ng-fs-xs); }
+.steps--auth li::before { width: 26px; height: 26px; font-size: 12px; }
+@media (max-width: 520px) { .steps--auth li span { display: inline; } .steps--auth li:not(:last-child)::after { margin: 0 4px; } .steps--auth li { gap: 4px; } }
+[data-qm1]:not([hidden]), [data-qm2]:not([hidden]), [data-qm3]:not([hidden]) { animation: auth-in .4s var(--ng-ease-out, ease) backwards; }
+.input--otp { letter-spacing: .5em; font-size: 1.35rem; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.pw-meter { height: 6px; border-radius: 6px; background: var(--ng-line); overflow: hidden; margin-top: 2px; }
+.pw-meter span { display: block; height: 100%; width: 0; border-radius: 6px; transition: width .35s var(--ng-ease-out, ease), background-color .3s; }
+.pw-meter[data-muc="0"] span { width: 12%; background: var(--ng-red); }
+.pw-meter[data-muc="1"] span { width: 30%; background: var(--ng-orange); }
+.pw-meter[data-muc="2"] span { width: 55%; background: var(--ng-carb); }
+.pw-meter[data-muc="3"] span { width: 80%; background: var(--ng-leaf); }
+.pw-meter[data-muc="4"] span { width: 100%; background: var(--ng-green); }

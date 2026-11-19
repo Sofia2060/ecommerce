@@ -1,0 +1,461 @@
+/* =========================================================================
+   NutriGreen UI 2.0 – lớp thiết kế & chuyển động
+   -------------------------------------------------------------------------
+   Nạp SAU CÙNG trên mọi trang khách (sau CSS của trang) để tinh chỉnh giao diện
+   mà không phá bố cục cũ. Giữ nguyên bộ nhận diện (xanh rêu #113B00, lá mạ #CADF47,
+   vàng chanh #ECFD87, kem #FAFFDE) và "bóng đổ lệch" đặc trưng trong slide concept;
+   thêm chiều sâu (bóng mềm nhiều lớp), chuyển động có chủ đích và phản hồi khi tương tác.
+
+   Nguyên tắc chuyển động (UX):
+   - Chuyển động phục vụ thông tin: hiện dần theo thứ tự đọc, phản hồi ngay khi bấm,
+     dẫn mắt tới giỏ hàng khi thêm sản phẩm – không chuyển động trang trí làm chậm việc mua.
+   - Nhanh: phản hồi hover 150–250ms, xuất hiện 500–700ms; không chặn thao tác.
+   - Tôn trọng prefers-reduced-motion: tắt toàn bộ ở cuối file.
+   - Hiệu ứng hover nặng (nghiêng 3D, đèn rọi) chỉ bật cho thiết bị có chuột.
+   ========================================================================= */
+
+:root {
+  --ng-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ng-ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --ng-shadow-lift: 0 1px 2px rgba(17, 59, 0, .06), 0 10px 28px -8px rgba(17, 59, 0, .18);
+  --ng-shadow-float: 0 2px 6px rgba(17, 59, 0, .06), 0 28px 56px -16px rgba(17, 59, 0, .32);
+  --ng-grad-lime: linear-gradient(135deg, #f3ffa8 0%, #ecfd87 35%, #cadf47 100%);
+  --ng-grad-forest: linear-gradient(140deg, #1d5410 0%, #113b00 55%, #0a2700 100%);
+  --ng-glow-lime: 0 0 0 6px rgba(202, 223, 71, .35);
+}
+
+/* ---------- Nền tảng ---------- */
+::selection { background: var(--ng-lime); color: var(--ng-forest); }
+html { scrollbar-color: var(--ng-line-strong) transparent; }
+body { text-rendering: optimizeLegibility; }
+@media (hover: hover) {
+  ::-webkit-scrollbar { width: 12px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--ng-line-strong); border-radius: 10px; border: 3px solid #fff; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--ng-leaf); }
+}
+.page-main { animation: page-in .6s var(--ng-ease-out) backwards; }
+@keyframes page-in { from { opacity: 0; transform: translateY(8px); } }
+
+/* Liên kết trong nội dung: gạch chân "vẽ" từ trái sang (độ ưu tiên 0 – không đè nền của link có class riêng) */
+:where(a:not(.btn, .chip, [class*="__"], [class*="pop"], .chat-channel, .cat, .cat-tile, .stat, .goal, .logo, .skip-link)) {
+  background-image: linear-gradient(currentColor, currentColor); background-position: 0 100%; background-size: 0 1.5px; background-repeat: no-repeat;
+  transition: background-size .3s var(--ng-ease-out), color .2s;
+}
+:where(a:not(.btn, .chip, [class*="__"], [class*="pop"], .chat-channel, .cat, .cat-tile, .stat, .goal, .logo, .skip-link)):hover { background-size: 100% 1.5px; }
+a:hover { text-decoration: none; }
+.page-main { overflow-x: clip; }
+
+/* Thanh tiến độ cuộn trang (motion.js chèn) */
+.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 1000; pointer-events: none; transform-origin: 0 50%; transform: scaleX(var(--p, 0)); background: linear-gradient(90deg, var(--ng-leaf), var(--ng-lime)); box-shadow: 0 0 10px rgba(202, 223, 71, .8); }
+
+/* ---------- Tiêu đề khu vực ---------- */
+.section-head h2 { position: relative; }
+.eyebrow::before { animation: eyebrow-pulse 2.6s ease-in-out infinite; }
+@keyframes eyebrow-pulse { 50% { box-shadow: inset 0 0 0 5px var(--ng-forest), 0 0 0 5px rgba(202, 223, 71, .35); } }
+.section--cream { background: radial-gradient(900px 380px at 0% 0%, rgba(236, 253, 135, .55), transparent 70%), var(--ng-cream); }
+
+/* ---------- Nút ---------- */
+.btn { position: relative; overflow: hidden; isolation: isolate; transition: transform .25s var(--ng-ease-spring), box-shadow .25s var(--ng-ease-out), background-color .2s, color .2s, border-color .2s; }
+/* vệt sáng lướt qua khi rê chuột */
+.btn::after { content: ''; position: absolute; inset: -2px auto -2px -60%; width: 45%; z-index: -1; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .55), transparent); transform: skewX(-20deg); transition: left .6s var(--ng-ease-out); pointer-events: none; }
+.btn--primary::after { background: linear-gradient(100deg, transparent, rgba(236, 253, 135, .45), transparent); }
+@media (hover: hover) {
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--ng-forest); }
+  .btn:hover::after { left: 120%; }
+  .btn--primary:hover { box-shadow: 4px 4px 0 var(--ng-lime), 4px 4px 0 2px var(--ng-forest); }
+  .btn:hover svg:last-child:not(:first-child) { transform: translateX(3px); }
+  .btn--ghost:hover { transform: none; box-shadow: none; }
+}
+.btn svg { transition: transform .25s var(--ng-ease-spring); }
+.btn:active { transform: translate(1px, 1px) scale(.98); box-shadow: none; transition-duration: .08s; }
+.btn--primary, .btn--primary:hover { background: var(--ng-grad-forest); background-color: var(--ng-green); }
+.btn--primary:hover { filter: brightness(1.12); }
+.btn--lime { background: var(--ng-grad-lime); }
+/* gợn sóng khi bấm (motion.js chèn span.ripple) */
+.ripple { position: absolute; border-radius: 50%; pointer-events: none; transform: scale(0); background: currentColor; opacity: .22; animation: ripple .6s var(--ng-ease-out) forwards; z-index: -1; }
+@keyframes ripple { to { transform: scale(2.6); opacity: 0; } }
+
+.icon-btn { transition: background-color .2s, transform .25s var(--ng-ease-spring), color .2s; }
+@media (hover: hover) { .icon-btn:hover { transform: translateY(-2px); background: var(--ng-lime-soft); } }
+.icon-btn:active { transform: scale(.92); }
+.icon-btn .count { transition: transform .3s var(--ng-ease-spring); }
+.is-bump { animation: bump .6s var(--ng-ease-spring); }
+@keyframes bump { 0% { transform: scale(1); } 30% { transform: scale(1.35) rotate(-8deg); } 60% { transform: scale(.92) rotate(4deg); } 100% { transform: scale(1); } }
+
+/* ---------- Chip, nhãn, ô chọn ---------- */
+.chip { transition: transform .2s var(--ng-ease-spring), border-color .2s, background-color .2s, color .2s, box-shadow .2s; }
+@media (hover: hover) { .chip:hover { transform: translateY(-2px); box-shadow: 0 6px 14px -6px rgba(17, 59, 0, .3); text-decoration: none; } }
+.chip:active { transform: scale(.96); }
+.badge--new { background: var(--ng-grad-lime); color: var(--ng-forest); border: 1.5px solid var(--ng-forest); position: relative; overflow: hidden; }
+.badge--new::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, .8) 50%, transparent 70%); transform: translateX(-100%); animation: shine 2.8s ease-in-out infinite; }
+@keyframes shine { 60%, 100% { transform: translateX(100%); } }
+.option-card { transition: border-color .2s, background-color .2s, box-shadow .25s var(--ng-ease-out), transform .25s var(--ng-ease-spring); }
+@media (hover: hover) { .option-card:hover { transform: translateY(-2px); box-shadow: var(--ng-shadow-lift); } }
+.option-card:has(input:checked) { animation: pick .35s var(--ng-ease-spring); }
+@keyframes pick { 40% { transform: scale(1.02); } }
+
+/* ---------- Biểu mẫu ---------- */
+.input, .select, .textarea { transition: border-color .2s, box-shadow .25s var(--ng-ease-out), background-color .2s, transform .2s; }
+@media (hover: hover) { .input:hover:not(:focus):not(:disabled), .select:hover:not(:focus), .textarea:hover:not(:focus) { border-color: var(--ng-leaf); } }
+.input:focus, .select:focus, .textarea:focus { box-shadow: 0 0 0 4px rgba(202, 223, 71, .45), 0 8px 20px -10px rgba(17, 59, 0, .35); }
+.field.is-invalid .input, .field.is-invalid .select { animation: shake .35s; }
+@keyframes shake { 20%, 60% { transform: translateX(-4px); } 40%, 80% { transform: translateX(4px); } }
+.field .err:not(:empty) { animation: err-in .25s var(--ng-ease-out); }
+@keyframes err-in { from { opacity: 0; transform: translateY(-4px); } }
+.qty button { transition: background-color .15s, transform .15s var(--ng-ease-spring); }
+.qty button:active { transform: scale(.85); }
+.seg button { transition: background-color .25s, color .2s, box-shadow .25s; }
+
+/* ---------- Thẻ / khối ---------- */
+.card, .panel { transition: box-shadow .3s var(--ng-ease-out), transform .3s var(--ng-ease-out), border-color .2s; }
+.panel { border-radius: 20px; }
+@media (hover: hover) { .panel:hover { box-shadow: var(--ng-shadow-lift); } }
+
+/* ---------- Đầu trang ---------- */
+.topbar { position: relative; overflow: hidden; background: var(--ng-grad-forest); }
+/* thông điệp đầu trang chạy ngang liên tục trên mọi màn hình (motion.js tạo .ticker); "Tra cứu đơn hàng" đứng yên bên phải */
+.topbar .ticker { display: none; }
+.topbar.has-ticker .topbar__in { gap: 20px; }
+.topbar.has-ticker .topbar__msg { display: none !important; }
+.topbar.has-ticker .ticker { display: block; flex: 1; min-width: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.ticker__track { display: inline-flex; gap: 48px; white-space: nowrap; padding-right: 48px; animation: marquee 28s linear infinite; }
+.topbar:hover .ticker__track { animation-play-state: paused; }
+.ticker__track p { margin: 0; }
+.ticker__track strong { color: var(--ng-lime); }
+.topbar.has-ticker .topbar__link { order: 2; flex: none; margin-left: 0; }
+@media (max-width: 759px) { .topbar.has-ticker .topbar__link { display: none; } }
+/* ảnh chụp sản phẩm (có nền studio) phủ kín khung thay vì bị viền kem */
+.pcard__media img { padding: 0; object-fit: cover; }
+.pd__media img { padding: 0; object-fit: cover; }
+.cat-tile__img img { width: 100%; height: 100%; object-fit: cover; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.site-header { transition: box-shadow .3s, background-color .3s; }
+.site-header__in { transition: min-height .35s var(--ng-ease-out); }
+.logo img { transition: height .35s var(--ng-ease-out), transform .4s var(--ng-ease-spring); }
+@media (hover: hover) { .logo:hover img { transform: rotate(-3deg) scale(1.04); } }
+.site-header.is-scrolled { background: rgba(255, 255, 255, .86); box-shadow: 0 10px 30px -14px rgba(17, 59, 0, .3); }
+.site-header.is-scrolled .site-header__in { min-height: 62px; }
+.site-header.is-scrolled .logo img { height: 38px; }
+
+/* menu chính: gạch chân lá mạ mọc từ giữa */
+.main-nav__link { position: relative; transition: background-color .2s, color .2s; }
+.main-nav__link::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 3px; border-radius: 3px; background: var(--ng-lime); transform: scaleX(0); transition: transform .3s var(--ng-ease-out); }
+.main-nav__link:hover::after, .main-nav__item.is-active > .main-nav__link::after { transform: scaleX(1); }
+.main-nav__item.is-active > .main-nav__link { box-shadow: none; }
+.main-nav__link:hover { text-decoration: none; }
+/* menu lớn: từng cột trượt lên lần lượt */
+.mega, .drop { transform: translateY(10px) scale(.98); transform-origin: 20% 0; transition: opacity .22s var(--ng-ease-out), transform .3s var(--ng-ease-out), visibility .22s; }
+.mega > *, .drop > a { opacity: 0; transform: translateY(8px); transition: opacity .3s var(--ng-ease-out), transform .35s var(--ng-ease-out); }
+.has-mega:hover .mega > *, .has-mega:focus-within .mega > *, .has-drop:hover .drop > a, .has-drop:focus-within .drop > a { opacity: 1; transform: none; }
+.mega > :nth-child(2), .drop > a:nth-child(2) { transition-delay: .04s; } .mega > :nth-child(3), .drop > a:nth-child(3) { transition-delay: .08s; }
+.mega > :nth-child(4), .drop > a:nth-child(4) { transition-delay: .12s; } .drop > a:nth-child(5) { transition-delay: .16s; } .drop > a:nth-child(6) { transition-delay: .2s; } .drop > a:nth-child(7) { transition-delay: .24s; }
+.mega__col a, .drop a { transition: color .2s, padding-left .25s var(--ng-ease-out); background-image: none; }
+.mega__col a:hover, .drop a:hover { padding-left: 6px; text-decoration: none; }
+.mega__promo { position: relative; overflow: hidden; background: var(--ng-grad-lime); transition: transform .3s var(--ng-ease-spring), box-shadow .3s; }
+.mega__promo::before { content: ''; position: absolute; width: 160px; height: 160px; right: -50px; bottom: -60px; border-radius: 50%; background: rgba(255, 255, 255, .45); transition: transform .5s var(--ng-ease-out); }
+.mega__promo:hover { transform: translateY(-3px) rotate(-.6deg); box-shadow: 4px 4px 0 var(--ng-forest); }
+.mega__promo:hover::before { transform: scale(1.6); }
+.mega__promo > * { position: relative; }
+.mega__promo-cta { transition: letter-spacing .3s var(--ng-ease-out); }
+.mega__promo:hover .mega__promo-cta { letter-spacing: .02em; }
+
+/* ô tìm kiếm */
+.search__input { transition: border-color .2s, background-color .2s, box-shadow .3s var(--ng-ease-out), width .35s var(--ng-ease-out); }
+.search__ico { transition: color .2s, transform .3s var(--ng-ease-spring); }
+.search:focus-within .search__ico { color: var(--ng-green); transform: translateY(-50%) scale(1.15) rotate(-10deg); }
+.search__suggest:not([hidden]), .hover-pop__box { transform-origin: 90% 0; }
+.search__suggest:not([hidden]) { animation: pop-in .25s var(--ng-ease-out); }
+.search__suggest a { transition: background-color .15s, transform .2s var(--ng-ease-out); }
+.search__suggest a:hover, .search__suggest a.is-focus { transform: translateX(3px); }
+@keyframes pop-in { from { opacity: 0; transform: translateY(-6px) scale(.98); } }
+.hover-pop__box { transform: translateY(8px) scale(.97); transition: opacity .2s var(--ng-ease-out), transform .3s var(--ng-ease-spring), visibility .2s; }
+.pop-item, .pop-menu a, .pop-menu button { transition: background-color .15s, transform .2s var(--ng-ease-out); }
+.pop-item:hover { transform: translateX(3px); }
+.pop-item img, .pop-line img { transition: transform .3s var(--ng-ease-spring); }
+.pop-item:hover img { transform: scale(1.08) rotate(-3deg); }
+/* nút tìm kiếm trên điện thoại (mở menu và đặt con trỏ vào ô tìm) */
+.site-header__search { display: inline-grid; }
+@media (min-width: 1080px) { .site-header__search { display: none; } }
+
+/* ngăn kéo di động: mục menu trượt vào lần lượt */
+.drawer { backdrop-filter: blur(3px); }
+.drawer__panel { animation: slide-in .4s var(--ng-ease-out); box-shadow: 20px 0 60px -20px rgba(17, 59, 0, .5); }
+.drawer nav > * { animation: drawer-item .45s var(--ng-ease-out) backwards; }
+.drawer nav > :nth-child(n+3) { animation-delay: .05s; } .drawer nav > :nth-child(n+6) { animation-delay: .1s; } .drawer nav > :nth-child(n+10) { animation-delay: .15s; } .drawer nav > :nth-child(n+14) { animation-delay: .2s; }
+@keyframes drawer-item { from { opacity: 0; transform: translateX(-16px); } }
+.drawer nav a { transition: padding-left .25s var(--ng-ease-out), color .2s; background-image: none; }
+.drawer nav a:hover { padding-left: 8px; text-decoration: none; }
+.drawer__tdee { background: var(--ng-grad-lime); box-shadow: 4px 4px 0 var(--ng-forest); transition: transform .25s var(--ng-ease-spring); }
+.drawer__tdee:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ng-forest); }
+
+/* ---------- Thẻ sản phẩm ---------- */
+.pcard { --rx: 0deg; --ry: 0deg; border-radius: 22px; transform-style: preserve-3d; transition: border-color .25s, box-shadow .35s var(--ng-ease-out), transform .45s var(--ng-ease-out); will-change: transform; }
+.pcard__media { overflow: hidden; background: radial-gradient(circle at 50% 60%, #fff 0%, var(--ng-cream) 70%); }
+.pcard--combo .pcard__media { background: radial-gradient(circle at 50% 60%, #fbffd9 0%, var(--ng-lime-soft) 70%); }
+/* vầng sáng lá mạ nở ra sau sản phẩm */
+.pcard__media::before { content: ''; position: absolute; left: 50%; top: 55%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(202, 223, 71, .75), rgba(202, 223, 71, 0) 70%); transform: translate(-50%, -50%) scale(.4); opacity: 0; transition: transform .6s var(--ng-ease-out), opacity .4s; }
+.pcard__media img { position: relative; transition: transform .6s var(--ng-ease-out), filter .3s; }
+.pcard__media img.is-placeholder { padding: 0; }
+.pcard__fav { transition: transform .25s var(--ng-ease-spring), color .2s, background-color .2s; }
+.pcard__fav:hover { transform: scale(1.12); }
+.pcard__fav[aria-pressed="true"] svg { animation: heart .5s var(--ng-ease-spring); }
+@keyframes heart { 30% { transform: scale(1.4); } 60% { transform: scale(.9); } }
+.pcard__add { transition: transform .35s var(--ng-ease-spring), box-shadow .25s, background-color .2s; }
+.pcard__add:active { transform: scale(.88); }
+.pcard__add svg { transition: transform .35s var(--ng-ease-spring); }
+.pcard__tags .badge { animation: tag-in .5s var(--ng-ease-spring) backwards; }
+.pcard__tags .badge:nth-child(2) { animation-delay: .08s; } .pcard__tags .badge:nth-child(3) { animation-delay: .16s; }
+@keyframes tag-in { from { opacity: 0; transform: translateX(-10px) scale(.9); } }
+.num-pill { transition: transform .25s var(--ng-ease-spring); }
+.pcard .macro-bar span { transform-origin: 0 50%; animation: grow-x .9s var(--ng-ease-out) backwards; }
+.pcard .macro-bar .c { animation-delay: .1s; } .pcard .macro-bar .f { animation-delay: .2s; }
+@keyframes grow-x { from { transform: scaleX(0); } }
+.pcard__name a { background-image: none; transition: color .2s; }
+@media (hover: hover) {
+  .pcard:hover { transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-6px); border-color: var(--ng-forest); box-shadow: 6px 6px 0 var(--ng-forest), var(--ng-shadow-float); }
+  .pcard:hover .pcard__media::before { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+  .pcard:hover .pcard__media img { transform: scale(1.09) rotate(-2.5deg) translateY(-4px); }
+  .pcard:hover .pcard__name a { color: var(--ng-green); }
+  .pcard:hover .pcard__add:not([disabled]) { background: var(--ng-forest); color: var(--ng-lime); transform: rotate(90deg); box-shadow: 0 0 0 5px rgba(202, 223, 71, .45); }
+  .pcard:hover .num-pill { transform: translateY(-1px); }
+  .pcard:hover .num-pill:nth-child(2) { transition-delay: .04s; } .pcard:hover .num-pill:nth-child(3) { transition-delay: .08s; }
+}
+.pcard--out:hover .pcard__media img { transform: none; }
+.is-added { animation: added .5s var(--ng-ease-spring); }
+@keyframes added { 40% { transform: scale(1.25); background: var(--ng-lime); } }
+
+/* ảnh bay vào giỏ (motion.js) */
+.fly-img { position: fixed; z-index: 1200; pointer-events: none; object-fit: contain; border-radius: 50%; background: #fff; border: 2px solid var(--ng-forest); box-shadow: var(--ng-shadow-float); padding: 4px; }
+
+/* hàng thẻ trượt ngang: chừa chỗ cho thẻ nổi lên khi hover */
+.rail { padding-top: 10px; padding-bottom: 18px; }
+@media (min-width: 1024px) { .rail { padding-left: 4px; padding-right: 10px; } }
+
+/* ---------- Trang chủ ---------- */
+.hero { position: relative; isolation: isolate; }
+/* hai đốm màu trôi chậm phía sau */
+.hero::before, .hero::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(50px); opacity: .75; pointer-events: none; }
+.hero::before { width: 520px; height: 520px; right: -120px; top: -180px; background: radial-gradient(circle, #ecfd87, rgba(236, 253, 135, 0) 70%); animation: blob-a 16s ease-in-out infinite alternate; }
+.hero::after { width: 420px; height: 420px; left: -160px; bottom: -200px; background: radial-gradient(circle, rgba(202, 223, 71, .7), rgba(202, 223, 71, 0) 70%); animation: blob-b 19s ease-in-out infinite alternate; }
+@keyframes blob-a { to { transform: translate(-140px, 90px) scale(1.15); } }
+@keyframes blob-b { to { transform: translate(160px, -60px) scale(.9); } }
+.hero__text > * { animation: rise .8s var(--ng-ease-out) backwards; }
+.hero__text > :nth-child(2) { animation-delay: .08s; } .hero__text > :nth-child(3) { animation-delay: .18s; } .hero__text > :nth-child(4) { animation-delay: .28s; } .hero__text > :nth-child(5) { animation-delay: .38s; }
+@keyframes rise { from { opacity: 0; transform: translateY(26px); } }
+/* nét "dạ quang" tô dưới cụm chữ nhấn – vẽ từ trái sang */
+.hero h1 .hl { background: linear-gradient(var(--ng-lime), var(--ng-lime)) 0 88% / 0 38% no-repeat; animation: draw-hl .9s .65s var(--ng-ease-out) forwards; border-radius: 4px; }
+@keyframes draw-hl { to { background-size: 100% 38%; } }
+.hero__art .tile { animation: tile-in .9s var(--ng-ease-spring) backwards, float 6s ease-in-out infinite; transition: transform .4s var(--ng-ease-spring), box-shadow .3s; }
+.hero__art .tile:nth-child(1) { animation-delay: .15s, 1s; } .hero__art .tile:nth-child(2) { animation-delay: .25s, 1.6s; }
+.hero__art .tile:nth-child(3) { animation-delay: .35s, 2.2s; } .hero__art .tile:nth-child(4) { animation-delay: .45s, 2.8s; }
+@keyframes tile-in { from { opacity: 0; transform: translateY(40px) scale(.85) rotate(-4deg); } }
+@keyframes float { 50% { translate: 0 -10px; } }
+@media (hover: hover) {
+  .hero__art .tile:hover { animation-play-state: paused; transform: rotate(-2deg) scale(1.03); box-shadow: 8px 8px 0 var(--ng-forest); }
+  .hero__art .tile--img:hover img { transform: scale(1.08) rotate(3deg); }
+}
+.tile--img img { transition: transform .5s var(--ng-ease-out); }
+.tile--txt { background: var(--ng-grad-lime); }
+.tile--forest { background: var(--ng-grad-forest); }
+.tile--txt span { text-shadow: none; background: linear-gradient(110deg, var(--ng-forest) 35%, var(--ng-leaf) 50%, var(--ng-forest) 65%) 0 0 / 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: text-shine 5s linear infinite; }
+.tile--forest span { background-image: linear-gradient(110deg, var(--ng-lime) 35%, #f6ffc0 50%, var(--ng-lime) 65%); }
+@keyframes text-shine { to { background-position: -250% 0; } }
+.hero__chip { animation: chip-in .7s 1s var(--ng-ease-spring) backwards; }
+@keyframes chip-in { from { opacity: 0; transform: translateY(14px) scale(.9); } }
+
+/* dải chữ chạy dưới hero */
+.ticker-band { background: var(--ng-forest); color: var(--ng-lime-soft); border-bottom: 2px solid var(--ng-forest); overflow: hidden; padding: 14px 0; transform: rotate(-1deg); width: calc(100% + 40px); margin: 10px 0 0 -20px; box-shadow: 0 8px 0 var(--ng-lime); }
+.ticker-band__track { display: inline-flex; align-items: center; gap: 22px; white-space: nowrap; font-weight: 800; font-size: clamp(1rem, .8rem + 1vw, 1.5rem); letter-spacing: -.01em; animation: marquee 32s linear infinite; padding-right: 22px; }
+.ticker-band__track i { font-style: normal; color: var(--ng-lime); display: inline-block; animation: spin 6s linear infinite; }
+.ticker-band:hover .ticker-band__track { animation-play-state: paused; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.campaign { position: relative; overflow: hidden; background: var(--ng-grad-forest); }
+.campaign::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 40%, rgba(236, 253, 135, .18) 50%, transparent 60%) 0 0 / 250% 100%; animation: text-shine 4s linear infinite; pointer-events: none; }
+
+/* thẻ mục tiêu */
+.goal { isolation: isolate; transition: transform .4s var(--ng-ease-spring), box-shadow .3s; }
+.goal::before { content: ''; position: absolute; z-index: -1; right: -40px; bottom: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255, 255, 255, .65); transform: scale(.6); transition: transform .6s var(--ng-ease-out); }
+.goal img { transition: transform .6s var(--ng-ease-spring); }
+.goal__go { display: inline-flex; gap: 6px; transition: gap .3s var(--ng-ease-out); }
+@media (hover: hover) {
+  .goal:hover { transform: translate(-3px, -5px) rotate(-.6deg); box-shadow: 8px 8px 0 var(--ng-forest); }
+  .goal:hover::before { transform: scale(2.4); }
+  .goal:hover img { transform: scale(1.14) rotate(-8deg) translate(-6px, -8px); }
+  .goal:hover .goal__go { gap: 12px; }
+}
+
+/* thẻ combo */
+.combo-card { --mx: 50%; --my: 50%; position: relative; isolation: isolate; transition: transform .45s var(--ng-ease-out), box-shadow .3s; }
+.combo-card::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; background: radial-gradient(420px circle at var(--mx) var(--my), rgba(236, 253, 135, .35), transparent 45%); opacity: 0; transition: opacity .3s; }
+.combo-card img { transition: transform .6s var(--ng-ease-out); }
+.combo-card--hot { background: linear-gradient(180deg, #f5ffb8, var(--ng-lime-soft) 40%); }
+.combo-card--hot .combo-card__top .badge { animation: glow 2.2s ease-in-out infinite; }
+@keyframes glow { 50% { box-shadow: 0 0 0 6px rgba(17, 59, 0, .12); } }
+@media (hover: hover) {
+  .combo-card:hover { transform: translateY(-8px); box-shadow: 8px 8px 0 var(--ng-forest), var(--ng-shadow-float); }
+  .combo-card:hover::after { opacity: 1; }
+  .combo-card:hover img { transform: scale(1.06) translateY(-4px); }
+}
+.combo-card__nums div { transition: transform .3s var(--ng-ease-spring), background-color .2s; }
+.combo-card:hover .combo-card__nums div { background: #fff; }
+.combo-card:hover .combo-card__nums div:nth-child(2) { transform: translateY(-3px); }
+
+.section--new { background: linear-gradient(180deg, #fff, var(--ng-cream)); }
+
+/* TDEE nhanh trên nền xanh rêu: đốm sáng trôi */
+.quick-tdee { position: relative; overflow: hidden; isolation: isolate; background: var(--ng-grad-forest); }
+.quick-tdee::before, .quick-tdee::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; }
+.quick-tdee::before { width: 380px; height: 380px; left: -120px; top: -140px; background: radial-gradient(circle, rgba(202, 223, 71, .28), transparent 70%); animation: blob-a 14s ease-in-out infinite alternate; }
+.quick-tdee::after { width: 300px; height: 300px; right: 8%; bottom: -160px; border: 2px dashed rgba(236, 253, 135, .25); animation: spin 40s linear infinite; }
+.quick-tdee__form { transition: transform .4s var(--ng-ease-spring), box-shadow .3s; }
+.quick-tdee__form:focus-within { transform: translateY(-4px); box-shadow: 10px 10px 0 var(--ng-lime); }
+.quick-tdee__kq:not([hidden]) { animation: rise .6s var(--ng-ease-out); }
+.kq-combo { transition: transform .3s var(--ng-ease-spring); }
+.kq-combo:hover { transform: scale(1.02) rotate(-.5deg); }
+
+/* thẻ bài viết, danh mục, hứa hẹn */
+.post-card, .cat { transition: transform .4s var(--ng-ease-spring), box-shadow .3s, border-color .2s; }
+.post-card__img img, .cat img { transition: transform .6s var(--ng-ease-out); }
+@media (hover: hover) {
+  .post-card:hover, .cat:hover { transform: translateY(-6px); box-shadow: 6px 6px 0 var(--ng-forest); }
+  .post-card:hover .post-card__img img { transform: scale(1.08) rotate(-2deg); }
+  .cat:hover img { transform: scale(1.1) rotate(-6deg); }
+}
+
+/* ---------- Dải cam kết & chân trang ---------- */
+.trust-strip { background: var(--ng-grad-lime); }
+.trust-item__ico { transition: transform .7s var(--ng-ease-spring), background-color .3s, color .3s; box-shadow: 3px 3px 0 rgba(17, 59, 0, .25); }
+@media (hover: hover) { .trust-item:hover .trust-item__ico { transform: rotateY(360deg) scale(1.06); background: #fff; color: var(--ng-forest); } }
+.site-footer { position: relative; overflow: hidden; background: var(--ng-grad-forest); }
+.site-footer::before { content: ''; position: absolute; width: 500px; height: 500px; right: -200px; top: -260px; border-radius: 50%; background: radial-gradient(circle, rgba(202, 223, 71, .14), transparent 70%); pointer-events: none; }
+.site-footer__col a { position: relative; align-self: flex-start; transition: color .2s, transform .25s var(--ng-ease-out); background-image: none; }
+.site-footer__col a::before { content: ''; position: absolute; left: -12px; top: 50%; width: 6px; height: 6px; border-radius: 50%; background: var(--ng-lime); transform: translateY(-50%) scale(0); transition: transform .25s var(--ng-ease-spring); }
+.site-footer__col a:hover { color: var(--ng-lime); transform: translateX(10px); text-decoration: none; }
+.site-footer__col a:hover::before { transform: translateY(-50%) scale(1); }
+.site-footer__contact a:hover, .site-footer__shops a:hover { transform: none; }
+.site-footer__contact a::before, .site-footer__shops a::before { display: none; }
+.site-footer__shops a { transition: background-color .2s, color .2s, transform .25s var(--ng-ease-spring); }
+.site-footer__shops a:hover { background: var(--ng-lime); color: var(--ng-forest); transform: translateY(-2px) !important; }
+.socials a { transition: transform .35s var(--ng-ease-spring), background-color .2s, color .2s; }
+.socials a:hover { transform: translateY(-4px) rotate(-8deg); }
+.pay-chips span { transition: background-color .2s, color .2s; }
+.pay-chips span:hover { background: var(--ng-lime); color: var(--ng-forest); }
+
+/* ---------- Nút chat nổi & về đầu trang ---------- */
+.chat-fab__btn { position: relative; transition: transform .3s var(--ng-ease-spring), box-shadow .25s; background: var(--ng-grad-lime); }
+.chat-fab__btn::before { content: ''; position: absolute; inset: -2px; border-radius: inherit; border: 2px solid var(--ng-lime); animation: ring 2.8s ease-out infinite; pointer-events: none; }
+@keyframes ring { 0% { transform: scale(1); opacity: .9; } 70%, 100% { transform: scale(1.35); opacity: 0; } }
+.chat-fab__btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ng-forest); }
+.chat-fab__btn[aria-expanded="true"]::before { display: none; }
+.chat-panel { animation: pop-up .35s var(--ng-ease-spring); transform-origin: 100% 100%; }
+@keyframes pop-up { from { opacity: 0; transform: translateY(12px) scale(.92); } }
+.chat-channel { transition: border-color .2s, background-color .2s, transform .25s var(--ng-ease-out); }
+.chat-channel:hover { transform: translateX(4px); }
+.chat-channel .ic { transition: transform .35s var(--ng-ease-spring); }
+.chat-channel:hover .ic { transform: rotate(-10deg) scale(1.1); }
+.to-top { --p: 0; position: relative; width: 48px; height: 48px; border-radius: 50%; border: 0; padding: 0; display: grid; place-items: center; color: var(--ng-forest); background: conic-gradient(var(--ng-leaf) calc(var(--p) * 1%), var(--ng-line) 0); box-shadow: var(--ng-shadow-lift); opacity: 0; transform: translateY(16px) scale(.8); pointer-events: none; transition: opacity .3s, transform .35s var(--ng-ease-spring); }
+.to-top::before { content: ''; position: absolute; inset: 4px; border-radius: 50%; background: #fff; transition: background-color .2s; }
+.to-top svg { position: relative; width: 20px; height: 20px; transition: transform .3s var(--ng-ease-spring); }
+.to-top.is-on { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover::before { background: var(--ng-lime-soft); }
+.to-top:hover svg { transform: translateY(-3px); }
+
+/* ---------- Toast & hộp thoại ---------- */
+.toast { animation: toast-in .45s var(--ng-ease-spring); background: var(--ng-grad-forest); }
+@keyframes toast-in { from { opacity: 0; transform: translateY(24px) scale(.9); } }
+.toast .ico { animation: bump .6s .1s var(--ng-ease-spring); }
+.modal { backdrop-filter: blur(4px); }
+.modal__box { animation: modal-in .4s var(--ng-ease-spring); }
+@keyframes modal-in { from { opacity: 0; transform: translateY(30px) scale(.95); } }
+
+/* ---------- Trang danh sách & chi tiết ---------- */
+.filters .check { transition: color .15s, transform .2s var(--ng-ease-out); }
+.filters .check:hover { color: var(--ng-forest); transform: translateX(3px); }
+.active-chips .chip { animation: tag-in .35s var(--ng-ease-spring) backwards; }
+.cmp tr td { transition: background-color .15s; }
+.tdee-nudge { transition: transform .35s var(--ng-ease-spring), box-shadow .3s; }
+.tdee-nudge:hover { transform: translateY(-3px); box-shadow: 6px 6px 0 var(--ng-forest); }
+.pd__media { border-radius: 28px; background: radial-gradient(circle at 50% 55%, #fff 0%, var(--ng-cream) 72%); transition: box-shadow .3s; }
+.pd__media:hover { box-shadow: var(--ng-shadow-lift); }
+.pd__media img { animation: pd-img .9s var(--ng-ease-out) backwards; }
+@keyframes pd-img { from { opacity: 0; transform: scale(.9) rotate(-3deg); } }
+.pd__nums div { transition: transform .3s var(--ng-ease-spring), box-shadow .3s; animation: rise .6s var(--ng-ease-out) backwards; }
+.pd__nums div:nth-child(2) { animation-delay: .06s; } .pd__nums div:nth-child(3) { animation-delay: .12s; } .pd__nums div:nth-child(4) { animation-delay: .18s; }
+.pd__nums div:hover { transform: translateY(-3px); box-shadow: 3px 3px 0 var(--ng-forest); }
+.ring { transition: transform .4s var(--ng-ease-spring); }
+.pd__fit:hover .ring { transform: rotate(360deg); }
+.pd__info-row svg { transition: transform .35s var(--ng-ease-spring); }
+.pd__info-row:hover svg { transform: scale(1.15) rotate(-8deg); }
+.day-plan div, .lot div { transition: transform .3s var(--ng-ease-spring), border-color .2s; }
+.day-plan div:hover, .lot div:hover { transform: translateY(-3px); border-color: var(--ng-forest); }
+.nlabel { transition: box-shadow .3s; }
+.nlabel:hover { box-shadow: 6px 6px 0 var(--ng-forest); }
+.nlabel table tr { transition: background-color .15s; }
+.nlabel table tr:hover { background: var(--ng-cream); }
+.macro-bar span { transition: width .6s var(--ng-ease-out); }
+
+/* ---------- Giỏ hàng & thanh toán ---------- */
+.line { transition: background-color .2s; animation: rise .5s var(--ng-ease-out) backwards; }
+.line__img img { transition: transform .4s var(--ng-ease-spring); }
+.line:hover .line__img img { transform: scale(1.08) rotate(-3deg); }
+.ship-meter__bar span { position: relative; overflow: hidden; transition: width .8s var(--ng-ease-out); }
+.ship-meter__bar span::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .7), transparent); transform: translateX(-100%); animation: shine 2s ease-in-out infinite; }
+.voucher-list button { transition: transform .25s var(--ng-ease-spring), background-color .2s; }
+.voucher-list button:hover { transform: translateY(-2px) rotate(-1deg); background: var(--ng-lime-soft); }
+.upsell { transition: transform .35s var(--ng-ease-spring), box-shadow .3s; }
+.upsell:hover { transform: translateY(-3px); box-shadow: 5px 5px 0 var(--ng-forest); }
+.upsell img { animation: float 4s ease-in-out infinite; }
+.steps li::before { transition: background-color .3s, border-color .3s, transform .4s var(--ng-ease-spring); }
+.steps li.is-current::before { transform: scale(1.12); box-shadow: var(--ng-glow-lime); }
+.steps li.is-done::before { animation: bump .5s var(--ng-ease-spring); }
+.ok-hero__ico { animation: success 1s var(--ng-ease-spring) backwards; }
+@keyframes success { 0% { transform: scale(0) rotate(-90deg); } 60% { transform: scale(1.15) rotate(8deg); } 100% { transform: none; } }
+
+/* ---------- Tài khoản, ví ưu đãi, đơn hàng ---------- */
+.stat { transition: transform .35s var(--ng-ease-spring), box-shadow .3s, border-color .2s; }
+.stat:hover { transform: translateY(-4px); border-color: var(--ng-forest); box-shadow: 4px 4px 0 var(--ng-forest); }
+.acc__nav a, .acc__nav button { transition: background-color .2s, padding-left .25s var(--ng-ease-out), box-shadow .2s; }
+@media (min-width: 960px) { .acc__nav a:hover { padding-left: 20px; } .acc__user { background: var(--ng-grad-forest); } }
+.coin-hero { background: var(--ng-grad-forest); position: relative; overflow: hidden; }
+.coin-hero b { display: inline-block; animation: bump 1s .3s var(--ng-ease-spring) backwards; }
+.gift, .vcard, .ocard, .remind { transition: transform .35s var(--ng-ease-spring), box-shadow .3s, border-color .2s; }
+.gift:hover { transform: translateY(-4px) rotate(-.5deg); border-style: solid; box-shadow: 4px 4px 0 var(--ng-leaf); }
+.ocard:hover, .vcard:hover { transform: translateY(-2px); border-color: var(--ng-forest); box-shadow: var(--ng-shadow-lift); }
+.avatar { transition: transform .4s var(--ng-ease-spring); }
+.acc__user:hover .avatar { transform: rotate(360deg); }
+.track__s.is-now::before { background-size: 200% 100%; animation: track 1.6s linear infinite; background-image: linear-gradient(90deg, var(--ng-green), var(--ng-lime), var(--ng-green)); }
+@keyframes track { to { background-position: -200% 0; } }
+
+/* ---------- Xuất hiện khi cuộn (motion.js gắn .rv) ---------- */
+html.motion .rv { opacity: 0; transform: translateY(28px); }
+html.motion .rv.is-in { opacity: 1; transform: none; transition: opacity .7s var(--ng-ease-out), transform .8s var(--ng-ease-out); transition-delay: calc(var(--i, 0) * 70ms); }
+
+/* ---------- Mức chuyển động ----------
+   motion-soft (mặc định khi hệ điều hành bật "giảm chuyển động"): giữ phản hồi hover và hiện mờ dần,
+   bỏ chuyển động liên tục / quãng dài (chữ chạy, trôi nổi, xoay, đốm màu, nghiêng 3D, ảnh bay). */
+html.motion-soft .rv { transform: none; }
+html.motion-soft :is(.hero, .quick-tdee)::before, html.motion-soft :is(.hero, .quick-tdee)::after,
+html.motion-soft .ticker-band__track, html.motion-soft .ticker-band i,
+html.motion-soft .tile--txt span, html.motion-soft .chat-fab__btn::before, html.motion-soft .eyebrow::before,
+html.motion-soft .badge--new::after, html.motion-soft .campaign::after, html.motion-soft .upsell img,
+html.motion-soft .ship-meter__bar span::after, html.motion-soft .combo-card--hot .combo-card__top .badge,
+html.motion-soft .track__s.is-now::before { animation: none !important; }
+html.motion-soft .hero__art .tile { animation: tile-in .6s var(--ng-ease-out) backwards !important; }
+html.motion-soft .ticker-band__track { flex-wrap: wrap; white-space: normal; justify-content: center; width: 100%; }
+html.motion-soft .ticker-band__track > :nth-last-child(-n+2) { display: none; }
+html.motion-soft .ticker-band { transform: none; width: 100%; margin-left: 0; }
+
+/* công tắc mức chuyển động ở chân trang */
+.motion-pref { display: flex; align-items: center; gap: 8px; }
+.motion-pref .seg { background: rgba(255, 255, 255, .1); }
+.motion-pref .seg button { color: #cfdcbc; padding: 4px 10px; font-size: var(--ng-fs-xs); }
+.motion-pref .seg button[aria-pressed="true"] { background: var(--ng-lime); color: var(--ng-forest); }
+
+/* xem trước ảnh phụ khi rê chuột lên thẻ (motion.js) */
+.pcard__dots { position: absolute; left: 0; right: 0; bottom: 10px; z-index: 2; display: flex; justify-content: center; gap: 5px; pointer-events: none; animation: err-in .25s ease; }
+.pcard__dots i { width: 6px; height: 6px; border-radius: 6px; background: rgba(255, 255, 255, .75); box-shadow: 0 0 0 1px rgba(17, 59, 0, .25); transition: width .25s, background-color .25s; }
+.pcard__dots i.on { width: 16px; background: var(--ng-forest); }
+.pcard:hover .pcard__media img.is-preview { transform: scale(1.03); animation: anh-vao .35s ease; }
+@keyframes anh-vao { from { opacity: .35; } }

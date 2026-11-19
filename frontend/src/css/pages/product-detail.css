@@ -76,3 +76,27 @@
   .day-plan { grid-template-columns: 1fr; }
   .pd__nums b { font-size: 1.05rem; }
 }
+
+/* Bộ ảnh sản phẩm: ảnh chính + dải ảnh phụ (từ item_image trong CSDL) */
+.pd__gallery { display: grid; gap: 12px; align-content: start; min-width: 0; }
+@media (min-width: 960px) { .pd__gallery { position: sticky; top: calc(var(--ng-header-h) + 16px); } .pd__gallery .pd__media { position: relative; top: auto; } }
+.pd__thumbs { display: flex; gap: 10px; overflow-x: auto; padding: 2px 2px 6px; scrollbar-width: thin; }
+.pd__thumbs:has(> .pd__thumb:only-child) { display: none; }
+.pd__thumb { flex: none; width: 76px; height: 76px; padding: 4px; border-radius: 14px; border: 1.5px solid var(--ng-line); background: var(--ng-cream); cursor: pointer; transition: border-color .2s, transform .25s, box-shadow .2s; }
+.pd__thumb img { width: 100%; height: 100%; object-fit: contain; }
+.pd__thumb:hover { border-color: var(--ng-leaf); transform: translateY(-2px); }
+.pd__thumb.is-active { border: 2px solid var(--ng-forest); box-shadow: 3px 3px 0 var(--ng-forest); }
+
+/* Mũi tên chuyển ảnh ngay trên ảnh lớn + số thứ tự ảnh */
+.pd__nav { position: absolute; top: 50%; z-index: 2; width: 44px; height: 44px; margin-top: -22px; display: grid; place-items: center; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .92); color: var(--ng-forest); box-shadow: 0 4px 14px rgba(17, 59, 0, .18); transition: transform .2s, background-color .2s, opacity .2s; }
+.pd__nav[hidden] { display: none; }
+.pd__nav svg { width: 20px; height: 20px; }
+.pd__nav--prev { left: 14px; }
+.pd__nav--next { right: 14px; }
+.pd__nav:hover { background: var(--ng-lime); transform: scale(1.08); }
+@media (hover: hover) { .pd__media .pd__nav { opacity: 0; } .pd__media:hover .pd__nav, .pd__nav:focus-visible { opacity: 1; } }
+.pd__media.is-zoom .pd__nav, .pd__media.is-zoom .pd__count { opacity: 0; pointer-events: none; }
+.pd__count { position: absolute; right: 14px; bottom: 14px; z-index: 2; padding: 3px 10px; border-radius: 999px; background: rgba(17, 59, 0, .75); color: #fff; font-size: var(--ng-fs-xs); font-weight: 700; font-variant-numeric: tabular-nums; }
+.pd__count[hidden] { display: none; }
+.pd__media img.is-doi { animation: anh-doi .35s ease; }
+@keyframes anh-doi { from { opacity: .3; } }

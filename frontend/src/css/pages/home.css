@@ -124,3 +124,127 @@
 .goal { min-height: 150px; }
 /* điện thoại: 3 combo trượt ngang thay vì xếp dọc dài */
 @media (max-width: 899px) { .combos { grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 6px 14px 2px; } .combos > * { scroll-snap-align: start; } }
+
+/* =====================================================================
+   Trang chủ bố cục mới (tham khảo cấu trúc website bán lẻ thực phẩm):
+   banner trượt → mã ưu đãi → sản phẩm mới → danh mục → combo → vì sao chọn → sản phẩm theo tab → TDEE → bài viết
+   ===================================================================== */
+body[data-page="home"] .trust-strip { display: none; } /* đã có khối "Vì sao chọn NutriGreen" */
+
+/* tiêu đề khu vực có gạch lá mạ */
+.title-line { position: relative; padding-bottom: 10px; }
+.title-line::after { content: ''; position: absolute; left: 0; bottom: 0; width: 56px; height: 4px; border-radius: 4px; background: var(--ng-lime); }
+.section-head--center { justify-content: center; text-align: center; }
+.section-head--center .title-line::after { left: 50%; transform: translateX(-50%); }
+.link-more { font-weight: 700; font-size: var(--ng-fs-sm); color: var(--ng-green); white-space: nowrap; transition: letter-spacing .25s; }
+.link-more:hover { letter-spacing: .02em; }
+
+/* ---- banner trượt ---- */
+.banner { position: relative; overflow: hidden; border-bottom: 2px solid var(--ng-forest); }
+.banner__track { display: grid; }
+.banner__slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity .7s ease, visibility .7s; }
+.banner__slide.is-active { opacity: 1; visibility: visible; }
+.banner__slide--1 { background: radial-gradient(700px 380px at 80% 40%, var(--ng-lime-soft), transparent 70%), var(--ng-cream); }
+.banner__slide--2 { background: radial-gradient(600px 360px at 78% 50%, rgba(202, 223, 71, .35), transparent 70%), var(--ng-forest); color: #e3eecf; }
+.banner__slide--3 { background: radial-gradient(700px 380px at 78% 45%, #fff, transparent 70%), var(--ng-lime-soft); }
+.banner__in { display: grid; gap: 12px; align-items: center; padding-top: 32px; padding-bottom: 56px; min-height: 420px; }
+@media (min-width: 900px) { .banner__in { grid-template-columns: 1.05fr 1fr; gap: 40px; min-height: 480px; padding-top: 40px; } }
+.banner__kicker { display: inline-block; margin: 0 0 12px; padding: 4px 12px; border-radius: 999px; background: var(--ng-forest); color: var(--ng-lime-soft); font-size: var(--ng-fs-xs); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.banner__slide--2 .banner__kicker { background: var(--ng-lime); color: var(--ng-forest); }
+.banner h1, .banner__h { font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem); line-height: 1.08; margin-bottom: 14px; }
+.banner__slide--2 .banner__h { color: #fff; }
+.banner__lead { font-size: var(--ng-fs-lg); max-width: 500px; margin-bottom: 22px; }
+.banner__slide--2 .banner__lead { color: #d4e2bd; }
+.banner__cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.banner__slide--2 .btn--primary { background: var(--ng-lime); color: var(--ng-forest); border-color: var(--ng-lime); }
+.banner__art { position: relative; height: 260px; }
+@media (min-width: 900px) { .banner__art { height: 420px; } }
+.banner__p { position: absolute; object-fit: contain; filter: drop-shadow(0 18px 24px rgba(17, 59, 0, .22)); }
+.banner__p--a { width: 62%; left: 19%; top: 0; z-index: 2; }
+.banner__p--b { width: 46%; left: 0; bottom: 0; z-index: 1; }
+.banner__p--c { width: 46%; right: 0; bottom: 0; z-index: 1; }
+.banner__p--solo { width: 88%; left: 6%; top: 0; height: 100%; }
+/* chữ và ảnh trượt vào khi banner chuyển */
+.banner__slide .banner__text > * { transform: translateY(18px); opacity: 0; transition: transform .7s var(--ng-ease), opacity .7s; }
+.banner__slide.is-active .banner__text > * { transform: none; opacity: 1; }
+.banner__slide.is-active .banner__text > :nth-child(2) { transition-delay: .08s; }
+.banner__slide.is-active .banner__text > :nth-child(3) { transition-delay: .16s; }
+.banner__slide.is-active .banner__text > :nth-child(4) { transition-delay: .24s; }
+.banner__slide .banner__p { transform: translateY(30px) scale(.92); opacity: 0; transition: transform .9s var(--ng-ease), opacity .9s; }
+.banner__slide.is-active .banner__p { transform: none; opacity: 1; }
+.banner__slide.is-active .banner__p--b { transition-delay: .12s; }
+.banner__slide.is-active .banner__p--c { transition-delay: .2s; }
+.banner__nav { position: absolute; top: 50%; z-index: 3; width: 46px; height: 46px; margin-top: -23px; border-radius: 50%; border: 2px solid var(--ng-forest); background: #fff; color: var(--ng-forest); display: none; place-items: center; transition: transform .25s, box-shadow .25s; }
+.banner__nav svg { width: 20px; height: 20px; }
+.banner__nav:hover { transform: scale(1.08); box-shadow: 3px 3px 0 var(--ng-forest); }
+.banner__nav--prev { left: 16px; }
+.banner__nav--next { right: 16px; }
+@media (min-width: 1440px) { .banner__nav { display: grid; } }
+.banner__dots { position: absolute; left: 0; right: 0; bottom: 18px; z-index: 3; display: flex; justify-content: center; gap: 8px; }
+.banner__dots button { width: 10px; height: 10px; padding: 0; border-radius: 10px; border: 2px solid var(--ng-forest); background: #fff; transition: width .3s, background-color .3s; }
+.banner__dots button[aria-current] { width: 28px; background: var(--ng-lime); }
+
+/* ---- dải mã ưu đãi ---- */
+.deals { padding: 28px 0 4px; }
+.deals__in { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.deal { position: relative; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; background: var(--ng-forest); color: #dbe7c6; overflow: hidden; transition: transform .3s, box-shadow .3s; }
+.deal::before, .deal::after { content: ''; position: absolute; left: 52px; width: 16px; height: 16px; border-radius: 50%; background: #fff; }
+.deal::before { top: -8px; }
+.deal::after { bottom: -8px; }
+.deal:hover { transform: translateY(-3px); box-shadow: 4px 4px 0 var(--ng-lime); }
+.deal__ic { flex: none; width: 34px; height: 34px; color: var(--ng-lime); }
+.deal__ic svg { width: 100%; height: 100%; }
+.deal__txt { display: flex; flex-direction: column; min-width: 0; padding-left: 12px; border-left: 2px dashed rgba(236, 253, 135, .35); line-height: 1.35; }
+.deal__txt strong { color: var(--ng-lime); font-size: var(--ng-fs-lg); letter-spacing: .03em; text-transform: uppercase; }
+.deal__txt span { font-size: var(--ng-fs-xs); }
+.deal__btn { margin-left: auto; flex: none; padding: 6px 12px; border-radius: 999px; border: 0; background: var(--ng-lime); color: var(--ng-forest); font-size: var(--ng-fs-xs); font-weight: 800; white-space: nowrap; }
+.deal__btn:hover { text-decoration: none; background: #fff; }
+
+/* ---- danh mục ---- */
+.cat-row { display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 760px) { .cat-row { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+.cat-tile { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; color: var(--ng-forest); }
+.cat-tile:hover { text-decoration: none; }
+.cat-tile__img { display: grid; place-items: center; width: min(100%, 190px); aspect-ratio: 1; border-radius: 50%; background: #fff; border: 2px solid var(--ng-forest); box-shadow: 5px 5px 0 var(--ng-lime); overflow: hidden; transition: transform .4s, box-shadow .3s; }
+.cat-tile__img img { width: 82%; height: 82%; object-fit: contain; transition: transform .5s; }
+.cat-tile__name { margin-top: 8px; font-weight: 800; font-size: var(--ng-fs-lg); text-transform: uppercase; letter-spacing: .02em; }
+.cat-tile__n { font-size: var(--ng-fs-sm); color: var(--ng-muted); }
+.cat-tile:hover .cat-tile__img { transform: translateY(-6px); box-shadow: 7px 9px 0 var(--ng-lime); }
+.cat-tile:hover .cat-tile__img img { transform: scale(1.1) rotate(-6deg); }
+
+/* ---- vì sao chọn ---- */
+.why { background: var(--ng-mint); padding: clamp(40px, 6vw, 72px) 0; }
+.why__in { display: grid; gap: 32px; align-items: center; }
+@media (min-width: 900px) { .why__in { grid-template-columns: 1.1fr .9fr; gap: 56px; } }
+.why__list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 18px; }
+.why__list li { display: flex; gap: 14px; align-items: flex-start; }
+.why__list h3 { font-size: var(--ng-fs-lg); margin: 0 0 2px; }
+.why__list p { margin: 0; font-size: var(--ng-fs-sm); }
+.why__ic { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--ng-forest); color: var(--ng-lime); transition: transform .4s; }
+.why__ic svg { width: 24px; height: 24px; }
+.why__list li:hover .why__ic { transform: rotate(-8deg) scale(1.08); }
+.why__art { position: relative; aspect-ratio: 1; max-width: 440px; width: 100%; margin: 0 auto; border-radius: 50%; background: radial-gradient(circle at 50% 45%, #fff, var(--ng-lime-soft) 70%); border: 2px solid var(--ng-forest); }
+.why__art img { position: absolute; inset: 8%; width: 84%; height: 84%; object-fit: contain; filter: drop-shadow(0 16px 20px rgba(17, 59, 0, .2)); }
+.why__stamp { position: absolute; right: -4px; bottom: 8%; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 132px; height: 132px; padding: 12px; border-radius: 50%; background: var(--ng-forest); color: #e3eecf; font-size: 11px; line-height: 1.25; text-align: center; transform: rotate(-10deg); box-shadow: 4px 4px 0 var(--ng-lime); }
+.why__stamp b { font-size: 1.8rem; color: var(--ng-lime); line-height: 1; }
+
+/* ---- sản phẩm theo tab ---- */
+.tabs-sp { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: -4px 0 22px; }
+.tabs-sp button { padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--ng-line-strong); background: #fff; font-weight: 700; font-size: var(--ng-fs-sm); color: var(--ng-text); transition: background-color .2s, color .2s, border-color .2s, transform .2s; }
+.tabs-sp button:hover { border-color: var(--ng-forest); transform: translateY(-2px); }
+.tabs-sp button[aria-selected="true"] { background: var(--ng-forest); border-color: var(--ng-forest); color: var(--ng-lime-soft); }
+
+.quick-tdee__more { display: inline-block; margin-top: 4px; font-weight: 700; color: var(--ng-lime); }
+@media (max-width: 759px) { .deals__in { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 80%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; } .deal { scroll-snap-align: start; } .banner__in { min-height: 0; padding-bottom: 48px; } }
+/* banner dùng ảnh chụp: khung bo góc kiểu thẻ */
+.banner__art:has(.banner__photo) { display: grid; place-items: center; }
+.banner__photo { width: auto; height: 100%; max-width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 28px; border: 2px solid var(--ng-forest); box-shadow: 8px 8px 0 var(--ng-forest); transform: rotate(2deg) scale(.94); opacity: 0; transition: transform .9s var(--ng-ease), opacity .9s; }
+.banner__slide.is-active .banner__photo { transform: rotate(2deg); opacity: 1; }
+
+/* chấm banner có thanh thời gian: chạy hết thì sang slide sau; rê chuột / chạm giữ thì tạm dừng */
+.banner__dots button { position: relative; overflow: hidden; }
+.banner__dots button[aria-current] { width: 40px; background: #fff; }
+.banner__dots .tien { position: absolute; inset: 0; border-radius: inherit; background: var(--ng-lime); transform: scaleX(0); transform-origin: 0 50%; }
+.banner__dots button[aria-current] .tien { animation: banner-tien 5s linear forwards; }
+.banner.is-paused .banner__dots .tien { animation-play-state: paused; }
+@keyframes banner-tien { to { transform: scaleX(1); } }

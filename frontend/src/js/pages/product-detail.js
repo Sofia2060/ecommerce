@@ -61,8 +61,11 @@
   }
 
   box.innerHTML = '<div class="pd' + (combo ? ' pd--combo' : '') + '">' +
-    '<div class="pd__media" data-zoom><img src="' + anh(sp.anh) + '" alt="' + esc(sp.ten + ' ' + sp.quyCach) + '" width="640" height="640"><div class="pcard__tags">' + (combo ? '<span class="badge badge--forest">Chỉ bán trên website</span>' : '') + (!combo && sp.dinhDuong.tren100g.duong <= d.cauHinh.nguongLoc.itDuong ? '<span class="badge badge--lime">Đường ' + so(sp.dinhDuong.tren100g.duong, 1) + 'g/100g</span>' : '') + (!combo && sp.dinhDuong.tren100g.protein >= d.cauHinh.nguongLoc.proteinCao ? '<span class="badge badge--green">Protein ' + so(sp.dinhDuong.tren100g.protein, 1) + 'g/100g</span>' : '') + '</div>' +
-    '<button class="pcard__fav" type="button" aria-label="Yêu thích" aria-pressed="' + NG.yeuThich.co(sp.ma) + '" data-yeu-thich="' + sp.ma + '">' + NG.IC.tim + '</button></div>' +
+    '<div class="pd__gallery"><div class="pd__media" data-zoom><img data-anh-chinh src="' + anh(sp.anh) + '" alt="' + esc(sp.ten + ' ' + sp.quyCach) + '" width="640" height="640"><div class="pcard__tags">' + (sp.moi ? '<span class="badge badge--new">Hàng mới về</span>' : '') + (combo ? '<span class="badge badge--forest">Chỉ bán trên website</span>' : '') + '</div>' + // số liệu đường/protein đã có ngay bên cạnh – ảnh để sạch
+    '<button class="pcard__fav" type="button" aria-label="Yêu thích" aria-pressed="' + NG.yeuThich.co(sp.ma) + '" data-yeu-thich="' + sp.ma + '">' + NG.IC.tim + '</button>' +
+    '<button class="pd__nav pd__nav--prev" type="button" aria-label="Ảnh trước" data-anh-lui hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg></button>' +
+    '<button class="pd__nav pd__nav--next" type="button" aria-label="Ảnh sau" data-anh-toi hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></button>' +
+    '<span class="pd__count" data-anh-dem hidden aria-live="polite"></span></div>' + thuVien() + '</div>' +
     '<div class="pd__main"><span class="pd__cat">' + esc(combo ? sp.nhan : tenDm) + '</span><h1>' + esc(sp.ten) + '</h1>' +
     '<div class="pd__meta"><span>' + esc(sp.quyCach) + '</span><span>Mã: ' + esc(sp.ma) + '</span>' + (dg.soLuong ? '<a href="#danh-gia">' + NG.ui.sao(dg.trungBinh) + ' ' + so(dg.trungBinh, 1) + ' (' + dg.soLuong + ' đánh giá)</a>' : '<a href="#danh-gia">Chưa có đánh giá</a>') + '</div>' +
     '<p class="pd__short">' + esc(sp.moTaNgan) + '</p>' +
@@ -83,13 +86,19 @@
 
     // khu vực dinh dưỡng và thông tin
     '<section class="pd-sec" aria-labelledby="tieu-de-dd"><div class="pd-sec__grid"><div><h2 id="tieu-de-dd" class="sr-only">Dinh dưỡng</h2><div data-nhan></div></div><div class="spec">' +
-    (combo ? comboInfo() : '<h2>Thông tin sản phẩm</h2><dl><dt>Thành phần</dt><dd>' + esc(sp.thanhPhan) + '</dd><dt>Lưu ý dị ứng</dt><dd>' + esc(diUng(sp.thanhPhan)) + '</dd><dt>Xuất xứ</dt><dd>' + esc(sp.xuatXu) + '</dd><dt>Hạn sử dụng</dt><dd>' + esc(sp.hanSuDung) + '</dd><dt>Bảo quản</dt><dd>' + esc(sp.baoQuan) + '</dd><dt>Cách dùng</dt><dd>' + esc(sp.huongDan) + '</dd><dt>Khẩu phần gợi ý</dt><dd>' + esc(sp.dinhDuong.khauPhan.moTa) + ' – ' + so(sp.khoiLuong / sp.dinhDuong.khauPhan.g) + ' khẩu phần mỗi ' + esc(sp.quyCach.toLowerCase()) + '.</dd></dl>' +
+    (combo ? comboInfo() : '<h2>Thông tin sản phẩm</h2><dl><dt>Thành phần</dt><dd>' + esc(sp.thanhPhan) + '</dd><dt>Lưu ý dị ứng</dt><dd>' + esc(sp.diUng || diUng(sp.thanhPhan)) + '</dd>' + (sp.soCongBo ? '<dt>Số tự công bố an toàn thực phẩm</dt><dd>' + esc(sp.soCongBo) + '</dd>' : '') + '<dt>Xuất xứ</dt><dd>' + esc(sp.xuatXu) + '</dd><dt>Hạn sử dụng</dt><dd>' + esc(sp.hanSuDung) + '</dd><dt>Bảo quản</dt><dd>' + esc(sp.baoQuan) + '</dd><dt>Cách dùng</dt><dd>' + esc(sp.huongDan) + '</dd><dt>Khẩu phần gợi ý</dt><dd>' + esc(sp.dinhDuong.khauPhan.moTa) + ' – ' + so(sp.khoiLuong / sp.dinhDuong.khauPhan.g) + ' khẩu phần mỗi ' + esc(sp.quyCach.toLowerCase()) + '.</dd></dl>' +
       '<p class="callout small mt-2">Số liệu dinh dưỡng mang tính tham khảo cho người trưởng thành khỏe mạnh, không thay thế tư vấn của bác sĩ hay chuyên gia dinh dưỡng. NutriGreen không quảng cáo sản phẩm có tác dụng chữa bệnh.</p>') +
     '</div></div></section>' +
     '<section class="pd-sec" id="danh-gia" aria-labelledby="tieu-de-dg"><h2 id="tieu-de-dg">Đánh giá từ khách đã mua</h2><div data-danh-gia></div></section>' +
     '<section class="pd-sec" aria-labelledby="tieu-de-lq"><h2 id="tieu-de-lq">' + (combo ? 'Mua lẻ từng món' : 'Thường mua cùng') + '</h2><div class="rail" data-lien-quan></div></section>';
 
-  // lưu ý dị ứng suy ra từ thành phần (an toàn thực phẩm – đọc kỹ thành phần trên bao bì)
+  // ảnh phụ lấy từ CSDL (item_image): nguyên liệu, cận cảnh, cách dùng, mặt sau – ảnh chưa có file tự ẩn khỏi dải
+  function thuVien() {
+    const ds = [{ loai: 'Sản phẩm', anh: sp.anh }].concat(sp.anhPhu || []);
+    if (ds.length < 2) return '';
+    return '<div class="pd__thumbs" aria-label="Ảnh sản phẩm">' + ds.map((x, i) => '<button class="pd__thumb' + (i ? '' : ' is-active') + '" type="button" data-anh-thu="' + esc(anh(x.anh)) + '" aria-label="Xem ảnh ' + esc(x.loai.toLowerCase()) + '"' + (i ? ' data-an-khi-loi' : '') + '><img src="' + anh(x.anh, !i) + '" alt="" width="96" height="96"></button>').join('') + '</div>';
+  }
+  // lưu ý dị ứng: ưu tiên ghi chú trong CSDL, nếu không có thì suy ra từ thành phần
   function diUng(tp) {
     const ds = [];
     if (/hạnh nhân|điều|óc chó/i.test(tp)) ds.push('các loại hạt cây (hạnh nhân, điều, óc chó)');
@@ -166,6 +175,30 @@
   });
   // phóng to ảnh
   const z = $('[data-zoom]');
+  // xem ảnh: bấm ảnh nhỏ, mũi tên trên ảnh lớn, vuốt (điện thoại) hoặc phím ← →
+  const chinh = $('[data-anh-chinh]');
+  const xemAnh = (t) => {
+    if (!t) return;
+    z.classList.remove('is-zoom'); delete chinh.dataset.anhCho; chinh.classList.remove('is-placeholder');
+    chinh.classList.remove('is-doi'); void chinh.offsetWidth; chinh.classList.add('is-doi');
+    chinh.src = t.dataset.anhThu; const ds = $$('.pd__thumb');
+    ds.forEach((b) => b.classList.toggle('is-active', b === t));
+    t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    const dem = $('[data-anh-dem]'); dem.textContent = (ds.indexOf(t) + 1) + ' / ' + ds.length;
+  };
+  const buocAnh = (n) => { const ds = $$('.pd__thumb'); if (ds.length < 2) return; const i = ds.findIndex((b) => b.classList.contains('is-active')); xemAnh(ds[(i + n + ds.length) % ds.length]); };
+  // chỉ hiện mũi tên khi có từ 2 ảnh (ảnh phụ chưa có file đã bị gỡ khỏi dải)
+  const capNhatNut = () => { const n = $$('.pd__thumb').length; ['[data-anh-lui]', '[data-anh-toi]', '[data-anh-dem]'].forEach((s) => { $(s).hidden = n < 2; }); if (n > 1) $('[data-anh-dem]').textContent = ($$('.pd__thumb').findIndex((b) => b.classList.contains('is-active')) + 1) + ' / ' + n; };
+  capNhatNut(); const tb = $('.pd__thumbs'); if (tb) new MutationObserver(capNhatNut).observe(tb, { childList: true });
+  box.addEventListener('click', (e) => {
+    if (e.target.closest('[data-anh-lui]')) return buocAnh(-1);
+    if (e.target.closest('[data-anh-toi]')) return buocAnh(1);
+    xemAnh(e.target.closest('[data-anh-thu]'));
+  });
+  let x0 = null;
+  z.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  z.addEventListener('touchend', (e) => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40 && !z.classList.contains('is-zoom')) buocAnh(dx < 0 ? 1 : -1); x0 = null; });
+  document.addEventListener('keydown', (e) => { if (/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName) || document.querySelector('.modal')) return; if (e.key === 'ArrowLeft') buocAnh(-1); if (e.key === 'ArrowRight') buocAnh(1); });
   z.addEventListener('click', (e) => { if (e.target.closest('button')) return; const r = z.getBoundingClientRect(); z.style.setProperty('--zx', ((e.clientX - r.left) / r.width * 100) + '%'); z.style.setProperty('--zy', ((e.clientY - r.top) / r.height * 100) + '%'); z.classList.toggle('is-zoom'); });
 
   // thanh mua dính đáy trên điện thoại

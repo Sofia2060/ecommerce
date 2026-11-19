@@ -14,6 +14,14 @@ R=[
 ("NG-GL-01","bun-gao-lut","Bún gạo lứt","gao-lut",["giam-can"],"Bộ 2 gói × 500g",1000,98000,360,7.5,1.5,80,3.5,0.5,80,"1 bữa (80g khô)",12,70,True,False),
 ("NG-GL-02","pho-gao-lut","Phở gạo lứt","gao-lut",["giam-can"],"Bộ 2 gói × 500g",1000,98000,360,7,1.2,81,3,0.5,80,"1 bữa (80g khô)",12,52,False,True),
 ("NG-GL-03","nui-gao-lut","Nui gạo lứt","gao-lut",["giam-can"],"Bộ 2 gói × 500g",1000,98000,360,7.5,2,79.5,3.8,0.6,80,"1 bữa (80g khô)",12,48,False,False),
+# ---- 7 sản phẩm mới (moi=True) – chưa có ảnh, website tự hiện khung "Ảnh đang cập nhật" cho tới khi thêm file <slug>.webp và <slug>-sm.webp
+("NG-HAT-04","hat-oc-cho-rang-moc","Hạt óc chó rang mộc","hat-granola",["tang-co"],"Hũ 250g",250,179000,654,15.2,62,14,6.7,2.6,30,"khoảng 7 nửa nhân (30g)",6,33,False,True),
+("NG-HAT-05","hat-chia-uc","Hạt chia Úc","hat-granola",["giam-can","an-sang-nhanh"],"Túi 300g",300,99000,450,16.5,30.7,42,34,0.5,15,"1 muỗng canh (15g)",12,64,False,True),
+("NG-GRA-03","granola-trai-cay-nhiet-doi","Granola trái cây nhiệt đới","hat-granola",["an-sang-nhanh"],"Túi 300g",300,135000,440,9,17,66,7,12,40,"4 muỗng canh (40g)",6,40,False,True),
+("NG-BAN-05","banh-gao-lut-me-den","Bánh gạo lứt mè đen","banh-an-kieng",["giam-can","an-sang-nhanh"],"Túi 200g",200,85000,395,8.5,6,80,4.5,0.8,20,"2 miếng (20g)",9,55,False,True),
+("NG-BAN-06","thanh-protein-hat","Thanh protein hạt","banh-an-kieng",["tang-co"],"Hộp 8 thanh × 40g",320,179000,410,25,18,42,9,7,40,"1 thanh (40g)",6,27,False,True),
+("NG-GL-04","mi-gao-lut-rau-cu","Mì gạo lứt rau củ","gao-lut",["giam-can"],"Bộ 2 gói × 500g",1000,105000,355,7.5,2,78,4,1.5,80,"1 bữa (80g khô)",12,45,False,True),
+("NG-GL-05","gao-lut-huyet-rong","Gạo lứt đỏ huyết rồng","gao-lut",["giam-can","tang-co"],"Túi 2kg",2000,129000,355,7.8,2.5,76,3.5,0.7,60,"1 chén cơm (60g gạo)",12,58,False,True),
 ]
 TXT={
 "hat-mix-5-loai":dict(moTaNgan="Hạnh nhân, điều, óc chó, hạt bí xanh và nam việt quất sấy, rang mộc không muối.",thanhPhan="Hạnh nhân (30%), hạt điều (25%), óc chó (20%), hạt bí xanh (15%), nam việt quất sấy (10%).",xuatXu="Hạnh nhân, óc chó nhập khẩu Mỹ; điều Bình Phước (nay thuộc Đồng Nai); đóng gói tại TP.HCM.",huongDan="Ăn trực tiếp như bữa phụ, rắc lên sữa chua, salad hoặc granola.",nguon="USDA FoodData Central – nhóm Nuts, mixed nuts, dry roasted (đối chiếu theo tỷ lệ phối trộn)."),
@@ -29,6 +37,13 @@ TXT={
 "bun-gao-lut":dict(moTaNgan="Bún khô 100% gạo lứt đỏ, sợi dai, không chất tẩy trắng.",thanhPhan="Gạo lứt đỏ (98%), nước, muối.",xuatXu="Gạo lứt Đồng Tháp; sản xuất tại Đồng Tháp, đóng gói tại TP.HCM.",huongDan="Luộc 5–7 phút trong nước sôi, xả nước lạnh. 80g khô ≈ 1 tô bún.",nguon="USDA FoodData Central – Noodles, brown rice, dry (đối chiếu)."),
 "pho-gao-lut":dict(moTaNgan="Bánh phở khô từ gạo lứt, sợi dẹt mềm, nấu nước dùng hoặc xào.",thanhPhan="Gạo lứt (98%), nước, muối.",xuatXu="Gạo lứt Đồng Tháp; sản xuất tại Đồng Tháp, đóng gói tại TP.HCM.",huongDan="Trụng 3–4 phút trong nước sôi. 80g khô ≈ 1 tô phở.",nguon="USDA FoodData Central – Noodles, brown rice, dry (đối chiếu)."),
 "nui-gao-lut":dict(moTaNgan="Nui xoắn gạo lứt, giữ dáng khi nấu, hợp salad và súp.",thanhPhan="Gạo lứt (95%), bột năng, nước.",xuatXu="Gạo lứt Đồng Tháp; sản xuất tại Đồng Tháp, đóng gói tại TP.HCM.",huongDan="Luộc 8–10 phút, xả nước lạnh. 80g khô ≈ 1 đĩa.",nguon="USDA FoodData Central – Pasta, brown rice, dry (đối chiếu)."),
+"hat-oc-cho-rang-moc":dict(moTaNgan="Óc chó nửa nhân vàng sáng, rang mộc nhiệt độ thấp, giàu omega-3 thực vật.",thanhPhan="100% óc chó.",xuatXu="Óc chó nhập khẩu Mỹ; rang và đóng gói tại TP.HCM.",huongDan="Ăn trực tiếp, rắc lên yến mạch, salad hoặc xay sữa hạt.",nguon="USDA FoodData Central – Nuts, walnuts, english (đối chiếu)."),
+"hat-chia-uc":dict(moTaNgan="Hạt chia đen Úc, nở gấp 10 lần khi ngâm, rất nhiều chất xơ.",thanhPhan="100% hạt chia.",xuatXu="Hạt chia nhập khẩu Úc; đóng gói tại TP.HCM.",huongDan="Ngâm 1 muỗng với 150ml nước/sữa 10 phút; trộn sữa chua, sinh tố, overnight oats.",nguon="USDA FoodData Central – Seeds, chia seeds, dried (đối chiếu)."),
+"granola-trai-cay-nhiet-doi":dict(moTaNgan="Granola yến mạch với xoài, thơm, dừa sấy dẻo – vị chua ngọt tự nhiên.",thanhPhan="Yến mạch cán dẹt (50%), xoài sấy (10%), thơm sấy (8%), dừa sấy (8%), hạt điều (8%), mật ong, dầu dừa.",xuatXu="Trái cây sấy Tiền Giang; phối trộn và nướng tại TP.HCM.",huongDan="Dùng với sữa chua không đường hoặc sữa hạt.",nguon="Tính theo công thức phối trộn, đối chiếu USDA FoodData Central cho từng nguyên liệu."),
+"banh-gao-lut-me-den":dict(moTaNgan="Bánh gạo lứt nổ giòn xốp phủ mè đen rang, không chiên, ít béo.",thanhPhan="Gạo lứt (88%), mè đen (8%), muối hồng, dầu gạo.",xuatXu="Gạo lứt Đồng Tháp; sản xuất và đóng gói tại TP.HCM.",huongDan="Ăn trực tiếp hoặc phết bơ đậu phộng, bơ, phô mai ít béo.",nguon="Tính theo công thức, đối chiếu USDA FoodData Central – Rice cakes, brown rice."),
+"thanh-protein-hat":dict(moTaNgan="Thanh protein từ whey và hạt, 10g protein mỗi thanh, ngọt nhẹ từ chà là.",thanhPhan="Whey protein (22%), hạnh nhân (18%), chà là (18%), yến mạch (15%), hạt điều, cacao, hạt chia.",xuatXu="Whey nhập khẩu New Zealand; sản xuất và đóng gói tại TP.HCM.",huongDan="Ăn sau tập 30 phút hoặc thay bữa phụ.",nguon="Tính theo công thức, đối chiếu USDA FoodData Central cho từng nguyên liệu."),
+"mi-gao-lut-rau-cu":dict(moTaNgan="Mì gạo lứt trộn bột rau bina, cà rốt, củ dền – 3 màu tự nhiên, không phẩm màu.",thanhPhan="Gạo lứt (90%), bột rau bina, bột cà rốt, bột củ dền, muối.",xuatXu="Gạo lứt Đồng Tháp; sản xuất tại Đồng Tháp, đóng gói tại TP.HCM.",huongDan="Trụng 4–5 phút trong nước sôi. 80g khô ≈ 1 tô mì.",nguon="USDA FoodData Central – Noodles, brown rice, dry (đối chiếu)."),
+"gao-lut-huyet-rong":dict(moTaNgan="Gạo lứt đỏ huyết rồng Long An, hạt dài, dẻo nhẹ, giữ nguyên lớp cám.",thanhPhan="100% gạo lứt huyết rồng.",xuatXu="Long An (nay thuộc Tây Ninh); đóng gói tại TP.HCM.",huongDan="Ngâm 2 giờ, nấu tỉ lệ 1 gạo : 1,8 nước. 60g gạo ≈ 1 chén cơm.",nguon="USDA FoodData Central – Rice, brown, long-grain, raw (đối chiếu)."),
 }
 BAOQUAN={"hat-granola":"Nơi khô ráo, thoáng mát, tránh nắng. Sau khi mở, đậy kín nắp/túi zip kèm gói hút ẩm, dùng trong 30 ngày.","banh-an-kieng":"Nơi khô ráo, dưới 30°C. Sau khi mở, cho vào hộp kín, dùng trong 14 ngày.","gao-lut":"Nơi khô ráo, tránh ẩm. Gói đã mở cần kẹp kín."}
 import datetime
@@ -37,6 +52,7 @@ def lo(i,thang):
     m=nsx.month+thang; y=nsx.year+(m-1)//12; m=(m-1)%12+1
     hsd=datetime.date(y,m,min(nsx.day,28))
     return {"ma":"L%s-%02d"%(nsx.strftime('%y%m%d'),i+1),"nsx":nsx.isoformat(),"hsd":hsd.isoformat()}
+MOI={"NG-HAT-04","NG-HAT-05","NG-GRA-03","NG-BAN-05","NG-BAN-06","NG-GL-04","NG-GL-05"}
 sp=[]
 for i,r in enumerate(R):
     (ma,slug,ten,dm,mt,qc,kl,gia,kcal,P,F,C,xo,du,kp,kpm,hsd,ton,nb,mh)=r
@@ -45,7 +61,7 @@ for i,r in enumerate(R):
       "anh":slug,"anhMinhHoa":mh,"moTaNgan":t["moTaNgan"],"thanhPhan":t["thanhPhan"],"xuatXu":t["xuatXu"],
       "hanSuDung":"%d tháng kể từ ngày sản xuất"%hsd,"baoQuan":BAOQUAN[dm],"huongDan":t["huongDan"],
       "dinhDuong":{"tren100g":{"kcal":kcal,"protein":P,"beo":F,"carb":C,"xo":xo,"duong":du},"khauPhan":{"g":kp,"moTa":kpm}},
-      "nguonSoLieu":t["nguon"],"ton":ton,"lo":lo(i,hsd),"noiBat":nb})
+      "nguonSoLieu":t["nguon"],"ton":ton,"lo":lo(i,hsd),"noiBat":nb,"moi":ma in MOI})
 combos=[
  {"ma":"NG-CB-1200","slug":"combo-giam-can-1200","ten":"Combo Giảm cân 1.200","mucTieuKcal":1200,"mucTieu":["giam-can"],"gia":308000,"nhan":"Giảm cân, giữ dáng",
   "thanhPhan":[{"ma":"NG-GRA-01","soLuong":1},{"ma":"NG-BAN-01","soLuong":1},{"chon":["NG-GL-01","NG-GL-02","NG-GL-03"],"soLuong":1}],
@@ -60,5 +76,5 @@ combos=[
 for c in combos:
     c.update({"loai":"combo","danhMuc":"combo","anh":"combo-%d"%c["mucTieuKcal"],"anhMinhHoa":False,"soNgay":7,"noiBat":True,"chiBanTrenWebsite":True})
 json.dump({"ghiChu":"Giá theo khung 80.000–180.000đ (mục 3.2.2). kcal/100g khớp Bảng 3.3 (kcal cả gói = kcal/100g × khối lượng). Năng lượng kiểm tra theo hệ số 4 (protein, carb trừ xơ) – 9 (béo) – 2 (xơ). Ảnh có anhMinhHoa=true là ảnh dựng lại từ bao bì mẫu, cần thay ảnh thật.",
-  "sanPham":sp,"combo":combos},open('frontend/mock-data/products.json','w'),ensure_ascii=False,indent=1)
+  "sanPham":sp,"combo":combos},open('frontend/mock-data/products.json','w',encoding='utf-8'),ensure_ascii=False,indent=1)
 print('ok',len(sp),len(combos))
